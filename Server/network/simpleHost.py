@@ -165,7 +165,7 @@ class SimpleHost(object):
         return
 
     def updateClients(self, current):
-        for pos in xrange(len(self.clients)):
+        for pos in range(len(self.clients)):
             client = self.clients[pos]
             if not client:
                 continue
