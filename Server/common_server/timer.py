@@ -54,7 +54,7 @@ class TimerManager(object):
 	
 	@staticmethod
 	def addTimer(delay, func, *args, **kwargs):
-		# type: (float, object, [], dict) -> CallLater
+		# type: (float, object, list, dict) -> CallLater
 		timer = CallLater(delay, func, *args, **kwargs)
 		
 		heapq.heappush(TimerManager.tasks, timer)
@@ -62,7 +62,7 @@ class TimerManager(object):
 	
 	@staticmethod
 	def addRepeatTimer(delay, func, *args, **kwargs):
-		# type: (float, object, [], any) -> CallEvery
+		# type: (float, object, list, any) -> CallEvery
 		timer = CallEvery(delay, func, *args, **kwargs)
 		
 		heapq.heappush(TimerManager.tasks, timer)
