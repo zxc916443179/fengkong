@@ -7,6 +7,7 @@ from common.rpc_queue_module import RpcQueue
 from common_server.data_module import DataCenter
 from common_server.thread_pool_module import ThreadPool
 from common_server.timer import TimerManager
+from gameEntity import GameEntity
 from network.simpleHost import SimpleHost
 from setting import keyType
 from typing import Dict
