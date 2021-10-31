@@ -84,7 +84,7 @@ class SimpleServer(object):
             logger.debug("close connect %d" % wparam)
 
         # process send queue:
-        for _ in xrange(min(self.max_consume, len(self.rpc_queue))):
+        for _ in range(min(self.max_consume, len(self.rpc_queue))):
             msg = self.rpc_queue.pop_msg()
             if msg is not None:
                 method, targets, args, kwargs = msg.parseMsg()
