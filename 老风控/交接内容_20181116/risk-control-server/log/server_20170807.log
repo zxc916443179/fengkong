@@ -1,0 +1,712 @@
+Mon, 07 Aug 2017 10:26:25 server.py[line:177] DEBUG 指定配置文件[conf/setting.ini]。
+Mon, 07 Aug 2017 10:26:25 server.py[line:189] INFO Server name: 测试
+Mon, 07 Aug 2017 10:26:25 server.py[line:190] INFO Listening on 127.0.0.1:50123
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:101] WARNING [0]Account[nan] cast to int failed!
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400008, 陈佳荧, 20) at 1
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400009, 曹旭斌, 30) at 2
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400010, 曲达, 40) at 3
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400011, 吴前瑜, 50) at 4
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400012, 李明伟, 60) at 5
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400013, 王树华, 70) at 6
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400014, 汤文浩, 80) at 7
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400015, 严森, 6000) at 8
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400016, 余柏翰, 100) at 9
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400017, 汪雪冰, 110) at 10
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400018, 王凯, 120) at 11
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400019, 冯艺超, 130) at 12
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400020, 杨金鹤, 140) at 13
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400021, 唐承协, 150) at 14
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400022, 孙开科, 160) at 15
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400023, 李超辉, 170) at 16
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400024, 王吉, 180) at 17
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400025, 赵宇, 190) at 18
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400026, 党政, 200) at 19
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400027, 邓文亮, 210) at 20
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400029, 韩健, 230) at 22
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400030, 胡林, 240) at 23
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400031, 赵汤毅, 250) at 24
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400032, 黄瑞士, 260) at 25
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400036, 曲达, 50000) at 26
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400039, 王凯, 30000) at 27
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400040, 赵宇, 20000) at 28
+Mon, 07 Aug 2017 10:26:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400041, 赵糖衣, 20000) at 29
+Mon, 07 Aug 2017 10:26:34 server.py[line:112] DEBUG Waiting for connection.
+Mon, 07 Aug 2017 10:26:34 server.py[line:116] INFO New Connection Address is ('127.0.0.1', 2467)
+Mon, 07 Aug 2017 10:26:34 server.py[line:112] DEBUG Waiting for connection.
+Mon, 07 Aug 2017 10:26:37 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:26:40 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:26:40 server.py[line:159] WARNING Error at handle_mew_conn
+Mon, 07 Aug 2017 10:26:40 server.py[line:160] WARNING Address is ('127.0.0.1', 2467).
+Mon, 07 Aug 2017 10:26:40 server.py[line:161] WARNING Traceback (most recent call last):
+  File "src\server.py", line 131, in handle_new_conn
+    data = conn.recv(1024)
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\_socket3.py", line 337, in recv
+    self._wait(self._read_event)
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\_socket3.py", line 157, in _wait
+    self.hub.wait(watcher)
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\hub.py", line 651, in wait
+    result = waiter.get()
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\hub.py", line 899, in get
+    return self.hub.switch()
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\hub.py", line 630, in switch
+    return RawGreenlet.switch(self)
+socket.timeout: timed out
+
+Mon, 07 Aug 2017 10:26:44 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:26:46 server.py[line:116] INFO New Connection Address is ('127.0.0.1', 2479)
+Mon, 07 Aug 2017 10:26:46 server.py[line:112] DEBUG Waiting for connection.
+Mon, 07 Aug 2017 10:26:47 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:26:50 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:26:53 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:26:53 server.py[line:155] INFO Connection of ('127.0.0.1', 2479) Closed!
+Mon, 07 Aug 2017 10:27:36 server.py[line:177] DEBUG 指定配置文件[conf/setting.ini]。
+Mon, 07 Aug 2017 10:27:36 server.py[line:189] INFO Server name: 测试
+Mon, 07 Aug 2017 10:27:36 server.py[line:190] INFO Listening on 127.0.0.1:50123
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:101] WARNING [0]Account[nan] cast to int failed!
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400008, 陈佳荧, 20) at 1
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400009, 曹旭斌, 30) at 2
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400010, 曲达, 40) at 3
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400011, 吴前瑜, 50) at 4
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400012, 李明伟, 60) at 5
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400013, 王树华, 70) at 6
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400014, 汤文浩, 80) at 7
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400015, 严森, 6000) at 8
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400016, 余柏翰, 100) at 9
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400017, 汪雪冰, 110) at 10
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400018, 王凯, 120) at 11
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400019, 冯艺超, 130) at 12
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400020, 杨金鹤, 140) at 13
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400021, 唐承协, 150) at 14
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400022, 孙开科, 160) at 15
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400023, 李超辉, 170) at 16
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400024, 王吉, 180) at 17
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400025, 赵宇, 190) at 18
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400026, 党政, 200) at 19
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400027, 邓文亮, 210) at 20
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400029, 韩健, 230) at 22
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400030, 胡林, 240) at 23
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400031, 赵汤毅, 250) at 24
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400032, 黄瑞士, 260) at 25
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400036, 曲达, 50000) at 26
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400039, 王凯, 30000) at 27
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400040, 赵宇, 20000) at 28
+Mon, 07 Aug 2017 10:27:36 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400041, 赵糖衣, 20000) at 29
+Mon, 07 Aug 2017 10:27:36 server.py[line:112] DEBUG Waiting for connection.
+Mon, 07 Aug 2017 10:27:38 server.py[line:116] INFO New Connection Address is ('127.0.0.1', 2537)
+Mon, 07 Aug 2017 10:27:38 server.py[line:112] DEBUG Waiting for connection.
+Mon, 07 Aug 2017 10:27:40 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:27:44 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:27:47 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:27:51 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:27:54 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:27:58 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:28:01 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:28:04 server.py[line:155] INFO Connection of ('127.0.0.1', 2537) Closed!
+Mon, 07 Aug 2017 10:28:05 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:28:08 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:28:12 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:28:15 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:28:19 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:28:22 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:28:26 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:28:29 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:28:33 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:28:37 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:28:40 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:28:44 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:28:47 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:28:51 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:28:54 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:28:58 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:29:01 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:29:05 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:29:08 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:29:12 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:29:15 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:29:19 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:29:23 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:29:26 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:29:30 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:29:33 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:29:37 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:29:40 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:29:44 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:29:47 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:29:51 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:29:54 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:29:58 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:30:01 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:30:05 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:30:08 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:30:12 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:30:15 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:30:19 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:30:22 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:30:26 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:30:29 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:30:33 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:30:36 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:30:40 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:30:43 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:30:47 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:30:50 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:30:54 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:30:57 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:31:01 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:31:04 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:31:08 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:101] WARNING [0]Account[nan] cast to int failed!
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400008, 陈佳荧, 20) at 1
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400009, 曹旭斌, 30) at 2
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400010, 曲达, 40) at 3
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400011, 吴前瑜, 50) at 4
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400012, 李明伟, 60) at 5
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400013, 王树华, 70) at 6
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400014, 汤文浩, 80) at 7
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400015, 严森, 6000) at 8
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400016, 余柏翰, 100) at 9
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400017, 汪雪冰, 110) at 10
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400018, 王凯, 120) at 11
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400019, 冯艺超, 130) at 12
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400020, 杨金鹤, 140) at 13
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400021, 唐承协, 150) at 14
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400022, 孙开科, 160) at 15
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400023, 李超辉, 170) at 16
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400024, 王吉, 180) at 17
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400025, 赵宇, 190) at 18
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400026, 党政, 200) at 19
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400027, 邓文亮, 210) at 20
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400029, 韩健, 230) at 22
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400030, 胡林, 240) at 23
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400031, 赵汤毅, 250) at 24
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400032, 黄瑞士, 260) at 25
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400036, 曲达, 50000) at 26
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400039, 王凯, 30000) at 27
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400040, 赵宇, 20000) at 28
+Mon, 07 Aug 2017 10:31:25 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400041, 赵糖衣, 20000) at 29
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:101] WARNING [0]Account[nan] cast to int failed!
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400008, 陈佳荧, 20) at 1
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400009, 曹旭斌, 30) at 2
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400010, 曲达, 40) at 3
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400011, 吴前瑜, 50) at 4
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400012, 李明伟, 60) at 5
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400013, 王树华, 70) at 6
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400014, 汤文浩, 80) at 7
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400015, 严森, 6000) at 8
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400016, 余柏翰, 100) at 9
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400017, 汪雪冰, 110) at 10
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400018, 王凯, 120) at 11
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400019, 冯艺超, 130) at 12
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400020, 杨金鹤, 140) at 13
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400021, 唐承协, 150) at 14
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400022, 孙开科, 160) at 15
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400023, 李超辉, 170) at 16
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400024, 王吉, 180) at 17
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400025, 赵宇, 190) at 18
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400026, 党政, 200) at 19
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400027, 邓文亮, 210) at 20
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400029, 韩健, 230) at 22
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400030, 胡林, 240) at 23
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400031, 赵汤毅, 250) at 24
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400032, 黄瑞士, 260) at 25
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400036, 曲达, 50000) at 26
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400039, 王凯, 30000) at 27
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400040, 赵宇, 20000) at 28
+Mon, 07 Aug 2017 10:33:45 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400041, 赵糖衣, 20000) at 29
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:33:51 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:101] WARNING [0]Account[nan] cast to int failed!
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400008, 陈佳荧, 20) at 1
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400009, 曹旭斌, 30) at 2
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400010, 曲达, 40) at 3
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400011, 吴前瑜, 50) at 4
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400012, 李明伟, 60) at 5
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400013, 王树华, 70) at 6
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400014, 汤文浩, 80) at 7
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400015, 严森, 6000) at 8
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400016, 余柏翰, 100) at 9
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400017, 汪雪冰, 110) at 10
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400018, 王凯, 120) at 11
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400019, 冯艺超, 130) at 12
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400020, 杨金鹤, 140) at 13
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400021, 唐承协, 150) at 14
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400022, 孙开科, 160) at 15
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400023, 李超辉, 170) at 16
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400024, 王吉, 180) at 17
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400025, 赵宇, 190) at 18
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400026, 党政, 200) at 19
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400027, 邓文亮, 210) at 20
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400029, 韩健, 230) at 22
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400030, 胡林, 240) at 23
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400031, 赵汤毅, 250) at 24
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400032, 黄瑞士, 260) at 25
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400036, 曲达, 50000) at 26
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400039, 王凯, 30000) at 27
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400040, 赵宇, 20000) at 28
+Mon, 07 Aug 2017 10:34:03 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400041, 赵糖衣, 20000) at 29
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:34:04 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:101] WARNING [0]Account[nan] cast to int failed!
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400008, 陈佳荧, 20) at 1
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400009, 曹旭斌, 30) at 2
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400010, 曲达, 40) at 3
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400011, 吴前瑜, 50) at 4
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400012, 李明伟, 60) at 5
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400013, 王树华, 70) at 6
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400014, 汤文浩, 80) at 7
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400015, 严森, 6000) at 8
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400016, 余柏翰, 100) at 9
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400017, 汪雪冰, 110) at 10
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400018, 王凯, 120) at 11
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400019, 冯艺超, 130) at 12
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400020, 杨金鹤, 140) at 13
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400021, 唐承协, 150) at 14
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400022, 孙开科, 160) at 15
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400023, 李超辉, 170) at 16
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400024, 王吉, 180) at 17
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400025, 赵宇, 190) at 18
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400026, 党政, 200) at 19
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400027, 邓文亮, 210) at 20
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400029, 韩健, 230) at 22
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400030, 胡林, 240) at 23
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400031, 赵汤毅, 250) at 24
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400032, 黄瑞士, 260) at 25
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400036, 曲达, 50000) at 26
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400039, 王凯, 30000) at 27
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400040, 赵宇, 20000) at 28
+Mon, 07 Aug 2017 10:47:40 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400041, 赵糖衣, 20000) at 29
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:47:55 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:101] WARNING [0]Account[nan] cast to int failed!
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400008, 陈佳荧, 20) at 1
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400009, 曹旭斌, 30) at 2
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400010, 曲达, 40) at 3
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400011, 吴前瑜, 50) at 4
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400012, 李明伟, 60) at 5
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400013, 王树华, 70) at 6
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400014, 汤文浩, 80) at 7
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400015, 严森, 6000) at 8
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400016, 余柏翰, 100) at 9
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400017, 汪雪冰, 110) at 10
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400018, 王凯, 120) at 11
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400019, 冯艺超, 130) at 12
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400020, 杨金鹤, 140) at 13
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400021, 唐承协, 150) at 14
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400022, 孙开科, 160) at 15
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400023, 李超辉, 170) at 16
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400024, 王吉, 180) at 17
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400025, 赵宇, 190) at 18
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400026, 党政, 200) at 19
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400027, 邓文亮, 210) at 20
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400029, 韩健, 230) at 22
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400030, 胡林, 240) at 23
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400031, 赵汤毅, 250) at 24
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400032, 黄瑞士, 260) at 25
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400036, 曲达, 50000) at 26
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400039, 王凯, 30000) at 27
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400040, 赵宇, 20000) at 28
+Mon, 07 Aug 2017 10:48:04 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400041, 赵糖衣, 20000) at 29
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:08 riskmanage.py[line:321] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:101] WARNING [0]Account[nan] cast to int failed!
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400008, 陈佳荧, 20) at 1
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400009, 曹旭斌, 30) at 2
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400010, 曲达, 40) at 3
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400011, 吴前瑜, 50) at 4
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400012, 李明伟, 60) at 5
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400013, 王树华, 70) at 6
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400014, 汤文浩, 80) at 7
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400015, 严森, 6000) at 8
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400016, 余柏翰, 100) at 9
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400017, 汪雪冰, 110) at 10
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400018, 王凯, 120) at 11
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400019, 冯艺超, 130) at 12
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400020, 杨金鹤, 140) at 13
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400021, 唐承协, 150) at 14
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400022, 孙开科, 160) at 15
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400023, 李超辉, 170) at 16
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400024, 王吉, 180) at 17
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400025, 赵宇, 190) at 18
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400026, 党政, 200) at 19
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400027, 邓文亮, 210) at 20
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400029, 韩健, 230) at 22
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400030, 胡林, 240) at 23
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400031, 赵汤毅, 250) at 24
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400032, 黄瑞士, 260) at 25
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400036, 曲达, 50000) at 26
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400039, 王凯, 30000) at 27
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400040, 赵宇, 20000) at 28
+Mon, 07 Aug 2017 10:48:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400041, 赵糖衣, 20000) at 29
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:318] INFO 找到 stop 的配置！
+Mon, 07 Aug 2017 10:48:44 riskmanage.py[line:323] WARNING 没有找到 stop 的配置！
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:101] WARNING [0]Account[nan] cast to int failed!
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400008, 陈佳荧, 20) at 1
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400009, 曹旭斌, 30) at 2
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400010, 曲达, 40) at 3
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400011, 吴前瑜, 50) at 4
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400012, 李明伟, 60) at 5
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400013, 王树华, 70) at 6
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400014, 汤文浩, 80) at 7
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400015, 严森, 6000) at 8
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400016, 余柏翰, 100) at 9
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400017, 汪雪冰, 110) at 10
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400018, 王凯, 120) at 11
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400019, 冯艺超, 130) at 12
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400020, 杨金鹤, 140) at 13
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400021, 唐承协, 150) at 14
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400022, 孙开科, 160) at 15
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400023, 李超辉, 170) at 16
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400024, 王吉, 180) at 17
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400025, 赵宇, 190) at 18
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400026, 党政, 200) at 19
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400027, 邓文亮, 210) at 20
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400029, 韩健, 230) at 22
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400030, 胡林, 240) at 23
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400031, 赵汤毅, 250) at 24
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400032, 黄瑞士, 260) at 25
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400036, 曲达, 50000) at 26
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400039, 王凯, 30000) at 27
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400040, 赵宇, 20000) at 28
+Mon, 07 Aug 2017 10:49:18 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400041, 赵糖衣, 20000) at 29
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:101] WARNING [0]Account[nan] cast to int failed!
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400008, 陈佳荧, 20) at 1
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400009, 曹旭斌, 30) at 2
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400010, 曲达, 40) at 3
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400011, 吴前瑜, 50) at 4
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400012, 李明伟, 60) at 5
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400013, 王树华, 70) at 6
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400014, 汤文浩, 80) at 7
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400015, 严森, 6000) at 8
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400016, 余柏翰, 100) at 9
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400017, 汪雪冰, 110) at 10
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400018, 王凯, 120) at 11
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400019, 冯艺超, 130) at 12
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400020, 杨金鹤, 140) at 13
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400021, 唐承协, 150) at 14
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400022, 孙开科, 160) at 15
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400023, 李超辉, 170) at 16
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400024, 王吉, 180) at 17
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400025, 赵宇, 190) at 18
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400026, 党政, 200) at 19
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400027, 邓文亮, 210) at 20
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400029, 韩健, 230) at 22
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400030, 胡林, 240) at 23
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400031, 赵汤毅, 250) at 24
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400032, 黄瑞士, 260) at 25
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400036, 曲达, 50000) at 26
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400039, 王凯, 30000) at 27
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400040, 赵宇, 20000) at 28
+Mon, 07 Aug 2017 10:50:31 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400041, 赵糖衣, 20000) at 29
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:101] WARNING [0]Account[nan] cast to int failed!
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400008, 陈佳荧, 20) at 1
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400009, 曹旭斌, 30) at 2
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400010, 曲达, 40) at 3
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400011, 吴前瑜, 50) at 4
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400012, 李明伟, 60) at 5
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400013, 王树华, 70) at 6
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400014, 汤文浩, 80) at 7
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400015, 严森, 6000) at 8
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400016, 余柏翰, 100) at 9
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400017, 汪雪冰, 110) at 10
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400018, 王凯, 120) at 11
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400019, 冯艺超, 130) at 12
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400020, 杨金鹤, 140) at 13
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400021, 唐承协, 150) at 14
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400022, 孙开科, 160) at 15
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400023, 李超辉, 170) at 16
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400024, 王吉, 180) at 17
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400025, 赵宇, 190) at 18
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400026, 党政, 200) at 19
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400027, 邓文亮, 210) at 20
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400029, 韩健, 230) at 22
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400030, 胡林, 240) at 23
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400031, 赵汤毅, 250) at 24
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400032, 黄瑞士, 260) at 25
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400036, 曲达, 50000) at 26
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400039, 王凯, 30000) at 27
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400040, 赵宇, 20000) at 28
+Mon, 07 Aug 2017 10:54:38 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400041, 赵糖衣, 20000) at 29
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:101] WARNING [0]Account[nan] cast to int failed!
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400008, 陈佳荧, 20) at 1
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400009, 曹旭斌, 30) at 2
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400010, 曲达, 40) at 3
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400011, 吴前瑜, 50) at 4
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400012, 李明伟, 60) at 5
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400013, 王树华, 70) at 6
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400014, 汤文浩, 80) at 7
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400015, 严森, 6000) at 8
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400016, 余柏翰, 100) at 9
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400017, 汪雪冰, 110) at 10
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400018, 王凯, 120) at 11
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400019, 冯艺超, 130) at 12
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400020, 杨金鹤, 140) at 13
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400021, 唐承协, 150) at 14
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400022, 孙开科, 160) at 15
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400023, 李超辉, 170) at 16
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400024, 王吉, 180) at 17
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400025, 赵宇, 190) at 18
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400026, 党政, 200) at 19
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400027, 邓文亮, 210) at 20
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400029, 韩健, 230) at 22
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400030, 胡林, 240) at 23
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400031, 赵汤毅, 250) at 24
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400032, 黄瑞士, 260) at 25
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400036, 曲达, 50000) at 26
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400039, 王凯, 30000) at 27
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400040, 赵宇, 20000) at 28
+Mon, 07 Aug 2017 10:55:11 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400041, 赵糖衣, 20000) at 29
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:101] WARNING [0]Account[nan] cast to int failed!
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400008, 陈佳荧, 20) at 1
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400009, 曹旭斌, 30) at 2
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400010, 曲达, 40) at 3
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400011, 吴前瑜, 50) at 4
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400012, 李明伟, 60) at 5
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400013, 王树华, 70) at 6
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400014, 汤文浩, 80) at 7
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400015, 严森, 6000) at 8
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400016, 余柏翰, 100) at 9
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400017, 汪雪冰, 110) at 10
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400018, 王凯, 120) at 11
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400019, 冯艺超, 130) at 12
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400020, 杨金鹤, 140) at 13
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400021, 唐承协, 150) at 14
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400022, 孙开科, 160) at 15
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400023, 李超辉, 170) at 16
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400024, 王吉, 180) at 17
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400025, 赵宇, 190) at 18
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400026, 党政, 200) at 19
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400027, 邓文亮, 210) at 20
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400029, 韩健, 230) at 22
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400030, 胡林, 240) at 23
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400031, 赵汤毅, 250) at 24
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400032, 黄瑞士, 260) at 25
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400036, 曲达, 50000) at 26
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400039, 王凯, 30000) at 27
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400040, 赵宇, 20000) at 28
+Mon, 07 Aug 2017 10:55:35 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400041, 赵糖衣, 20000) at 29
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:101] WARNING [0]Account[nan] cast to int failed!
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400008, 陈佳荧, 20) at 1
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400009, 曹旭斌, 30) at 2
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400010, 曲达, 40) at 3
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400011, 吴前瑜, 50) at 4
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400012, 李明伟, 60) at 5
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400013, 王树华, 70) at 6
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400014, 汤文浩, 80) at 7
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400015, 严森, 6000) at 8
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400016, 余柏翰, 100) at 9
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400017, 汪雪冰, 110) at 10
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400018, 王凯, 120) at 11
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400019, 冯艺超, 130) at 12
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400020, 杨金鹤, 140) at 13
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400021, 唐承协, 150) at 14
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400022, 孙开科, 160) at 15
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400023, 李超辉, 170) at 16
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400024, 王吉, 180) at 17
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400025, 赵宇, 190) at 18
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400026, 党政, 200) at 19
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400027, 邓文亮, 210) at 20
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400029, 韩健, 230) at 22
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400030, 胡林, 240) at 23
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400031, 赵汤毅, 250) at 24
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400032, 黄瑞士, 260) at 25
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400036, 曲达, 50000) at 26
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400039, 王凯, 30000) at 27
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400040, 赵宇, 20000) at 28
+Mon, 07 Aug 2017 10:58:19 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400041, 赵糖衣, 20000) at 29
+Mon, 07 Aug 2017 10:58:32 server.py[line:177] DEBUG 指定配置文件[conf/setting.ini]。
+Mon, 07 Aug 2017 10:58:32 server.py[line:189] INFO Server name: 测试
+Mon, 07 Aug 2017 10:58:32 server.py[line:190] INFO Listening on 127.0.0.1:50123
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:101] WARNING [0]Account[nan] cast to int failed!
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400008, 陈佳荧, 20) at 1
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400009, 曹旭斌, 30) at 2
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400010, 曲达, 40) at 3
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400011, 吴前瑜, 50) at 4
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400012, 李明伟, 60) at 5
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400013, 王树华, 70) at 6
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400014, 汤文浩, 80) at 7
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400015, 严森, 6000) at 8
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400016, 余柏翰, 100) at 9
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400017, 汪雪冰, 110) at 10
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400018, 王凯, 120) at 11
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400019, 冯艺超, 130) at 12
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400020, 杨金鹤, 140) at 13
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400021, 唐承协, 150) at 14
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400022, 孙开科, 160) at 15
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400023, 李超辉, 170) at 16
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400024, 王吉, 180) at 17
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400025, 赵宇, 190) at 18
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400026, 党政, 200) at 19
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400027, 邓文亮, 210) at 20
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400029, 韩健, 230) at 22
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400030, 胡林, 240) at 23
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400031, 赵汤毅, 250) at 24
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400032, 黄瑞士, 260) at 25
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400036, 曲达, 50000) at 26
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400039, 王凯, 30000) at 27
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400040, 赵宇, 20000) at 28
+Mon, 07 Aug 2017 10:58:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400041, 赵糖衣, 20000) at 29
+Mon, 07 Aug 2017 10:58:33 server.py[line:112] DEBUG Waiting for connection.
+Mon, 07 Aug 2017 10:58:37 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:58:37 server.py[line:116] INFO New Connection Address is ('127.0.0.1', 4044)
+Mon, 07 Aug 2017 10:58:37 server.py[line:112] DEBUG Waiting for connection.
+Mon, 07 Aug 2017 10:58:40 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:58:43 server.py[line:159] WARNING Error at handle_mew_conn
+Mon, 07 Aug 2017 10:58:43 server.py[line:160] WARNING Address is ('127.0.0.1', 4044).
+Mon, 07 Aug 2017 10:58:43 server.py[line:161] WARNING Traceback (most recent call last):
+  File "src\server.py", line 131, in handle_new_conn
+    data = conn.recv(1024)
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\_socket3.py", line 337, in recv
+    self._wait(self._read_event)
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\_socket3.py", line 157, in _wait
+    self.hub.wait(watcher)
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\hub.py", line 651, in wait
+    result = waiter.get()
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\hub.py", line 899, in get
+    return self.hub.switch()
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\hub.py", line 630, in switch
+    return RawGreenlet.switch(self)
+socket.timeout: timed out
+
+Mon, 07 Aug 2017 10:58:44 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:58:47 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:58:48 server.py[line:116] INFO New Connection Address is ('127.0.0.1', 4057)
+Mon, 07 Aug 2017 10:58:48 server.py[line:112] DEBUG Waiting for connection.
+Mon, 07 Aug 2017 10:58:51 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:58:54 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:58:58 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:59:01 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:59:05 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:59:08 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:59:12 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:59:15 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:59:19 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:59:22 server.py[line:155] INFO Connection of ('127.0.0.1', 4057) Closed!
+Mon, 07 Aug 2017 10:59:22 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:59:26 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:59:29 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:59:33 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:59:36 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:59:40 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:59:49 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:59:53 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 10:59:56 server.py[line:89] DEBUG Data Recieved.
+Mon, 07 Aug 2017 11:00:00 server.py[line:89] DEBUG Data Recieved.

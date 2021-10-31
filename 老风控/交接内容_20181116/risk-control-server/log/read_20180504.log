@@ -1,0 +1,131 @@
+Fri, 04 May 2018 11:09:56 read.py[line:217] INFO sys args: ['src\\read.py']
+Fri, 04 May 2018 11:09:56 read.py[line:176] INFO compute
+Fri, 04 May 2018 11:09:56 read.py[line:190] INFO Reading latest file[Trealdeal_20180504.log]
+Fri, 04 May 2018 11:09:56 read.py[line:100] INFO There are 366 rows in dbf and 366 unique rows in dbf
+Fri, 04 May 2018 11:09:56 read.py[line:30] INFO Time consumed in transform_dbf_to_csv: 0.11358657947890437 second
+Fri, 04 May 2018 11:09:56 read.py[line:207] INFO med file zy011.csv write success
+Fri, 04 May 2018 11:09:57 read.py[line:50] INFO df size before reassembe: 366
+Fri, 04 May 2018 11:09:57 read.py[line:52] INFO df size after reassembe: 0
+Fri, 04 May 2018 11:09:57 read.py[line:30] INFO Time consumed in reassembe: 0.05126049918208131 second
+Fri, 04 May 2018 11:09:57 read.py[line:30] INFO Time consumed in main: 1.097445380359884 second
+Fri, 04 May 2018 11:09:57 read.py[line:176] INFO compute
+Fri, 04 May 2018 11:09:57 read.py[line:190] INFO Reading latest file[Trealdeal_20180504.log]
+Fri, 04 May 2018 11:09:57 read.py[line:100] INFO There are 366 rows in dbf and 366 unique rows in dbf
+Fri, 04 May 2018 11:09:57 read.py[line:30] INFO Time consumed in transform_dbf_to_csv: 0.04739703910905324 second
+Fri, 04 May 2018 11:09:57 read.py[line:207] INFO med file zy011.csv write success
+Fri, 04 May 2018 11:09:57 read.py[line:50] INFO df size before reassembe: 366
+Fri, 04 May 2018 11:09:57 read.py[line:52] INFO df size after reassembe: 0
+Fri, 04 May 2018 11:09:57 read.py[line:30] INFO Time consumed in reassembe: 0.03023525506516478 second
+Fri, 04 May 2018 11:09:57 read.py[line:30] INFO Time consumed in main: 0.1606474058284273 second
+Fri, 04 May 2018 11:09:57 read.py[line:176] INFO compute
+Fri, 04 May 2018 11:09:57 read.py[line:190] INFO Reading latest file[Trealdeal_20180504.log]
+Fri, 04 May 2018 11:09:57 read.py[line:100] INFO There are 366 rows in dbf and 366 unique rows in dbf
+Fri, 04 May 2018 11:09:57 read.py[line:30] INFO Time consumed in transform_dbf_to_csv: 0.046838960061508006 second
+Fri, 04 May 2018 11:09:57 read.py[line:207] INFO med file zy011.csv write success
+Fri, 04 May 2018 11:09:57 read.py[line:50] INFO df size before reassembe: 366
+Fri, 04 May 2018 11:09:57 read.py[line:52] INFO df size after reassembe: 0
+Fri, 04 May 2018 11:09:57 read.py[line:30] INFO Time consumed in reassembe: 0.02849787136363302 second
+Fri, 04 May 2018 11:09:57 read.py[line:30] INFO Time consumed in main: 0.12894953992611868 second
+Fri, 04 May 2018 11:09:57 read.py[line:176] INFO compute
+Fri, 04 May 2018 11:09:57 read.py[line:190] INFO Reading latest file[Trealdeal_20180504.log]
+Fri, 04 May 2018 11:09:57 read.py[line:100] INFO There are 366 rows in dbf and 366 unique rows in dbf
+Fri, 04 May 2018 11:09:57 read.py[line:30] INFO Time consumed in transform_dbf_to_csv: 0.050228394276873756 second
+Fri, 04 May 2018 11:09:57 read.py[line:207] INFO med file zy011.csv write success
+Fri, 04 May 2018 11:09:57 read.py[line:50] INFO df size before reassembe: 366
+Fri, 04 May 2018 11:09:57 read.py[line:52] INFO df size after reassembe: 0
+Fri, 04 May 2018 11:09:57 read.py[line:30] INFO Time consumed in reassembe: 0.031579679437347075 second
+Fri, 04 May 2018 11:09:57 read.py[line:30] INFO Time consumed in main: 0.13502782288584902 second
+Fri, 04 May 2018 11:09:57 read.py[line:176] INFO compute
+Fri, 04 May 2018 11:09:57 read.py[line:190] INFO Reading latest file[Trealdeal_20180504.log]
+Fri, 04 May 2018 11:09:57 read.py[line:100] INFO There are 366 rows in dbf and 366 unique rows in dbf
+Fri, 04 May 2018 11:09:57 read.py[line:30] INFO Time consumed in transform_dbf_to_csv: 0.04613837459050729 second
+Fri, 04 May 2018 11:09:57 read.py[line:207] INFO med file zy011.csv write success
+Fri, 04 May 2018 11:09:57 read.py[line:50] INFO df size before reassembe: 366
+Fri, 04 May 2018 11:09:57 read.py[line:52] INFO df size after reassembe: 0
+Fri, 04 May 2018 11:09:57 read.py[line:30] INFO Time consumed in reassembe: 0.029619149449984894 second
+Fri, 04 May 2018 11:09:57 read.py[line:30] INFO Time consumed in main: 0.12548458583964006 second
+Fri, 04 May 2018 11:09:57 read.py[line:176] INFO compute
+Fri, 04 May 2018 11:09:57 read.py[line:190] INFO Reading latest file[Trealdeal_20180504.log]
+Fri, 04 May 2018 11:09:57 read.py[line:100] INFO There are 366 rows in dbf and 366 unique rows in dbf
+Fri, 04 May 2018 11:09:57 read.py[line:30] INFO Time consumed in transform_dbf_to_csv: 0.048335277507792984 second
+Fri, 04 May 2018 11:09:57 read.py[line:207] INFO med file zy011.csv write success
+Fri, 04 May 2018 11:09:57 read.py[line:50] INFO df size before reassembe: 366
+Fri, 04 May 2018 11:09:58 read.py[line:52] INFO df size after reassembe: 0
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in reassembe: 0.033602502651728594 second
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in main: 0.13689149970517378 second
+Fri, 04 May 2018 11:09:58 read.py[line:176] INFO compute
+Fri, 04 May 2018 11:09:58 read.py[line:190] INFO Reading latest file[Trealdeal_20180504.log]
+Fri, 04 May 2018 11:09:58 read.py[line:100] INFO There are 366 rows in dbf and 366 unique rows in dbf
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in transform_dbf_to_csv: 0.04902263633470061 second
+Fri, 04 May 2018 11:09:58 read.py[line:207] INFO med file zy011.csv write success
+Fri, 04 May 2018 11:09:58 read.py[line:50] INFO df size before reassembe: 366
+Fri, 04 May 2018 11:09:58 read.py[line:52] INFO df size after reassembe: 0
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in reassembe: 0.031159840153872853 second
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in main: 0.13270420018483176 second
+Fri, 04 May 2018 11:09:58 read.py[line:176] INFO compute
+Fri, 04 May 2018 11:09:58 read.py[line:190] INFO Reading latest file[Trealdeal_20180504.log]
+Fri, 04 May 2018 11:09:58 read.py[line:100] INFO There are 366 rows in dbf and 366 unique rows in dbf
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in transform_dbf_to_csv: 0.04685901336061726 second
+Fri, 04 May 2018 11:09:58 read.py[line:207] INFO med file zy011.csv write success
+Fri, 04 May 2018 11:09:58 read.py[line:50] INFO df size before reassembe: 366
+Fri, 04 May 2018 11:09:58 read.py[line:52] INFO df size after reassembe: 0
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in reassembe: 0.028902777339260055 second
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in main: 0.1312002027516539 second
+Fri, 04 May 2018 11:09:58 read.py[line:176] INFO compute
+Fri, 04 May 2018 11:09:58 read.py[line:190] INFO Reading latest file[Trealdeal_20180504.log]
+Fri, 04 May 2018 11:09:58 read.py[line:100] INFO There are 366 rows in dbf and 366 unique rows in dbf
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in transform_dbf_to_csv: 0.05073228675023067 second
+Fri, 04 May 2018 11:09:58 read.py[line:207] INFO med file zy011.csv write success
+Fri, 04 May 2018 11:09:58 read.py[line:50] INFO df size before reassembe: 366
+Fri, 04 May 2018 11:09:58 read.py[line:52] INFO df size after reassembe: 0
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in reassembe: 0.031327519867699216 second
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in main: 0.13433449073580261 second
+Fri, 04 May 2018 11:09:58 read.py[line:176] INFO compute
+Fri, 04 May 2018 11:09:58 read.py[line:190] INFO Reading latest file[Trealdeal_20180504.log]
+Fri, 04 May 2018 11:09:58 read.py[line:100] INFO There are 366 rows in dbf and 366 unique rows in dbf
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in transform_dbf_to_csv: 0.05303884281370852 second
+Fri, 04 May 2018 11:09:58 read.py[line:207] INFO med file zy011.csv write success
+Fri, 04 May 2018 11:09:58 read.py[line:50] INFO df size before reassembe: 366
+Fri, 04 May 2018 11:09:58 read.py[line:52] INFO df size after reassembe: 0
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in reassembe: 0.03448186115095675 second
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in main: 0.1521746736218903 second
+Fri, 04 May 2018 11:09:58 read.py[line:176] INFO compute
+Fri, 04 May 2018 11:09:58 read.py[line:190] INFO Reading latest file[Trealdeal_20180504.log]
+Fri, 04 May 2018 11:09:58 read.py[line:100] INFO There are 366 rows in dbf and 366 unique rows in dbf
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in transform_dbf_to_csv: 0.058796272987693854 second
+Fri, 04 May 2018 11:09:58 read.py[line:207] INFO med file zy011.csv write success
+Fri, 04 May 2018 11:09:58 read.py[line:50] INFO df size before reassembe: 366
+Fri, 04 May 2018 11:09:58 read.py[line:52] INFO df size after reassembe: 0
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in reassembe: 0.03351503613433815 second
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in main: 0.14934801177939327 second
+Fri, 04 May 2018 11:09:58 read.py[line:176] INFO compute
+Fri, 04 May 2018 11:09:58 read.py[line:190] INFO Reading latest file[Trealdeal_20180504.log]
+Fri, 04 May 2018 11:09:58 read.py[line:100] INFO There are 366 rows in dbf and 366 unique rows in dbf
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in transform_dbf_to_csv: 0.04980684832964544 second
+Fri, 04 May 2018 11:09:58 read.py[line:207] INFO med file zy011.csv write success
+Fri, 04 May 2018 11:09:58 read.py[line:50] INFO df size before reassembe: 366
+Fri, 04 May 2018 11:09:58 read.py[line:52] INFO df size after reassembe: 0
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in reassembe: 0.03455439436050067 second
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in main: 0.13538707560605756 second
+Fri, 04 May 2018 11:09:58 read.py[line:176] INFO compute
+Fri, 04 May 2018 11:09:58 read.py[line:190] INFO Reading latest file[Trealdeal_20180504.log]
+Fri, 04 May 2018 11:09:58 read.py[line:100] INFO There are 366 rows in dbf and 366 unique rows in dbf
+Fri, 04 May 2018 11:09:58 read.py[line:30] INFO Time consumed in transform_dbf_to_csv: 0.09734340720058521 second
+Fri, 04 May 2018 11:09:59 read.py[line:207] INFO med file zy011.csv write success
+Fri, 04 May 2018 11:09:59 read.py[line:50] INFO df size before reassembe: 366
+Fri, 04 May 2018 11:09:59 read.py[line:52] INFO df size after reassembe: 0
+Fri, 04 May 2018 11:09:59 read.py[line:30] INFO Time consumed in reassembe: 0.06656287306602993 second
+Fri, 04 May 2018 11:09:59 read.py[line:30] INFO Time consumed in main: 0.24157484104560467 second
+Fri, 04 May 2018 11:09:59 read.py[line:176] INFO compute
+Fri, 04 May 2018 11:09:59 read.py[line:190] INFO Reading latest file[Trealdeal_20180504.log]
+Fri, 04 May 2018 11:09:59 read.py[line:100] INFO There are 366 rows in dbf and 366 unique rows in dbf
+Fri, 04 May 2018 11:09:59 read.py[line:30] INFO Time consumed in transform_dbf_to_csv: 0.09628783566876065 second
+Fri, 04 May 2018 11:09:59 read.py[line:207] INFO med file zy011.csv write success
+Fri, 04 May 2018 11:09:59 read.py[line:50] INFO df size before reassembe: 366
+Fri, 04 May 2018 11:09:59 read.py[line:52] INFO df size after reassembe: 0
+Fri, 04 May 2018 11:09:59 read.py[line:30] INFO Time consumed in reassembe: 0.03241765134054164 second
+Fri, 04 May 2018 11:09:59 read.py[line:30] INFO Time consumed in main: 0.17604663288041333 second
+Fri, 04 May 2018 11:09:59 read.py[line:176] INFO compute
+Fri, 04 May 2018 11:09:59 read.py[line:190] INFO Reading latest file[Trealdeal_20180504.log]
+Fri, 04 May 2018 11:09:59 read.py[line:100] INFO There are 366 rows in dbf and 366 unique rows in dbf
+Fri, 04 May 2018 11:09:59 read.py[line:30] INFO Time consumed in transform_dbf_to_csv: 0.04454691063993943 second

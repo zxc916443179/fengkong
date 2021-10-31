@@ -1,0 +1,57 @@
+Thu, 10 Aug 2017 19:51:32 server.py[line:177] DEBUG Ö¸¶¨ÅäÖÃÎÄ¼þ[conf/setting.ini]¡£
+Thu, 10 Aug 2017 19:51:32 server.py[line:189] INFO Server name: ²âÊÔ
+Thu, 10 Aug 2017 19:51:32 server.py[line:190] INFO Listening on 127.0.0.1:50123
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:101] WARNING [0]Account[nan] cast to int failed!
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400008, ³Â¼ÑÓ«, 20) at 1
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400009, ²ÜÐñ±ó, 30) at 2
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400010, Çú´ï, 40) at 3
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400011, ÎâÇ°è¤, 50) at 4
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400012, ÀîÃ÷Î°, 60) at 5
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400013, ÍõÊ÷»ª, 70) at 6
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400014, ÌÀÎÄºÆ, 80) at 7
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400015, ÑÏÉ­, 6000) at 8
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400016, Óà°Øº², 100) at 9
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400017, ÍôÑ©±ù, 110) at 10
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400018, Íõ¿­, 120) at 11
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400019, ·ëÒÕ³¬, 130) at 12
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400020, Ñî½ðº×, 140) at 13
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400021, ÌÆ³ÐÐ­, 150) at 14
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400022, Ëï¿ª¿Æ, 160) at 15
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400023, Àî³¬»Ô, 170) at 16
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400024, Íõ¼ª, 180) at 17
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400025, ÕÔÓî, 190) at 18
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400026, µ³Õþ, 200) at 19
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400027, µËÎÄÁÁ, 210) at 20
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400029, º«½¡, 230) at 22
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400030, ºúÁÖ, 240) at 23
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400031, ÕÔÌÀÒã, 250) at 24
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400032, »ÆÈðÊ¿, 260) at 25
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400036, Çú´ï, 50000) at 26
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400039, Íõ¿­, 30000) at 27
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400040, ÕÔÓî, 20000) at 28
+Thu, 10 Aug 2017 19:51:32 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400041, ÕÔÌÇÒÂ, 20000) at 29
+Thu, 10 Aug 2017 19:51:49 server.py[line:112] DEBUG Waiting for connection.
+Thu, 10 Aug 2017 19:51:51 server.py[line:116] INFO New Connection Address is ('127.0.0.1', 3123)
+Thu, 10 Aug 2017 19:51:51 server.py[line:112] DEBUG Waiting for connection.
+Thu, 10 Aug 2017 19:51:56 server.py[line:159] WARNING Error at handle_mew_conn
+Thu, 10 Aug 2017 19:51:56 server.py[line:160] WARNING Address is ('127.0.0.1', 3123).
+Thu, 10 Aug 2017 19:51:56 server.py[line:161] WARNING Traceback (most recent call last):
+  File "src\server.py", line 131, in handle_new_conn
+    data = conn.recv(1024)
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\_socket3.py", line 337, in recv
+    self._wait(self._read_event)
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\_socket3.py", line 157, in _wait
+    self.hub.wait(watcher)
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\hub.py", line 651, in wait
+    result = waiter.get()
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\hub.py", line 899, in get
+    return self.hub.switch()
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\hub.py", line 630, in switch
+    return RawGreenlet.switch(self)
+socket.timeout: timed out
+
+Thu, 10 Aug 2017 19:52:01 server.py[line:89] DEBUG Data Recieved.
+Thu, 10 Aug 2017 19:52:01 server.py[line:116] INFO New Connection Address is ('127.0.0.1', 3131)
+Thu, 10 Aug 2017 19:52:01 server.py[line:112] DEBUG Waiting for connection.
+Thu, 10 Aug 2017 19:52:03 server.py[line:155] INFO Connection of ('127.0.0.1', 3131) Closed!

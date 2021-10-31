@@ -1,0 +1,62 @@
+[
+  {
+    "_wid": 0,
+    "_weapon_pow": 21.0,
+    "_weapon_stable": 0.7,
+    "_weapon_range": 20.0,
+    "_shock_screen": 0.2,
+    "_move_speed": -0.2,
+    "_fire_time": 0.1,
+    "_fire_type": 1
+  },
+  {
+    "_wid": 1,
+    "_weapon_pow": 14.0,
+    "_weapon_stable": 1.0,
+    "_weapon_range": 35.0,
+    "_shock_screen": 0.0,
+    "_move_speed": 0.0,
+    "_fire_time": 0.06,
+    "_fire_type": 1
+  },
+  {
+    "_wid": 2,
+    "_weapon_pow": 70.0,
+    "_weapon_stable": 0.5,
+    "_weapon_range": 35.0,
+    "_shock_screen": 0.5,
+    "_move_speed": -0.5,
+    "_fire_time": 0.17,
+    "_fire_type": 1
+  },
+  {
+    "_wid": 3,
+    "_weapon_pow": 100.0,
+    "_weapon_stable": 1.0,
+    "_weapon_range": 12.0,
+    "_shock_screen": 0.6,
+    "_move_speed": 0.0,
+    "_fire_time": 1.09,
+    "_fire_type": 1
+  },
+  {
+    "_wid": 4,
+    "_weapon_pow": 100.0,
+    "_weapon_stable": 1.0,
+    "_weapon_range": 12.0,
+    "_shock_screen": 0.6,
+    "_move_speed": 0.0,
+    "_fire_time": 1.09,
+    "_fire_type": 1
+  },
+  {
+    "_wid": 5,
+    "_weapon_pow": 300.0,
+    "_weapon_stable": 1.0,
+    "_weapon_range": 50.0,
+    "_shock_screen": 1.0,
+    "_move_speed": 0.0,
+    "_fire_time": 1.0,
+    "_fire_type": 2
+  }
+]

@@ -1,0 +1,221 @@
+[
+    {
+        "buff_id": [
+            1
+        ],
+        "group": 1,
+        "buff_type": 0,
+        "time": 3.0,
+        "same_priority_replace_rule": 0,
+        "is_instant": 0,
+        "buff_name": "speed_add",
+        "icon_type": "",
+        "pack_max": "",
+        "effects": [
+            {
+                "speed": 0.3
+            }
+        ],
+        "prior": 1,
+        "invoke_time": ""
+    }, {
+        "buff_id": [
+            7
+        ],
+        "group": 1,
+        "buff_type": 4,
+        "time": 30000.0,
+        "same_priority_replace_rule": 0,
+        "is_instant": 0,
+        "buff_name": "weapon_speed_reduce",
+        "icon_type": "",
+        "pack_max": "",
+        "effects": [
+            {
+                "speed": 0.0
+            }
+        ],
+        "prior": 1,
+        "invoke_time": ""
+    },
+    {
+        "buff_id": [
+            2
+        ],
+        "group": 1,
+        "buff_type": 3,
+        "time": 3.0,
+        "same_priority_replace_rule": 0,
+        "is_instant": 0,
+        "buff_name": "damage_add",
+        "icon_type": "",
+        "pack_max": "",
+        "effects": [
+            {
+                "dmg_rate": 0.3
+            }
+        ],
+        "prior": 1,
+        "invoke_time": ""
+    },
+    {
+        "buff_id": [
+            3
+        ],
+        "group": 1,
+        "buff_type": 1,
+        "time": 3.0,
+        "same_priority_replace_rule": 0,
+        "is_instant": 0,
+        "buff_name": "speed_red",
+        "icon_type": "",
+        "pack_max": "",
+        "effects": [
+            {
+                "speed": -0.5
+            }
+        ],
+        "prior": 1,
+        "invoke_time": ""
+    },
+    {
+        "buff_id": [
+            4
+        ],
+        "group": 4,
+        "buff_type": 4,
+        "time": 3.0,
+        "same_priority_replace_rule": 0,
+        "is_instant": 0,
+        "buff_name": "burn",
+        "icon_type": "",
+        "pack_max": 1,
+        "effects": [
+            {
+                "hp": -3
+            }
+        ],
+        "prior": 1,
+        "invoke_time": 1.0
+    },
+    {
+        "buff_id": [
+            5
+        ],
+        "group": 5,
+        "buff_type": 5,
+        "time": 5.0,
+        "same_priority_replace_rule": 0,
+        "is_instant": 0,
+        "buff_name": "flash",
+        "icon_type": "",
+        "pack_max": 1,
+        "effects": [
+            {
+                "hp": -3
+            }
+        ],
+        "prior": 1,
+        "invoke_time": 1.0
+    },
+    {
+        "buff_id": [
+            6
+        ],
+        "group": 6,
+        "buff_type": 7,
+        "time": 3,
+        "same_priority_replace_rule": 1,
+        "is_instant": 0,
+        "buff_name": "dizzy",
+        "icon_type": "",
+        "pack_max": "",
+        "effects": [
+            {
+                "dizzy": 0
+            }
+        ],
+        "prior": 1,
+        "invoke_time": ""
+    },
+    {
+        "buff_id": [
+            11
+        ],
+        "group": 7,
+        "buff_type": 2,
+        "time": 0,
+        "same_priority_replace_rule": 1,
+        "is_instant": 0,
+        "buff_name": "flog",
+        "icon_type": "",
+        "pack_max": "",
+        "effects": [
+            {
+                "hp": -5
+            }
+        ],
+        "prior": 1,
+        "invoke_time": ""
+    },
+    {
+        "buff_id": [
+            8
+        ],
+        "group": 7,
+        "buff_type": 3,
+        "time": 0.02,
+        "same_priority_replace_rule": 1,
+        "is_instant": 0,
+        "buff_name": "repulse",
+        "icon_type": "",
+        "pack_max": "",
+        "effects": [
+            {
+
+            }
+        ],
+        "prior": 1,
+        "invoke_time": ""
+    },
+    {
+        "buff_id": [
+            9
+        ],
+        "group": 8,
+        "buff_type": -1,
+        "time": 0.02,
+        "same_priority_replace_rule": 1,
+        "is_instant": 0,
+        "buff_name": "water",
+        "icon_type": "",
+        "pack_max": "",
+        "effects": [
+            {
+
+            }
+        ],
+        "prior": 1,
+        "invoke_time": ""
+    },
+    {
+        "buff_id": [
+            10
+        ],
+        "group": 1,
+        "buff_type": 6,
+        "time": 3,
+        "same_priority_replace_rule": 0,
+        "is_instant": 0,
+        "buff_name": "fighting",
+        "icon_type": "",
+        "pack_max": "",
+        "effects": [
+            {
+                "speed": -0.9
+            }
+        ],
+        "prior": 1,
+        "invoke_time": ""
+    }
+]

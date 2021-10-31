@@ -1,0 +1,56 @@
+Mon, 16 Jul 2018 22:11:34 main.py[line:549] INFO 结算程序[2.3.2]开始执行。
+Mon, 16 Jul 2018 22:11:34 main.py[line:570] WARNING 隔夜仓文件[]没有找到！
+Mon, 16 Jul 2018 22:11:34 main.py[line:573] WARNING 零头股文件[]没有找到！
+Mon, 16 Jul 2018 22:11:34 main.py[line:119] WARNING 编号为[]交易员的成交记录被忽视！
+Mon, 16 Jul 2018 22:11:34 main.py[line:405] INFO 开始计算手续费和印花税。
+Mon, 16 Jul 2018 22:11:34 main.py[line:414] INFO 输出详细的手续费记录到[log/2018-07-09_tax_detail.xls]文件。
+Mon, 16 Jul 2018 22:11:35 main.py[line:416] INFO 计算手续费和印花税结束。
+Mon, 16 Jul 2018 22:11:35 main.py[line:599] INFO 从行情文件[A股行情20180522.xls]中获取收盘价。
+Mon, 16 Jul 2018 22:11:35 main.py[line:156] INFO [001/007] 股票代码：[600176|中国巨石] 收盘价：[13.16]
+Mon, 16 Jul 2018 22:11:35 main.py[line:156] INFO [002/007] 股票代码：[600487|亨通光电] 收盘价：[36.35]
+Mon, 16 Jul 2018 22:11:35 main.py[line:156] INFO [003/007] 股票代码：[600970|中材国际] 收盘价：[8.48]
+Mon, 16 Jul 2018 22:11:35 main.py[line:156] INFO [004/007] 股票代码：[601012|隆基股份] 收盘价：[38.18]
+Mon, 16 Jul 2018 22:11:35 main.py[line:156] INFO [005/007] 股票代码：[601233|桐昆股份] 收盘价：[19.76]
+Mon, 16 Jul 2018 22:11:35 main.py[line:156] INFO [006/007] 股票代码：[000830|鲁西化工] 收盘价：[21.49]
+Mon, 16 Jul 2018 22:11:35 main.py[line:156] INFO [007/007] 股票代码：[002343|慈文传媒] 收盘价：[33.26]
+Mon, 16 Jul 2018 22:11:35 main.py[line:157] DEBUG close_price: {'600176': 13.16, '600487': 36.35, '600970': 8.48, '601012': 38.18, '601233': 19.76, '000830': 21.49, '002343': 33.26}
+Mon, 16 Jul 2018 22:11:35 main.py[line:158] INFO 所有股票收盘价获取结束。
+Mon, 16 Jul 2018 22:11:35 main.py[line:419] INFO 开始计算系统收入。
+Mon, 16 Jul 2018 22:11:35 main.py[line:447] INFO 输出系统详细记录到[log/2018-07-09_system_detail.xlsx]文件。
+Mon, 16 Jul 2018 22:11:35 main.py[line:449] INFO 计算系统收入结束。
+Mon, 16 Jul 2018 22:11:35 main.py[line:452] INFO 开始计算交易员收入。
+Mon, 16 Jul 2018 22:11:36 main.py[line:484] INFO 输出交易员详细记录到[log/2018-07-09_trader_detail.xlsx]文件。
+Mon, 16 Jul 2018 22:11:36 main.py[line:486] INFO 开始计算交易员收入。
+Mon, 16 Jul 2018 22:11:36 main.py[line:614] INFO 成功输出系统盈亏到[委托信息2018070901_system.xlsx]文件。
+Mon, 16 Jul 2018 22:11:36 main.py[line:616] INFO 成功输出交易员盈亏到[委托信息2018070901_trader.xlsx]文件。
+Mon, 16 Jul 2018 22:11:36 main.py[line:619] INFO 成功输出隔夜仓到[委托信息2018070901_legacy.xlsx]文件。
+Mon, 16 Jul 2018 22:11:36 main.py[line:621] INFO 成功输出零头股到[委托信息2018070901_pieces.xlsx]文件。
+Mon, 16 Jul 2018 22:11:37 main.py[line:623] INFO 成功输出详情到[委托信息2018070901_detail.xlsx]文件。
+Mon, 16 Jul 2018 22:12:43 main.py[line:549] INFO 结算程序[2.3.2]开始执行。
+Mon, 16 Jul 2018 22:12:43 main.py[line:570] WARNING 隔夜仓文件[]没有找到！
+Mon, 16 Jul 2018 22:12:43 main.py[line:573] WARNING 零头股文件[]没有找到！
+Mon, 16 Jul 2018 22:12:43 main.py[line:119] WARNING 编号为[]交易员的成交记录被忽视！
+Mon, 16 Jul 2018 22:12:43 main.py[line:405] INFO 开始计算手续费和印花税。
+Mon, 16 Jul 2018 22:12:43 main.py[line:414] INFO 输出详细的手续费记录到[log/2018-07-09_tax_detail.xls]文件。
+Mon, 16 Jul 2018 22:12:43 main.py[line:416] INFO 计算手续费和印花税结束。
+Mon, 16 Jul 2018 22:12:43 main.py[line:599] INFO 从行情文件[A股行情20180522.xls]中获取收盘价。
+Mon, 16 Jul 2018 22:12:43 main.py[line:156] INFO [001/007] 股票代码：[600176|中国巨石] 收盘价：[13.16]
+Mon, 16 Jul 2018 22:12:43 main.py[line:156] INFO [002/007] 股票代码：[600487|亨通光电] 收盘价：[36.35]
+Mon, 16 Jul 2018 22:12:43 main.py[line:156] INFO [003/007] 股票代码：[600970|中材国际] 收盘价：[8.48]
+Mon, 16 Jul 2018 22:12:43 main.py[line:156] INFO [004/007] 股票代码：[601012|隆基股份] 收盘价：[38.18]
+Mon, 16 Jul 2018 22:12:43 main.py[line:156] INFO [005/007] 股票代码：[601233|桐昆股份] 收盘价：[19.76]
+Mon, 16 Jul 2018 22:12:43 main.py[line:156] INFO [006/007] 股票代码：[000830|鲁西化工] 收盘价：[21.49]
+Mon, 16 Jul 2018 22:12:43 main.py[line:156] INFO [007/007] 股票代码：[002343|慈文传媒] 收盘价：[33.26]
+Mon, 16 Jul 2018 22:12:43 main.py[line:157] DEBUG close_price: {'600176': 13.16, '600487': 36.35, '600970': 8.48, '601012': 38.18, '601233': 19.76, '000830': 21.49, '002343': 33.26}
+Mon, 16 Jul 2018 22:12:43 main.py[line:158] INFO 所有股票收盘价获取结束。
+Mon, 16 Jul 2018 22:12:43 main.py[line:419] INFO 开始计算系统收入。
+Mon, 16 Jul 2018 22:12:43 main.py[line:447] INFO 输出系统详细记录到[log/2018-07-09_system_detail.xlsx]文件。
+Mon, 16 Jul 2018 22:12:43 main.py[line:449] INFO 计算系统收入结束。
+Mon, 16 Jul 2018 22:12:43 main.py[line:452] INFO 开始计算交易员收入。
+Mon, 16 Jul 2018 22:12:43 main.py[line:484] INFO 输出交易员详细记录到[log/2018-07-09_trader_detail.xlsx]文件。
+Mon, 16 Jul 2018 22:12:43 main.py[line:486] INFO 开始计算交易员收入。
+Mon, 16 Jul 2018 22:12:44 main.py[line:614] INFO 成功输出系统盈亏到[委托信息2018070901_system.xlsx]文件。
+Mon, 16 Jul 2018 22:12:44 main.py[line:616] INFO 成功输出交易员盈亏到[委托信息2018070901_trader.xlsx]文件。
+Mon, 16 Jul 2018 22:12:44 main.py[line:619] INFO 成功输出隔夜仓到[委托信息2018070901_legacy.xlsx]文件。
+Mon, 16 Jul 2018 22:12:44 main.py[line:621] INFO 成功输出零头股到[委托信息2018070901_pieces.xlsx]文件。
+Mon, 16 Jul 2018 22:12:44 main.py[line:623] INFO 成功输出详情到[委托信息2018070901_detail.xlsx]文件。

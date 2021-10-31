@@ -1,0 +1,30 @@
+Thu, 21 Jun 2018 22:49:49 main.py[line:402] INFO 结算程序[2.3.2]开始执行。
+Thu, 21 Jun 2018 22:49:49 main.py[line:422] WARNING 隔夜仓文件[]没有找到！
+Thu, 21 Jun 2018 22:49:49 main.py[line:425] WARNING 零头股文件[]没有找到！
+Thu, 21 Jun 2018 22:49:50 main.py[line:108] WARNING 编号为[400007]交易员的成交记录被忽视！
+Thu, 21 Jun 2018 22:49:50 main.py[line:326] INFO 开始计算手续费和印花税。
+Thu, 21 Jun 2018 22:50:19 main.py[line:402] INFO 结算程序[2.3.2]开始执行。
+Thu, 21 Jun 2018 22:50:19 main.py[line:422] WARNING 隔夜仓文件[]没有找到！
+Thu, 21 Jun 2018 22:50:19 main.py[line:425] WARNING 零头股文件[]没有找到！
+Thu, 21 Jun 2018 22:50:19 main.py[line:108] WARNING 编号为[400007]交易员的成交记录被忽视！
+Thu, 21 Jun 2018 22:50:19 main.py[line:326] INFO 开始计算手续费和印花税。
+Thu, 21 Jun 2018 22:50:53 main.py[line:402] INFO 结算程序[2.3.2]开始执行。
+Thu, 21 Jun 2018 22:50:53 main.py[line:422] WARNING 隔夜仓文件[]没有找到！
+Thu, 21 Jun 2018 22:50:53 main.py[line:425] WARNING 零头股文件[]没有找到！
+Thu, 21 Jun 2018 22:50:53 main.py[line:108] WARNING 编号为[400007]交易员的成交记录被忽视！
+Thu, 21 Jun 2018 22:50:53 main.py[line:326] INFO 开始计算手续费和印花税。
+Thu, 21 Jun 2018 22:53:31 main.py[line:400] INFO 结算程序[2.3.2]开始执行。
+Thu, 21 Jun 2018 22:53:31 main.py[line:420] WARNING 隔夜仓文件[]没有找到！
+Thu, 21 Jun 2018 22:53:31 main.py[line:423] WARNING 零头股文件[]没有找到！
+Thu, 21 Jun 2018 22:53:31 main.py[line:108] WARNING 编号为[400007]交易员的成交记录被忽视！
+Thu, 21 Jun 2018 22:53:31 main.py[line:326] INFO 开始计算手续费和印花税。
+Thu, 21 Jun 2018 22:53:31 main.py[line:332] INFO 计算手续费和印花税结束。
+Thu, 21 Jun 2018 22:53:31 main.py[line:451] INFO 行情文件[]未找到，尝试从网络获取。
+Thu, 21 Jun 2018 22:53:31 main.py[line:150] INFO 获取股票的收盘价。
+Thu, 21 Jun 2018 23:27:59 main.py[line:206] WARNING 第 1 次尝试 get_k_data 失败
+Thu, 21 Jun 2018 23:28:01 main.py[line:206] WARNING 第 2 次尝试 get_k_data 失败
+Thu, 21 Jun 2018 23:28:03 main.py[line:206] WARNING 第 3 次尝试 get_k_data 失败
+Thu, 21 Jun 2018 23:28:03 main.py[line:209] ERROR 尝试 get_k_data 3次，均失败，请检查您的网络连接。
+Thu, 21 Jun 2018 23:28:03 main.py[line:213] INFO [000/022] 股票代码：[600176] 收盘价：[13.08]
+Thu, 21 Jun 2018 23:28:07 main.py[line:206] WARNING 第 1 次尝试 get_k_data 失败
+Thu, 21 Jun 2018 23:28:08 main.py[line:206] WARNING 第 2 次尝试 get_k_data 失败

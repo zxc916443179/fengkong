@@ -1,0 +1,363 @@
+Fri, 18 May 2018 22:00:44 server.py[line:177] DEBUG Ö¸¶¨ÅäÖÃÎÄ¼þ[conf/setting.ini]¡£
+Fri, 18 May 2018 22:00:44 server.py[line:189] INFO Server name: ²âÊÔ
+Fri, 18 May 2018 22:00:44 server.py[line:190] INFO Listening on 127.0.0.1:50123
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:110] WARNING [0]Account[nan] cast to int failed!
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400008, ³Â¼ÑÓ«, 20) at 1
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400009, ²ÜÐñ±ó, 30) at 2
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400010, Çú´ï, 40) at 3
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400011, ÎâÇ°è¤, 50) at 4
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400012, ÀîÃ÷Î°, 60) at 5
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400013, ÍõÊ÷»ª, 70) at 6
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400014, ÌÀÎÄºÆ, 80) at 7
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400015, ÑÏÉ­, 6000) at 8
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400016, Óà°Øº², 100) at 9
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400017, ÍôÑ©±ù, 110) at 10
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400018, Íõ¿­, 120) at 11
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400019, ·ëÒÕ³¬, 130) at 12
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400020, Ñî½ðº×, 140) at 13
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400021, ÌÆ³ÐÐ­, 150) at 14
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400022, Ëï¿ª¿Æ, 160) at 15
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400023, Àî³¬»Ô, 170) at 16
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400024, Íõ¼ª, 180) at 17
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400025, ÕÔÓî, 190) at 18
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400026, µ³Õþ, 200) at 19
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400027, µËÎÄÁÁ, 210) at 20
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400029, º«½¡, 230) at 22
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400030, ºúÁÖ, 240) at 23
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400031, ÕÔÌÀÒã, 250) at 24
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400032, »ÆÈðÊ¿, 260) at 25
+Fri, 18 May 2018 22:00:44 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400050, 400050, 10000) at 26
+Fri, 18 May 2018 22:00:45 server.py[line:112] DEBUG Waiting for connection.
+Fri, 18 May 2018 22:00:48 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:00:51 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:00:54 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:00:57 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:00 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:04 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:07 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:10 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:13 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:14 server.py[line:116] INFO New Connection Address is ('127.0.0.1', 1158)
+Fri, 18 May 2018 22:01:14 server.py[line:112] DEBUG Waiting for connection.
+Fri, 18 May 2018 22:01:16 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:20 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:20 server.py[line:159] WARNING Error at handle_mew_conn
+Fri, 18 May 2018 22:01:20 server.py[line:160] WARNING Address is ('127.0.0.1', 1158).
+Fri, 18 May 2018 22:01:20 server.py[line:161] WARNING Traceback (most recent call last):
+  File "src\server.py", line 131, in handle_new_conn
+    data = conn.recv(1024)
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\_socket3.py", line 337, in recv
+    self._wait(self._read_event)
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\_socket3.py", line 157, in _wait
+    self.hub.wait(watcher)
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\hub.py", line 651, in wait
+    result = waiter.get()
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\hub.py", line 899, in get
+    return self.hub.switch()
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\hub.py", line 630, in switch
+    return RawGreenlet.switch(self)
+socket.timeout: timed out
+
+Fri, 18 May 2018 22:01:23 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:26 server.py[line:116] INFO New Connection Address is ('127.0.0.1', 1199)
+Fri, 18 May 2018 22:01:26 server.py[line:112] DEBUG Waiting for connection.
+Fri, 18 May 2018 22:01:26 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:29 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:32 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:35 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:39 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:42 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:45 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:48 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:51 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:55 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:01:58 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:02:01 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:02:04 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:02:07 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:02:11 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:02:14 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:02:17 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:02:20 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:02:20 server.py[line:155] INFO Connection of ('127.0.0.1', 1199) Closed!
+Fri, 18 May 2018 22:02:25 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:02:28 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:02:31 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:02:34 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:02:37 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:02:40 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:02:44 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:02:47 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:02:50 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:02:53 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:02:57 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:00 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:03 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:06 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:09 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:13 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:16 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:19 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:23 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:26 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:29 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:32 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:36 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:39 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:42 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:45 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:48 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:51 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:55 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:03:58 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:04:01 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:04:04 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:04:07 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:04:11 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:04:14 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:04:17 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:04:20 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:04:23 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:04:27 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:04:30 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:04:33 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:04:36 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:04:40 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:04:43 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:04:46 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:04:49 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:04:52 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:04:55 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:00 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:03 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:06 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:09 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:13 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:16 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:19 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:22 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:26 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:29 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:32 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:35 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:39 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:43 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:46 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:49 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:52 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:56 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:05:59 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:06:02 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:06:06 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:06:10 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:06:13 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:06:16 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:06:19 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:06:23 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:06:26 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:06:29 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:06:32 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:06:36 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:06:39 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:06:42 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:06:46 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:06:49 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:06:52 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:06:55 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:06:59 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:07:02 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:07:05 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:07:08 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:07:12 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:07:15 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:07:18 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:07:21 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:07:24 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:07:28 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:07:31 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:07:34 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:07:37 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:07:41 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:07:44 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:07:47 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:07:50 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:07:53 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:07:56 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:00 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:03 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:06 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:09 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:12 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:16 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:20 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:23 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:26 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:30 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:33 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:36 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:39 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:43 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:46 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:49 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:52 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:56 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:08:59 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:09:02 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:09:05 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:09:08 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:09:12 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:09:15 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:09:18 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:09:21 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:09:25 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:09:28 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:09:32 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:09:35 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:09:38 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:09:41 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:10:57 server.py[line:177] DEBUG Ö¸¶¨ÅäÖÃÎÄ¼þ[conf/setting.ini]¡£
+Fri, 18 May 2018 22:10:57 server.py[line:189] INFO Server name: ²âÊÔ
+Fri, 18 May 2018 22:10:57 server.py[line:190] INFO Listening on 127.0.0.1:50123
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:110] WARNING [0]Account[nan] cast to int failed!
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400008, ³Â¼ÑÓ«, 20) at 1
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400009, ²ÜÐñ±ó, 30) at 2
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400010, Çú´ï, 40) at 3
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400011, ÎâÇ°è¤, 50) at 4
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400012, ÀîÃ÷Î°, 60) at 5
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400013, ÍõÊ÷»ª, 70) at 6
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400014, ÌÀÎÄºÆ, 80) at 7
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400015, ÑÏÉ­, 6000) at 8
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400016, Óà°Øº², 100) at 9
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400017, ÍôÑ©±ù, 110) at 10
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400018, Íõ¿­, 120) at 11
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400019, ·ëÒÕ³¬, 130) at 12
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400020, Ñî½ðº×, 140) at 13
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400021, ÌÆ³ÐÐ­, 150) at 14
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400022, Ëï¿ª¿Æ, 160) at 15
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400023, Àî³¬»Ô, 170) at 16
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400024, Íõ¼ª, 180) at 17
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400025, ÕÔÓî, 190) at 18
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400026, µ³Õþ, 200) at 19
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400027, µËÎÄÁÁ, 210) at 20
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400029, º«½¡, 230) at 22
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400030, ºúÁÖ, 240) at 23
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400031, ÕÔÌÀÒã, 250) at 24
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400032, »ÆÈðÊ¿, 260) at 25
+Fri, 18 May 2018 22:10:57 riskmanage.py[line:121] DEBUG (Account, Name, Stop): (400050, target, 10000) at 26
+Fri, 18 May 2018 22:10:58 server.py[line:112] DEBUG Waiting for connection.
+Fri, 18 May 2018 22:10:59 server.py[line:116] INFO New Connection Address is ('127.0.0.1', 3422)
+Fri, 18 May 2018 22:10:59 server.py[line:112] DEBUG Waiting for connection.
+Fri, 18 May 2018 22:11:01 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:11:04 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:11:05 server.py[line:159] WARNING Error at handle_mew_conn
+Fri, 18 May 2018 22:11:05 server.py[line:160] WARNING Address is ('127.0.0.1', 3422).
+Fri, 18 May 2018 22:11:05 server.py[line:161] WARNING Traceback (most recent call last):
+  File "src\server.py", line 131, in handle_new_conn
+    data = conn.recv(1024)
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\_socket3.py", line 337, in recv
+    self._wait(self._read_event)
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\_socket3.py", line 157, in _wait
+    self.hub.wait(watcher)
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\hub.py", line 651, in wait
+    result = waiter.get()
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\hub.py", line 899, in get
+    return self.hub.switch()
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\hub.py", line 630, in switch
+    return RawGreenlet.switch(self)
+socket.timeout: timed out
+
+Fri, 18 May 2018 22:11:07 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:11:09 server.py[line:116] INFO New Connection Address is ('127.0.0.1', 3454)
+Fri, 18 May 2018 22:11:09 server.py[line:112] DEBUG Waiting for connection.
+Fri, 18 May 2018 22:11:11 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:11:14 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:11:17 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:11:20 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:11:24 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:11:27 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:11:30 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:11:33 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:11:36 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:11:39 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:11:42 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:11:46 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:11:49 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:11:52 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:11:55 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:11:58 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:12:01 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:12:05 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:12:08 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:12:11 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:12:14 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:12:17 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:12:21 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:12:24 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:12:27 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:12:30 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:12:33 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:12:37 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:12:40 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:12:43 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:12:46 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:12:50 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:12:53 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:12:56 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:00 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:03 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:07 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:10 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:13 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:16 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:19 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:23 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:26 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:29 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:32 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:35 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:38 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:42 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:45 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:48 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:51 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:54 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:13:57 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:01 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:04 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:07 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:10 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:13 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:17 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:20 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:23 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:26 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:30 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:33 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:36 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:39 server.py[line:155] INFO Connection of ('127.0.0.1', 3454) Closed!
+Fri, 18 May 2018 22:14:39 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:42 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:45 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:49 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:52 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:55 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:14:58 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:15:01 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:15:04 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:15:08 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:15:11 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:15:14 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:15:17 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:15:21 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:15:24 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:15:27 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:15:30 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:15:33 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:15:37 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:15:40 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:15:43 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:15:46 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:15:49 server.py[line:89] DEBUG Data Recieved.
+Fri, 18 May 2018 22:15:54 server.py[line:89] DEBUG Data Recieved.

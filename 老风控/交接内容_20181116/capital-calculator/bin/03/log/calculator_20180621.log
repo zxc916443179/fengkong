@@ -1,0 +1,9 @@
+Thu, 21 Jun 2018 02:04:07 main.py[line:508] INFO 结算程序[2.3.2]开始执行。
+Thu, 21 Jun 2018 02:04:07 main.py[line:528] WARNING 隔夜仓文件[]没有找到！
+Thu, 21 Jun 2018 02:04:07 main.py[line:531] WARNING 零头股文件[]没有找到！
+Thu, 21 Jun 2018 02:04:07 main.py[line:119] WARNING 编号为[400007]交易员的成交记录被忽视！
+Thu, 21 Jun 2018 02:04:07 main.py[line:393] INFO 开始计算手续费和印花税。
+Thu, 21 Jun 2018 02:04:08 main.py[line:402] INFO 输出详细的手续费记录到[log/2017-06-02_tax_detail.xls]文件。
+Thu, 21 Jun 2018 02:04:08 main.py[line:404] INFO 计算手续费和印花税结束。
+Thu, 21 Jun 2018 02:04:08 main.py[line:560] INFO 行情文件[]未找到，尝试从网络获取。
+Thu, 21 Jun 2018 02:04:08 main.py[line:162] INFO 获取股票的收盘价。

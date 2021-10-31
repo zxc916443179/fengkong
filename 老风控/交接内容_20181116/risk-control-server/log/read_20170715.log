@@ -1,0 +1,38 @@
+Sat, 15 Jul 2017 02:10:02 read.py[line:102] INFO Reading latest file[Trealdeal_20170531.log]
+Sat, 15 Jul 2017 02:11:46 read.py[line:28] INFO Time consumed in read_dbf: 103.82872420672507 second
+Sat, 15 Jul 2017 02:18:06 read.py[line:106] INFO Reading latest file[Trealdeal_20170531.log]
+Sat, 15 Jul 2017 02:19:50 read.py[line:45] INFO There are 4461 rows in dbf
+Sat, 15 Jul 2017 02:19:50 read.py[line:28] INFO Time consumed in read_dbf: 103.88112480949967 second
+Sat, 15 Jul 2017 02:20:50 read.py[line:107] INFO Reading latest file[Trealdeal_20170531.log]
+Sat, 15 Jul 2017 02:22:33 read.py[line:46] INFO There are 4461 rows in dbf
+Sat, 15 Jul 2017 02:22:33 read.py[line:28] INFO Time consumed in read_dbf: 102.95153398628226 second
+Sat, 15 Jul 2017 02:22:33 read.py[line:28] INFO Time consumed in get_names: 0.3428429901852894 second
+Sat, 15 Jul 2017 02:22:33 read.py[line:28] INFO Time consumed in get_risk_manage_df: 0.3622142921750111 second
+Sat, 15 Jul 2017 02:22:33 read.py[line:28] INFO Time consumed in main: 103.38690083060703 second
+Sat, 15 Jul 2017 02:22:33 read.py[line:107] INFO Reading latest file[Trealdeal_20170531.log]
+Sat, 15 Jul 2017 02:24:17 read.py[line:46] INFO There are 4461 rows in dbf
+Sat, 15 Jul 2017 02:24:17 read.py[line:28] INFO Time consumed in read_dbf: 103.53437325605805 second
+Sat, 15 Jul 2017 02:24:17 read.py[line:28] INFO Time consumed in get_names: 0.05039490952407277 second
+Sat, 15 Jul 2017 02:24:17 read.py[line:28] INFO Time consumed in get_risk_manage_df: 0.0688109366386982 second
+Sat, 15 Jul 2017 02:24:17 read.py[line:28] INFO Time consumed in main: 103.64900794768216 second
+Sat, 15 Jul 2017 02:24:17 read.py[line:107] INFO Reading latest file[Trealdeal_20170531.log]
+Sat, 15 Jul 2017 02:26:05 read.py[line:46] INFO There are 4461 rows in dbf
+Sat, 15 Jul 2017 02:26:05 read.py[line:28] INFO Time consumed in read_dbf: 108.80086806711071 second
+Sat, 15 Jul 2017 02:26:06 read.py[line:28] INFO Time consumed in get_names: 0.051178243454728545 second
+Sat, 15 Jul 2017 02:26:06 read.py[line:28] INFO Time consumed in get_risk_manage_df: 0.07314103253310122 second
+Sat, 15 Jul 2017 02:26:06 read.py[line:28] INFO Time consumed in main: 108.91383369428132 second
+Sat, 15 Jul 2017 02:26:06 read.py[line:107] INFO Reading latest file[Trealdeal_20170531.log]
+Sat, 15 Jul 2017 02:27:18 read.py[line:108] INFO Reading latest file[Trealdeal_20170531.log]
+Sat, 15 Jul 2017 02:29:31 read.py[line:47] INFO There are 4461 rows in dbf
+Sat, 15 Jul 2017 02:29:31 read.py[line:28] INFO Time consumed in read_dbf: 132.9911060026589 second
+Sat, 15 Jul 2017 02:29:31 read.py[line:28] INFO Time consumed in get_names: 0.0863476330174251 second
+Sat, 15 Jul 2017 02:29:31 read.py[line:28] INFO Time consumed in get_risk_manage_df: 0.10617886636734397 second
+Sat, 15 Jul 2017 02:29:31 read.py[line:28] INFO Time consumed in main: 133.1452721786752 second
+Sat, 15 Jul 2017 02:29:31 read.py[line:108] INFO Reading latest file[Trealdeal_20170531.log]
+Sat, 15 Jul 2017 02:32:20 read.py[line:110] INFO Reading latest file[Trealdeal_20170531.log]
+Sat, 15 Jul 2017 02:33:41 read.py[line:49] INFO There are 13398 rows in dbf and 4461 unique rows in dbf
+Sat, 15 Jul 2017 02:33:41 read.py[line:28] INFO Time consumed in read_dbf: 80.0281509564695 second
+Sat, 15 Jul 2017 02:33:41 read.py[line:28] INFO Time consumed in get_names: 0.068394097177773 second
+Sat, 15 Jul 2017 02:33:41 read.py[line:28] INFO Time consumed in get_risk_manage_df: 0.08238445824522955 second
+Sat, 15 Jul 2017 02:33:41 read.py[line:28] INFO Time consumed in main: 80.14377804173343 second
+Sat, 15 Jul 2017 02:33:41 read.py[line:110] INFO Reading latest file[Trealdeal_20170531.log]

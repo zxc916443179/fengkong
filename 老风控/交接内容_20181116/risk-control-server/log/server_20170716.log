@@ -1,0 +1,23 @@
+Sun, 16 Jul 2017 17:37:20 server.py[line:98] INFO Waiting for connection.
+Sun, 16 Jul 2017 17:37:51 server.py[line:97] INFO Waiting for connection.
+Sun, 16 Jul 2017 17:37:56 server.py[line:73] INFO Data Recieved.
+Sun, 16 Jul 2017 17:37:58 server.py[line:101] INFO New Connection Address is ('127.0.0.1', 13979)
+Sun, 16 Jul 2017 17:37:58 server.py[line:97] INFO Waiting for connection.
+Sun, 16 Jul 2017 17:38:00 server.py[line:73] INFO Data Recieved.
+Sun, 16 Jul 2017 17:38:04 server.py[line:73] INFO Data Recieved.
+Sun, 16 Jul 2017 17:38:06 server.py[line:140] INFO Connection of ('127.0.0.1', 13979) Closed!
+Sun, 16 Jul 2017 17:38:08 server.py[line:73] INFO Data Recieved.
+Sun, 16 Jul 2017 17:38:12 server.py[line:73] INFO Data Recieved.
+Sun, 16 Jul 2017 17:38:17 server.py[line:73] INFO Data Recieved.
+Sun, 16 Jul 2017 17:38:21 server.py[line:73] INFO Data Recieved.
+Sun, 16 Jul 2017 17:39:42 server.py[line:96] INFO Waiting for connection.
+Sun, 16 Jul 2017 17:39:46 server.py[line:73] INFO Data Recieved.
+Sun, 16 Jul 2017 18:01:23 server.py[line:96] INFO Waiting for connection.
+Sun, 16 Jul 2017 18:01:27 server.py[line:100] INFO New Connection Address is ('127.0.0.1', 14457)
+Sun, 16 Jul 2017 18:01:27 server.py[line:96] INFO Waiting for connection.
+Sun, 16 Jul 2017 18:01:27 server.py[line:73] INFO Data Recieved.
+Sun, 16 Jul 2017 18:01:34 server.py[line:73] INFO Data Recieved.
+Sun, 16 Jul 2017 18:01:38 server.py[line:73] INFO Data Recieved.
+Sun, 16 Jul 2017 18:01:42 server.py[line:73] INFO Data Recieved.
+Sun, 16 Jul 2017 18:01:43 server.py[line:139] INFO Connection of ('127.0.0.1', 14457) Closed!
+Sun, 16 Jul 2017 18:01:46 server.py[line:73] INFO Data Recieved.

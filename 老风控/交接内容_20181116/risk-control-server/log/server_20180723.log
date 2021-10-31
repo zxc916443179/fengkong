@@ -1,0 +1,80 @@
+Mon, 23 Jul 2018 18:28:36 server.py[line:193] DEBUG Ö¸¶¨ÅäÖÃÎÄ¼þ[conf/setting.ini]¡£
+Mon, 23 Jul 2018 18:28:36 server.py[line:205] INFO Server name: ²âÊÔ
+Mon, 23 Jul 2018 18:28:36 server.py[line:206] INFO Listening on 127.0.0.1:50123
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:117] WARNING [0]Account[nan] cast to int failed!
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400008, ³Â¼ÑÓ«, 20) at 1
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400009, ²ÜÐñ±ó, 30) at 2
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400010, Çú´ï, 40) at 3
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400011, ÎâÇ°è¤, 50) at 4
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400012, ÀîÃ÷Î°, 60) at 5
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400013, ÍõÊ÷»ª, 70) at 6
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400014, ÌÀÎÄºÆ, 80) at 7
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400015, ÑÏÉ­, 6000) at 8
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400016, Óà°Øº², 100) at 9
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400017, ÍôÑ©±ù, 110) at 10
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400018, Íõ¿­, 120) at 11
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400019, ·ëÒÕ³¬, 130) at 12
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400020, Ñî½ðº×, 140) at 13
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400021, ÌÆ³ÐÐ­, 150) at 14
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400022, Ëï¿ª¿Æ, 160) at 15
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400023, Àî³¬»Ô, 170) at 16
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400024, Íõ¼ª, 180) at 17
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400025, ÕÔÓî, 190) at 18
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400026, µ³Õþ, 200) at 19
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400027, µËÎÄÁÁ, 210) at 20
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400029, º«½¡, 230) at 22
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400030, ºúÁÖ, 240) at 23
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400031, ÕÔÌÀÒã, 250) at 24
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400032, »ÆÈðÊ¿, 260) at 25
+Mon, 23 Jul 2018 18:28:36 riskmanage.py[line:128] DEBUG (Account, Name, Stop): (400050, target, 10000) at 26
+Mon, 23 Jul 2018 18:28:36 server.py[line:112] DEBUG Waiting for connection.
+Mon, 23 Jul 2018 18:28:39 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:28:43 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:28:46 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:28:49 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:28:52 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:28:55 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:28:58 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:01 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:04 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:07 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:10 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:13 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:16 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:19 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:22 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:26 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:29 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:32 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:35 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:38 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:41 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:44 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:45 server.py[line:116] INFO New Connection Address is ('127.0.0.1', 1294)
+Mon, 23 Jul 2018 18:29:45 server.py[line:112] DEBUG Waiting for connection.
+Mon, 23 Jul 2018 18:29:47 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:50 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:53 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:56 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:29:59 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:02 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:06 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:09 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:11 server.py[line:171] INFO Connection of ('127.0.0.1', 1294) Closed!
+Mon, 23 Jul 2018 18:30:12 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:15 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:18 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:21 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:24 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:27 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:30 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:33 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:36 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:39 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:42 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:46 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:49 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:52 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:55 server.py[line:89] DEBUG Data Recieved.
+Mon, 23 Jul 2018 18:30:58 server.py[line:89] DEBUG Data Recieved.

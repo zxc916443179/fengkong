@@ -1,0 +1,29 @@
+[2017-07-14 23:57:30] Waiting for connection
+[2017-07-14 23:57:35] Data Recieved
+[2017-07-14 23:57:40] Data Recieved
+[2017-07-14 23:57:44] New Connection Address is ('127.0.0.1', 9800)
+[2017-07-14 23:57:44] Waiting for connection
+[2017-07-14 23:57:45] Data Recieved
+[2017-07-14 23:57:49] Data Recieved
+[2017-07-14 23:57:50] Error at handle_mew_conn
+[2017-07-14 23:57:50] Address is ('127.0.0.1', 9800)
+[2017-07-14 23:57:50] Traceback (most recent call last):
+  File "src\server.py", line 97, in handle_new_conn
+    data = conn.recv(1024)
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\_socket3.py", line 337, in recv
+    self._wait(self._read_event)
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\_socket3.py", line 157, in _wait
+    self.hub.wait(watcher)
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\hub.py", line 651, in wait
+    result = waiter.get()
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\hub.py", line 899, in get
+    return self.hub.switch()
+  File "C:\Program Files\Anaconda3\lib\site-packages\gevent\hub.py", line 630, in switch
+    return RawGreenlet.switch(self)
+socket.timeout: timed out
+
+[2017-07-14 23:57:52] New Connection Address is ('127.0.0.1', 9806)
+[2017-07-14 23:57:52] Waiting for connection
+[2017-07-14 23:57:54] Data Recieved
+[2017-07-14 23:57:58] Data Recieved
+[2017-07-14 23:57:58] Connection of ('127.0.0.1', 9806) Closed

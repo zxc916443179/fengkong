@@ -1,0 +1,30 @@
+Tue, 01 Aug 2017 10:26:27 server.py[line:177] DEBUG 指定配置文件[conf/setting.ini]。
+Tue, 01 Aug 2017 10:26:28 server.py[line:189] INFO Server name: 测试
+Tue, 01 Aug 2017 10:26:28 server.py[line:190] INFO Listening on 127.0.0.1:50123
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:101] WARNING [0]Account[nan] cast to int failed!
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400008, 陈佳荧, 20) at 1
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400009, 曹旭斌, 30) at 2
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400010, 曲达, 40) at 3
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400011, 吴前瑜, 50) at 4
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400012, 李明伟, 60) at 5
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400013, 王树华, 70) at 6
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400014, 汤文浩, 80) at 7
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400015, 严森, 6000) at 8
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400016, 余柏翰, 100) at 9
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400017, 汪雪冰, 110) at 10
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400018, 王凯, 120) at 11
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400019, 冯艺超, 130) at 12
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400020, 杨金鹤, 140) at 13
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400021, 唐承协, 150) at 14
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400022, 孙开科, 160) at 15
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400023, 李超辉, 170) at 16
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400024, 王吉, 180) at 17
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400025, 赵宇, 190) at 18
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400026, 党政, 200) at 19
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400027, 邓文亮, 210) at 20
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400028, 400028, 220) at 21
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400029, 韩健, 230) at 22
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400030, 胡林, 240) at 23
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400031, 赵汤毅, 250) at 24
+Tue, 01 Aug 2017 10:26:28 riskmanage.py[line:112] DEBUG (Account, Name, Stop): (400032, 黄瑞士, 260) at 25
+Tue, 01 Aug 2017 10:30:20 server.py[line:187] ERROR 指定的配置文件[conf/setting.ini]不存在！
