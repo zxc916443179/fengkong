@@ -60,9 +60,9 @@ class RpcProxy(object):
             if getattr(func, '__exposed__', False):
                 func(method, *info['args'], **info['kwargs'])
             else:
-                print 'invalid rpc call, NOT PERMITTED:', method
+                print('invalid rpc call, NOT PERMITTED:', method)
         else:
-            print 'invalid rpc call, NOT EXIST:', method
+            print('invalid rpc call, NOT EXIST:', method)
 
 
 class NetStream(object):
