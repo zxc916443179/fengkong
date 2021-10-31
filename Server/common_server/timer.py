@@ -102,7 +102,7 @@ class TimerManager(object):
 	
 	@staticmethod
 	def removeCancelledTasks():
-		print 'remove cancelled tasks'
+		print('remove cancelled tasks')
 		tmp_tasks = []
 		for t in TimerManager.tasks:
 			if not t.cancelled:

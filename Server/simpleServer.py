@@ -7,10 +7,6 @@ from common.rpc_queue_module import RpcQueue
 from common_server.data_module import DataCenter
 from common_server.thread_pool_module import ThreadPool
 from common_server.timer import TimerManager
-from game.AI_module import AIModule
-from game.battle_module import BattleModule
-from game.player_module import PlayerModule
-from gameEntity import GameEntity
 from network.simpleHost import SimpleHost
 from setting import keyType
 from typing import Dict
@@ -118,10 +114,10 @@ if __name__ == "__main__":
     else:
         log_files = os.listdir("log")
         if len(log_files) > 5:
-            print "exceed max keep log files, removing"
+            print("exceed max keep log files, removing")
             for i, log_file in enumerate(log_files):
                 os.remove(os.path.join("log", log_file))
-                print "remove file ", os.path.join("log", log_file)
+                print("remove file ", os.path.join("log", log_file))
                 if i == 4:
                     break
 
@@ -136,16 +132,9 @@ if __name__ == "__main__":
     if arguments.verbose:
         logger.addHandler(logging.StreamHandler())
     server = SimpleServer(config=arguments)
-    ai_module = AIModule()
     server.startup()
     thread_pool = ThreadPool()
     thread_pool.start()
-    playerModule = PlayerModule()
-    battleModule = BattleModule()
-    TimerManager.addRepeatTimer(conf.MODULE_MONSTER_TICK, ai_module.tick, tick_time=conf.MODULE_MONSTER_TICK)
-    TimerManager.addRepeatTimer(conf.MODULE_PLAYER_TICK, playerModule.tick, tick_time=conf.MODULE_PLAYER_TICK)
-    TimerManager.addRepeatTimer(0.02, server.broadCast)
-    TimerManager.addRepeatTimer(0.02, battleModule.tick, tick_time=0.02)
     try:
         while 1:
             server.tick()
