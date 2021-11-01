@@ -237,6 +237,7 @@ class NetStream(object):
                     return -1
             
             except socket.error as error:
+                print(error)
                 code, _ = error
                 if code not in self.errd:
                     self.errc = code
