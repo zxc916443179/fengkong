@@ -70,8 +70,8 @@ class NetStream(object):
         super(NetStream, self).__init__()
 
         self.sock = None  # socket object
-        self.send_buf = ''  # send buffer
-        self.recv_buf = ''  # recv buffer
+        self.send_buf = b''  # send buffer
+        self.recv_buf = b''  # recv buffer
 
         self.state = conf.NET_STATE_STOP
         self.errd = (errno.EINPROGRESS, errno.EALREADY, errno.EWOULDBLOCK)
@@ -91,8 +91,8 @@ class NetStream(object):
         self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
         self.sock.connect_ex((address, port))
         self.state = conf.NET_STATE_CONNECTING
-        self.send_buf = ''
-        self.recv_buf = ''
+        self.send_buf = b''
+        self.recv_buf = b''
         self.errc = 0
 
         return 0
@@ -121,8 +121,8 @@ class NetStream(object):
         self.state = conf.NET_STATE_ESTABLISHED
         self.nodelay(1)
 
-        self.send_buf = ''
-        self.recv_buf = ''
+        self.send_buf = b''
+        self.recv_buf = b''
 
         return 0
 
@@ -157,12 +157,12 @@ class NetStream(object):
         try:
             self.sock.recv(0)
         except socket.error as error:
-            (code, _) = error
+            code, _ = error.errno, error.strerror
             if code in self.conn:
                 return 0
             if code in self.errd:
                 self.state = conf.NET_STATE_ESTABLISHED
-                self.recv_buf = ''
+                self.recv_buf = b''
                 return 1
 
             self.close()
@@ -176,7 +176,7 @@ class NetStream(object):
     def send(self, data):
         size = len(data) + conf.NET_HEAD_LENGTH_SIZE
         wsize = struct.pack(conf.NET_HEAD_LENGTH_FORMAT, size)
-        self.__sendRaw(wsize + data)
+        self.__sendRaw(wsize + str.encode(data))
 
         return 0
 
@@ -197,7 +197,7 @@ class NetStream(object):
             # print "self.send_buf",self.send_buf
             wsize = self.sock.send(self.send_buf)
         except socket.error as error:
-            (code, _) = error
+            code, _ = error.errno, error.strerror
             if code not in self.errd:
                 self.errc = code
                 self.close()
@@ -215,7 +215,7 @@ class NetStream(object):
 
         size = struct.unpack(conf.NET_HEAD_LENGTH_FORMAT, rsize)[0]
         if len(self.recv_buf) < size:
-            return ''
+            return b''
 
         self.__recvRaw(conf.NET_HEAD_LENGTH_SIZE)
 
@@ -223,9 +223,9 @@ class NetStream(object):
 
     # try to receive all the data into recv_buf
     def __tryRecv(self):
-        rdata = ''
+        rdata = b''
         while 1:
-            text = ''
+            text = b''
             try:
                 text = self.sock.recv(1024)
                 if not text:
@@ -234,12 +234,12 @@ class NetStream(object):
 
                     return -1
             except socket.error as error:
-                code, _ = error
+                code, _ = error.errno, error.strerror
                 if code not in self.errd:
                     self.errc = code
                     self.close()
                     return -1
-            if text == '':
+            if text == b'':
                 break
 
             rdata = rdata + text
@@ -251,7 +251,7 @@ class NetStream(object):
     def __peekRaw(self, size):
         self.process()
         if len(self.recv_buf) == 0:
-            return ''
+            return b''
 
         if size > len(self.recv_buf):
             size = len(self.recv_buf)

@@ -63,3 +63,6 @@ class MsgHandler(Thread):
         else:
             logger.error("not implement: %s" % msg.method)
 
+    @req()
+    def heartBeat(self, msg: Message) -> None:
+        logger.info("heart beat from Server")

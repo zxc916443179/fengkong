@@ -23,7 +23,7 @@ class SimpleHost(object):
 
     def generateID(self):
         pos = -1
-        for i in xrange(len(self.clients)):
+        for i in range(len(self.clients)):
             if self.clients[i] is None:
                 pos = i
                 break

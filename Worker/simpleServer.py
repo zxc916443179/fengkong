@@ -75,18 +75,6 @@ class Worker(object):
             else:
                 break
 
-    def broadCast(self):
-        for room in self.data_center.allRooms:
-            if room.isOnGoing:
-                player_data = parseRpcMessage("PlayerSyncHandler/UpdatePlayerSituation",
-                                              room.client_id_list, [], {"Players": room.getPlayersPosition()})
-                self.netstream.send(json.dumps(player_data))
-                monster_data = parseRpcMessage("MonsterSyncHandler/SyncMonsterPosition",
-                                               room.client_id_list, [], {"monsters": [
-                        self.data_center.getEntityByID(keyType.Monster, monster_eid).getMonsterPositionData()
-                        for monster_eid in room.monster_list
-                    ]})
-                self.netstream.send(json.dumps(monster_data))
 
     def heartbeat(self):
         data = parseRpcMessage("heartBeat", [-1], [], {})

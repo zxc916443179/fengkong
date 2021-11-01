@@ -7,6 +7,8 @@ from gameEntity import RPCError
 
 import logging
 
+from setting import keyType
+
 logger = logging.getLogger()
 
 
@@ -26,13 +28,6 @@ class MsgHandler(Thread):
         self.msg_queue = MsgQueue()
         self.rpc_queue = RpcQueue()
         self.data_center = DataCenter()
-        self.playerInitData = [{
-            "Position": {"x": 0., "y": 0., "z": 1.}, "Rotation": {"x": 0., "y": 0., "z": 0.}, "Name": "test1",
-            "Money": 0, "Speed": 6.
-        }, {
-            "Position": {"x": 0., "y": 0., "z": -10.}, "Rotation": {"x": 0., "y": 0., "z": 0.}, "Name": "Test2",
-            "Money": 0, "Speed": 6.
-        }]
 
     def run(self):
         while self.state == 0:
@@ -62,3 +57,12 @@ class MsgHandler(Thread):
                 logger.error("invalid rpc call, unreachable: %s" % msg.method)
         else:
             logger.error("not implement: %s" % msg.method)
+
+    @req()
+    def heartBeat(self, msg: Message) -> None:
+        logger.info("heart beat from client")
+    
+    @req()
+    def closeClient(self, msg: Message) -> None:
+        client = self.data_center.getClient(msg.client_id)
+        client.setState(keyType.CLIENT_STATE.DEAD)

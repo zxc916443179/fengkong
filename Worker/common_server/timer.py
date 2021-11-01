@@ -2,8 +2,10 @@
 
 import heapq
 import time
+from functools import total_ordering
 
 
+@total_ordering
 class CallLater(object):
 	"""Calls a function at a later time.
 	"""
@@ -20,6 +22,9 @@ class CallLater(object):
 
 	def __le__(self, other):
 		return self.timeout <= other.timeout
+	
+	def __eq__(self, o: object) -> bool:
+		return self.timeout == o.timeout
 
 	def call(self):
 		try:
@@ -46,7 +51,7 @@ class CallEvery(CallLater):
 		self.timeout = time.time() + self._delay
 		
 		return True
-
+	
 
 class TimerManager(object):
 	tasks = []

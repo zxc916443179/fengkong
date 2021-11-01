@@ -3,7 +3,7 @@ import time
 
 from common import conf
 from common.message_queue_module import MsgQueue, Message
-from common.rpc_queue_module import RpcQueue
+from common.rpc_queue_module import RpcMessage, RpcQueue
 from common_server.data_module import DataCenter
 from common_server.thread_pool_module import ThreadPool
 from common_server.timer import TimerManager
@@ -13,6 +13,8 @@ from setting import keyType
 from typing import Dict
 import argparse
 
+
+logger = logging.getLogger(__name__)
 
 class SimpleServer(object):
 
@@ -26,7 +28,6 @@ class SimpleServer(object):
         self.msg_queue = MsgQueue()
         self.data_center = DataCenter()
         self.data_center.setConfig(config)
-        self.frame = 0
 
         self.max_consume = 10
 
@@ -43,25 +44,9 @@ class SimpleServer(object):
         entity.id = eid
 
         self.entities[eid] = entity
+        self.data_center.regClient(eid)
 
         return
-
-    def broadCast(self):
-        for room in self.data_center.allRooms:
-            if room.isOnGoing:
-                for eid in room.player_list:
-                    entity = self.data_center.getEntityByID(keyType.Player, eid)
-                    if entity.state == keyType.PLAYER_STATE_MAP.In_Game and self.entities.__contains__(entity.client_id):
-                        self.entities[entity.client_id].caller["PlayerSyncHandler/UpdatePlayerSituation"]([],
-                                                                                                          Players=room.getPlayersPosition())
-                        self.entities[entity.client_id].caller["MonsterSyncHandler/SyncMonsterPosition"](
-                            [],
-                            monsters=[
-                                self.data_center.getEntityByID(keyType.Monster, monster_eid).getMonsterPositionData()
-                                for monster_eid in room.monster_list],
-                            frame=self.frame
-                        )
-                self.frame += 1
 
     def tick(self, tick_time=0.02):
         self.host.process()
@@ -100,6 +85,8 @@ class SimpleServer(object):
 
         return
 
+    def heartBeatToClient(self):
+        self.rpc_queue.push_msg(0, RpcMessage("heartBeat", list(self.entities.keys()), [], {}))
 
 if __name__ == "__main__":
     import os
@@ -134,6 +121,7 @@ if __name__ == "__main__":
         logger.addHandler(logging.StreamHandler())
     server = SimpleServer(config=arguments)
     server.startup()
+    TimerManager.addRepeatTimer(1.0, server.heartBeatToClient)
     thread_pool = ThreadPool()
     thread_pool.start()
     try:

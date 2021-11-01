@@ -26,7 +26,7 @@ class Header(object):
 
 		begin, elen, lst, fmt = 0, 0, [], self.bfmt
 		self.offset = struct.calcsize(self.BYTES_ORDER + self.char_for_len)
-		for i in xrange(x) :
+		for i in range(x) :
 			end = fmt.index('%', begin)
 			elen = elen + struct.calcsize(self.BYTES_ORDER + fmt[begin:end])
 			s = struct.unpack(self.BYTES_ORDER + self.char_for_len, raw[elen - self.offset:elen])[0]

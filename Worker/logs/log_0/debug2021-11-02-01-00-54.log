@@ -1,0 +1,5 @@
+2021/11/02 01:00:54 AM - DEBUG[thread_pool_module/start(19)] - thread start
+2021/11/02 01:00:54 AM - INFO[netStream/__tryConnect(173)] - success connect to gate server
+2021/11/02 01:00:55 AM - INFO[msg_handler_module/heartBeat(68)] - heart beat from Server
+2021/11/02 01:00:56 AM - INFO[msg_handler_module/heartBeat(68)] - heart beat from Server
+2021/11/02 01:00:57 AM - INFO[msg_handler_module/heartBeat(68)] - heart beat from Server
