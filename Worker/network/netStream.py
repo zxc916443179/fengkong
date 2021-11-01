@@ -60,9 +60,9 @@ class RpcProxy(object):
             if getattr(func, '__exposed__', False):
                 func(method, *info['args'], **info['kwargs'])
             else:
-                print 'invalid rpc call, NOT PERMITTED:', method
+                print('invalid rpc call, NOT PERMITTED:', method)
         else:
-            print 'invalid rpc call, NOT EXIST:', method
+            print('invalid rpc call, NOT EXIST:', method)
 
 
 class NetStream(object):
@@ -156,7 +156,8 @@ class NetStream(object):
             return -1
         try:
             self.sock.recv(0)
-        except socket.error, (code, strerror):
+        except socket.error as error:
+            code, _ = error
             if code in self.conn:
                 return 0
             if code in self.errd:
@@ -196,7 +197,9 @@ class NetStream(object):
         try:
             # print "self.send_buf",self.send_buf
             wsize = self.sock.send(self.send_buf)
-        except socket.error, (code, strerror):
+        
+        except socket.error as error:
+            code, _ = error
             if code not in self.errd:
                 self.errc = code
                 self.close()
@@ -232,7 +235,9 @@ class NetStream(object):
                     self.close()
 
                     return -1
-            except socket.error, (code, strerror):
+            
+            except socket.error as error:
+                code, _ = error
                 if code not in self.errd:
                     self.errc = code
                     self.close()

@@ -1,6 +1,6 @@
 # -*- coding: GBK -*-
 
-from msg_handler_module import MsgHandler
+from common_server.msg_handler_module import MsgHandler
 
 from common.message_queue_module import MsgQueue
 import logging
