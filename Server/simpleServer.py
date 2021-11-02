@@ -11,6 +11,7 @@ from gameEntity import GameEntity
 from network.simpleHost import SimpleHost
 from setting import keyType
 from typing import Dict
+from risk_manager.reader import Reader
 import argparse
 
 
@@ -85,8 +86,6 @@ class SimpleServer(object):
 
         return
 
-    def heartBeatToClient(self):
-        self.rpc_queue.push_msg(0, RpcMessage("heartBeat", list(self.entities.keys()), [], {}))
 
 if __name__ == "__main__":
     import os
@@ -94,7 +93,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--debug", action="store_true", help="enable debug mode")
     parser.add_argument("--verbose", "-v", action="store_true", help="enable verbose mode")
-    parser.add_argument("--show_map", "-sm", action="store_true", help="enable debug map mode")
+    parser.add_argument("--config_file", "-cfg", default="conf/setting.ini")
     arguments = parser.parse_args()
 
     if not os.path.exists("log"):
@@ -121,7 +120,8 @@ if __name__ == "__main__":
         logger.addHandler(logging.StreamHandler())
     server = SimpleServer(config=arguments)
     server.startup()
-    TimerManager.addRepeatTimer(1.0, server.heartBeatToClient)
+    reader = Reader()
+    TimerManager.addRepeatTimer(1.0, reader.run)
     thread_pool = ThreadPool()
     thread_pool.start()
     try:

@@ -1,3 +1,4 @@
+import configparser
 from common.common_library_module import Singleton
 from common.rpc_queue_module import RpcMessage
 from setting import keyType
@@ -5,7 +6,6 @@ from common_server.timer import TimerManager
 import logging
 from typing import TYPE_CHECKING, List, Union, Dict, Tuple
 import time
-import numpy as np
 
 if TYPE_CHECKING:
     from argparse import Namespace
@@ -33,10 +33,25 @@ class DataCenter(object):
         self.config = None
         self.clients: Dict[int, Client] = {}
         self.checkTimer = TimerManager.addRepeatTimer(0.2, self.checkZombieClient)
+        self.cf: configparser.ConfigParser = None
+    
+    def readConfigFile(self):
+        if self.config.config_file:
+            logger.info("read config file from %s", self.config.config_file)
+            import configparser, codecs
+            self.cf = configparser.ConfigParser()
+            with codecs.open(self.config.config_file, 'r', encoding="utf-8") as f:
+                self.cf.readfp(f)
+            pass
+        pass
+
+    def getCfgValue(self, section: str, key: str):
+        return self.cf.get(section, key)
 
     def setConfig(self, config):
         # type: (Namespace) -> None
         self.config = config
+        self.readConfigFile()
 
     def regClient(self, client_id):
         if client_id not in self.clients:
