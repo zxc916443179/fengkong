@@ -69,4 +69,4 @@ class MsgHandler(Thread):
     
     @req()
     def syncData(self, msg: Message) -> None:
-        logger.info("sync message from Server")
+        logger.info("sync message from Server %s", msg.kwargs)

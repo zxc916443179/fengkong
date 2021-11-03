@@ -104,7 +104,7 @@ class riskmanage():
             更新名单
         --------
         '''
-        names_df = pd.read_excel(self.names_to_account, encoding="gb2312")
+        names_df = pd.read_excel(self.names_to_account)
         self.humans = []
         self.names_dic = {}
         self.loss = {}
