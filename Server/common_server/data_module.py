@@ -16,7 +16,7 @@ class Client(object):
     def __init__(self, hid) -> None:
         self.id = self.genId()
         self.hid = hid
-        self.state = 0
+        self.state = keyType.CLIENT_STATE.NORMAL
     
     def genId(self):
         self.id = str(int(time.time() * 1000))[3:] + str(Client.idx)
@@ -34,6 +34,12 @@ class DataCenter(object):
         self.clients: Dict[int, Client] = {}
         self.checkTimer = TimerManager.addRepeatTimer(0.2, self.checkZombieClient)
         self.cf: configparser.ConfigParser = None
+
+        self.res = None
+        self.res_status = None
+
+        self.trader_list = None
+        self.detail_list = None
     
     def readConfigFile(self):
         if self.config.config_file:
@@ -45,8 +51,15 @@ class DataCenter(object):
             pass
         pass
 
-    def getCfgValue(self, section: str, key: str):
-        return self.cf.get(section, key)
+    def getCfgValue(self, section: str, key: str, default: any = None):
+        value = None
+        try:
+            value = self.cf.get(section, key)
+        except:
+            value = default
+        if value is None:
+            value = default
+        return value
 
     def setConfig(self, config):
         # type: (Namespace) -> None
@@ -67,8 +80,8 @@ class DataCenter(object):
             if client.state == keyType.CLIENT_STATE.DEAD:
                 remove_list.append(client.hid)
         for hid in remove_list:
-            self.clients.pop(client.hid)
-            logger.info(f"remove dead client {client.hid}")
+            self.clients.pop(hid)
+            logger.info(f"remove dead client {hid}")
     
     def getClient(self, hid):
         return self.clients.get(hid)
@@ -79,3 +92,18 @@ class DataCenter(object):
             if client.id == id:
                 return client
         return None
+    
+    def getClientList(self) -> List[int]:
+        return self.clients.keys()
+    
+    def isClientAlive(self, hid: int) -> bool:
+        return hid in self.clients and self.clients[hid].state == keyType.CLIENT_STATE.NORMAL
+    
+    def writeData(self, res, res_status, trader_list, detail_list):
+        self.res = res
+        self.res_status = res_status
+        self.trader_list = trader_list
+        self.detail_list = detail_list
+    
+    def getData(self):
+        return self.res, self.res_status, self.trader_list, self.detail_list

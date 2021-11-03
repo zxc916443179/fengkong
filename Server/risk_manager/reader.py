@@ -16,12 +16,16 @@ class Reader(object):
         self.data_center = DataCenter()
         self.mid_dir = self.data_center.getCfgValue("reader", "mid_dir")
         self.log_dir = self.data_center.getCfgValue("reader", "log_dir")
+        self.mid_csv_file = self.mid_dir + self.data_center.getCfgValue("reader", "mid_csv_file")
+        self.final_csv_file = self.mid_dir + self.data_center.getCfgValue("reader", "final_csv_file")
         if not os.path.exists(self.log_dir):
             self.logger.error(u"没找到 pbrc Log 目录[%s]！" % self.log_dir)
             raise Exception("Pbrc Log Folder Do Not Exists.")
         if not os.path.exists(self.mid_dir):
             self.logger.warning(u"中间目录[%s]不存在，自动创建。" % self.mid_dir)
             os.mkdir(self.mid_dir)
+        self.names_to_account = None
+        self.run()  # 初始化的时候先run一遍
 
     def run(self):
         fileNames = os.listdir(self.log_dir)
@@ -44,18 +48,17 @@ class Reader(object):
         #mydf = get_risk_manage_df(mydf)
         #mydf.to_csv("real/zy01.csv", encoding="gb2312", index=False)
 
-        my_dic = self.transform_dbf_to_csv(self.log_dir + latestFile)
+        my_dic = self.transformDbfToCsv(self.log_dir + latestFile)
         #self.logger.info(u"dbf log 文件[%s]解析完成！" % latestFile)
         records = list(my_dic.values())
         #with open('real/zy011.csv', 'w', newline='') as csvfile:
-        mid_csv_file = self.mid_dir + self.data_center.getCfgValue("reader", "mid_csv_file")
         #self.logger.info(u"dbf log 转化为 csv 文件[%s]。" % mid_csv_file)
         #print(records)
         if len(records) == 0:
             self.logger.warning(u"Pbrc log[%s]中没有成交记录！")
             input(u"按任意键继续。")
             raise Exception("No Entrust Found.")
-        with open(mid_csv_file, 'w', newline='') as csvfile:
+        with open(self.mid_csv_file, 'w', newline='') as csvfile:
             fieldnames = records[0].keys()
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
@@ -63,8 +66,9 @@ class Reader(object):
         csvfile.close()
         #self.logger.info(u"中间文件[%s]写入成功！" % mid_csv_file)
 
-        df = pd.read_csv(mid_csv_file, encoding="gb2312")
+        df = pd.read_csv(self.mid_csv_file, encoding="gb2312")
         names_file = self.data_center.getCfgValue("input", "names")
+        self.names_to_account = names_file
         if not os.path.exists(names_file):
             self.logger.error(u"交易员配置文件[%s]没有找到！" % names_file)
             raise Exception("Trader Configuration File Do Not Exists.")
@@ -74,9 +78,8 @@ class Reader(object):
             names_df.dropna()
             #self.logger.info(u"重组委托记录。")
             df = self.reassembe(df, names_df)
-            final_csv_file = self.mid_dir + self.data_center.getCfgValue("reader", "final_csv_file")
             #self.logger.info(u"将重组后的委托记录写入最终CSV[%s]中。" % final_csv_file)
-            df.to_csv(final_csv_file, encoding="gb2312", index=False)
+            df.to_csv(self.final_csv_file, encoding="gb2312", index=False)
 
     def reassembe(self, df: DataFrame, names_df: DataFrame) -> DataFrame:
         total_save_head = ['CJSJ', 'TZGW', 'ZQDM', 'CJSL', 'CJJG', 'WTFX'] # Limit head
@@ -123,7 +126,7 @@ class Reader(object):
 
         return df
 
-    def transform_dbf_to_csv(self, filepath):
+    def transformDbfToCsv(self, filepath):
         count = 0
         result = {}
         for record in DBF(filepath, recfactory=dict):

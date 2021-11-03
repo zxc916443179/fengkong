@@ -11,7 +11,7 @@ from gameEntity import GameEntity
 from network.simpleHost import SimpleHost
 from setting import keyType
 from typing import Dict
-from risk_manager.reader import Reader
+from risk_manager.risk_manager import RiskManager
 import argparse
 
 
@@ -49,7 +49,11 @@ class SimpleServer(object):
 
         return
 
+    def syncData(self):
+        self.rpc_queue.push_msg(0, RpcMessage("syncData", self.data_center.getClientList(), [], {"data": list(self.data_center.getData())}))
+
     def tick(self, tick_time=0.02):
+        self.data_center.checkZombieClient()
         self.host.process()
         event, wparam, data = self.host.read()
         if event == conf.NET_CONNECTION_NEW:
@@ -76,14 +80,8 @@ class SimpleServer(object):
             if msg is not None:
                 method, targets, args, kwargs = msg.parseMsg()
                 for target in targets:
-                    if self.entities.__contains__(target):
+                    if self.entities.__contains__(target) and self.data_center.isClientAlive(target):
                         self.entities[target].caller[method](*args, **kwargs)
-        # for eid, entity in self.entities.iteritems():
-        # 	# Note: you can not delete entity in tick.
-        # 	# you may cache delete items and delete in next frame
-        # 	# or just use items.
-        # 	entity.tick()
-
         return
 
 
@@ -120,10 +118,11 @@ if __name__ == "__main__":
         logger.addHandler(logging.StreamHandler())
     server = SimpleServer(config=arguments)
     server.startup()
-    reader = Reader()
-    TimerManager.addRepeatTimer(1.0, reader.run)
     thread_pool = ThreadPool()
     thread_pool.start()
+    risk_manager = RiskManager()
+    TimerManager.addRepeatTimer(server.data_center.getCfgValue("server", "tick_time", default=1.0), risk_manager.renew_status)
+    TimerManager.addRepeatTimer(1.0, server.syncData)
     try:
         while 1:
             server.tick()
