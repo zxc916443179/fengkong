@@ -560,7 +560,7 @@ class riskmanage():
 #def reassembe(df, names_df):
 #    total_save_head = ['CJSJ', 'TZGW', 'ZQDM', 'CJSL', 'CJJG', 'WTFX'] # Limit head
 #    df = df.dropna(subset=total_save_head)
-#    df = df.ix[:, total_save_head]
+#    df = df.loc[:, total_save_head]
 #
 #    # Delete ZQDM = 204001
 #    total_save_loc = df.ZQDM != 204001

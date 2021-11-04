@@ -1,0 +1,8 @@
+2021/11/04 23:53:31 PM - DEBUG[thread_pool_module/start(19)] - thread start
+2021/11/04 23:53:34 PM - ERROR[simpleServer/connect(58)] - 无法连接服务器，尝试重连。。。剩余重连次数10
+2021/11/04 23:53:37 PM - ERROR[simpleServer/connect(58)] - 无法连接服务器，尝试重连。。。剩余重连次数9
+2021/11/04 23:53:40 PM - ERROR[simpleServer/connect(58)] - 无法连接服务器，尝试重连。。。剩余重连次数8
+2021/11/04 23:53:43 PM - ERROR[simpleServer/connect(58)] - 无法连接服务器，尝试重连。。。剩余重连次数7
+2021/11/04 23:53:46 PM - ERROR[simpleServer/connect(58)] - 无法连接服务器，尝试重连。。。剩余重连次数6
+2021/11/04 23:53:49 PM - ERROR[simpleServer/connect(58)] - 无法连接服务器，尝试重连。。。剩余重连次数5
+2021/11/04 23:53:52 PM - ERROR[simpleServer/connect(58)] - 无法连接服务器，尝试重连。。。剩余重连次数4

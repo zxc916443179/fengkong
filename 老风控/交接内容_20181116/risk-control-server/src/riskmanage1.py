@@ -104,7 +104,7 @@ class riskmanage():
             更新名单
         --------
         '''
-        names_df = pd.read_excel(self.names_to_account, encoding="gb2312")
+        names_df = pd.read_excel(self.names_to_account)
         self.humans = []
         self.names_dic = {}
         self.loss = {}
@@ -655,7 +655,7 @@ class riskmanage():
 #def reassembe(df, names_df):
 #    total_save_head = ['CJSJ', 'TZGW', 'ZQDM', 'CJSL', 'CJJG', 'WTFX'] # Limit head
 #    df = df.dropna(subset=total_save_head)
-#    df = df.ix[:, total_save_head]
+#    df = df.loc[:, total_save_head]
 #
 #    # Delete ZQDM = 204001
 #    total_save_loc = df.ZQDM != 204001

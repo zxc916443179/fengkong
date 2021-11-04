@@ -9,7 +9,6 @@ import csv
 import time
 import codecs
 import logging
-import functools
 import configparser
 
 import numpy as np
@@ -49,7 +48,7 @@ def time_me(fn):
 def reassembe(df, names_df):
     total_save_head = ['CJSJ', 'TZGW', 'ZQDM', 'CJSL', 'CJJG', 'WTFX'] # Limit head
     df = df.dropna(subset=total_save_head)
-    df = df.ix[:, total_save_head]
+    df = df.loc[:, total_save_head]
 
     # Delete ZQDM = 204001
     total_save_loc = df.ZQDM != 204001
@@ -168,7 +167,7 @@ def main(cfgfile):
         raise Exception("Trader Configuration File Do Not Exists.")
     else:
         #logging.info(u"解析交易员配置文件[%s]" % names_file)
-        names_df = pd.read_excel(names_file, encoding="gb2312")
+        names_df = pd.read_excel(names_file)
         names_df.dropna()
         #logging.info(u"重组委托记录。")
         df = reassembe(df, names_df)

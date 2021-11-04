@@ -3,7 +3,7 @@ import time
 
 from common import conf
 from common.message_queue_module import MsgQueue, Message
-from common.rpc_queue_module import RpcQueue
+from common.rpc_queue_module import RpcMessage, RpcQueue
 from common_server.data_module import DataCenter
 from common_server.thread_pool_module import ThreadPool
 from common_server.timer import TimerManager
@@ -11,8 +11,11 @@ from gameEntity import GameEntity
 from network.simpleHost import SimpleHost
 from setting import keyType
 from typing import Dict
+from risk_manager.risk_manager import RiskManager
 import argparse
 
+
+logger = logging.getLogger(__name__)
 
 class SimpleServer(object):
 
@@ -26,7 +29,6 @@ class SimpleServer(object):
         self.msg_queue = MsgQueue()
         self.data_center = DataCenter()
         self.data_center.setConfig(config)
-        self.frame = 0
 
         self.max_consume = 10
 
@@ -43,27 +45,15 @@ class SimpleServer(object):
         entity.id = eid
 
         self.entities[eid] = entity
+        self.data_center.regClient(eid)
 
         return
 
-    def broadCast(self):
-        for room in self.data_center.allRooms:
-            if room.isOnGoing:
-                for eid in room.player_list:
-                    entity = self.data_center.getEntityByID(keyType.Player, eid)
-                    if entity.state == keyType.PLAYER_STATE_MAP.In_Game and self.entities.__contains__(entity.client_id):
-                        self.entities[entity.client_id].caller["PlayerSyncHandler/UpdatePlayerSituation"]([],
-                                                                                                          Players=room.getPlayersPosition())
-                        self.entities[entity.client_id].caller["MonsterSyncHandler/SyncMonsterPosition"](
-                            [],
-                            monsters=[
-                                self.data_center.getEntityByID(keyType.Monster, monster_eid).getMonsterPositionData()
-                                for monster_eid in room.monster_list],
-                            frame=self.frame
-                        )
-                self.frame += 1
+    def syncData(self):
+        self.rpc_queue.push_msg(0, RpcMessage("syncData", self.data_center.getClientList(), [], {"data": list(self.data_center.getData())}))
 
     def tick(self, tick_time=0.02):
+        self.data_center.checkZombieClient()
         self.host.process()
         event, wparam, data = self.host.read()
         if event == conf.NET_CONNECTION_NEW:
@@ -90,14 +80,8 @@ class SimpleServer(object):
             if msg is not None:
                 method, targets, args, kwargs = msg.parseMsg()
                 for target in targets:
-                    if self.entities.__contains__(target):
+                    if self.entities.__contains__(target) and self.data_center.isClientAlive(target):
                         self.entities[target].caller[method](*args, **kwargs)
-        # for eid, entity in self.entities.iteritems():
-        # 	# Note: you can not delete entity in tick.
-        # 	# you may cache delete items and delete in next frame
-        # 	# or just use items.
-        # 	entity.tick()
-
         return
 
 
@@ -107,7 +91,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--debug", action="store_true", help="enable debug mode")
     parser.add_argument("--verbose", "-v", action="store_true", help="enable verbose mode")
-    parser.add_argument("--show_map", "-sm", action="store_true", help="enable debug map mode")
+    parser.add_argument("--config_file", "-cfg", default="conf/setting.ini")
     arguments = parser.parse_args()
 
     if not os.path.exists("log"):
@@ -136,6 +120,9 @@ if __name__ == "__main__":
     server.startup()
     thread_pool = ThreadPool()
     thread_pool.start()
+    risk_manager = RiskManager()
+    TimerManager.addRepeatTimer(server.data_center.getCfgValue("server", "tick_time", default=1.0), risk_manager.renew_status)
+    TimerManager.addRepeatTimer(1.0, server.syncData)
     try:
         while 1:
             server.tick()

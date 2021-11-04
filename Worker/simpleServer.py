@@ -31,19 +31,41 @@ def parseRpcMessage(method, targets, args, kwargs):
 class Worker(object):
     def __init__(self, config=None):
         # type: (argparse.Namespace) -> None
+        self.config = config
+        self.retry_times = 10
         self.netstream = NetStream()
-        self.netstream.connect(config.ip, config.port)
+        self.connect_timer = TimerManager.addRepeatTimer(3.0, self.connect)
+        self.logger = logging.getLogger(__name__)
         self.queue = []  # type: List
-        self.state = 0
+        self.state = -1
         self.max_consume = 10
         self.message_queue = MsgQueue()
         self.rpc_queue = RpcQueue()
         self.data_center = DataCenter()
         self.data_center.setConfig(config)
 
+    def connect(self):
+        try:
+            self.state = -1
+            self.netstream.connect(self.config.ip, self.config.port)
+            self.state = 0
+            self.retry_times = 10
+            self.logger.info("连接服务器成功")
+            if self.connect_timer is not None:
+                TimerManager.cancel(self.connect_timer)
+        except:
+            if self.retry_times > 0:
+                self.logger.error(f"无法连接服务器，尝试重连。。。剩余重连次数{self.retry_times}")
+                self.retry_times -= 1
+            else:
+                self.logger.error("无法连接服务器，请检查服务器状态")
+                import sys
+                sys.exit()
+                TimerManager.cancel(self.connect_timer)
+
     def tick(self, tick_time=0.02):
         if self.state == -1:
-            raise Exception
+            return
         self.netstream.process()
         while self.netstream.status() == conf.NET_STATE_ESTABLISHED:
             data = self.netstream.recv()
@@ -60,8 +82,10 @@ class Worker(object):
             code, wparam, data = self.queue[0]
             self.queue = self.queue[1:]
             if code == conf.NET_CONNECTION_LEAVE or self.netstream.state == -1:
-                logger.error("lose connection, leave now")
+                logger.error("失去连接，尝试重连")
                 self.state = -1
+                self.connect_timer = TimerManager.addRepeatTimer(3.0, self.connect)
+                break
             elif code == conf.NET_CONNECTION_DATA:
                 info = json.loads(data)
                 self.message_queue.push_msg(0,
@@ -75,18 +99,6 @@ class Worker(object):
             else:
                 break
 
-    def broadCast(self):
-        for room in self.data_center.allRooms:
-            if room.isOnGoing:
-                player_data = parseRpcMessage("PlayerSyncHandler/UpdatePlayerSituation",
-                                              room.client_id_list, [], {"Players": room.getPlayersPosition()})
-                self.netstream.send(json.dumps(player_data))
-                monster_data = parseRpcMessage("MonsterSyncHandler/SyncMonsterPosition",
-                                               room.client_id_list, [], {"monsters": [
-                        self.data_center.getEntityByID(keyType.Monster, monster_eid).getMonsterPositionData()
-                        for monster_eid in room.monster_list
-                    ]})
-                self.netstream.send(json.dumps(monster_data))
 
     def heartbeat(self):
         data = parseRpcMessage("heartBeat", [-1], [], {})
@@ -136,6 +148,6 @@ if __name__ == "__main__":
         while 1:
             worker.tick()
             TimerManager.scheduler()
-    except KeyboardInterrupt:
+    except (KeyboardInterrupt, SystemExit):
         logger.error("", exc_info=True)
         thread_pool.stop()
