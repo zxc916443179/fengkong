@@ -8,17 +8,16 @@ from risk_manager.calculator import Calculator
 ts = None
 
 class RiskManager(object):
-    def __init__(self, mid_dir, log_dir, final_csv_file, mid_csv_file, names_to_account, name) -> None:
+    def __init__(self, mid_dir, log_dir, final_csv_file, mid_csv_file, names_to_account, name, trader_tax_rate=0.0003, stamp_tax_rate=0.001) -> None:
         self.import_package()
         self.logger = logging.getLogger()
-        self.mid_csv_file = self.reader.final_csv_file
-        self.names_to_account = self.reader.names_to_account
         self.names_to_account = names_to_account
         self.name = name
         self.reader = Reader(mid_dir, log_dir, mid_csv_file, final_csv_file, names_to_account)
+        self.mid_csv_file = self.reader.final_csv_file
 
-        self.trade_cost = self.data_center.getCfgValue("server", "trader_tax_rate", default=0.0003)
-        self.yhs_cost = self.data_center.getCfgValue("server", "stamp_tax_rate", default=0.001)
+        self.trade_cost = trader_tax_rate
+        self.yhs_cost = stamp_tax_rate
         
         # renew by renew_humans
         self.humans = []            #账户列表
@@ -217,9 +216,6 @@ class RiskManager(object):
         self.reader.run()
         self.data = self.provide_data()
         self.renew_stock_status()
-        
-        # 写数据到data_center
-        self.data_center.writeData(*self.get_current_status2(), *self.get_current_status3())
 
     def get_current_status2(self):
         '''

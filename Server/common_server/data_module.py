@@ -35,24 +35,22 @@ class DataCenter(object):
         self.clients: Dict[int, Client] = {}
         self.checkTimer = TimerManager.addRepeatTimer(0.2, self.checkZombieClient)
         self.cf: configparser.ConfigParser = None
+        self.pf: configparser.ConfigParser = None
 
-        self.risk_mgrs = {}
+        self.risk_mgrs: dict[str, RiskManager] = {}
 
-        self.res = None
-        self.res_status = None
-
-        self.trader_list = None
-        self.detail_list = None
-    
     def readConfigFile(self):
+        import codecs
         if self.config.config_file:
             logger.info("read config file from %s", self.config.config_file)
-            import configparser, codecs
             self.cf = configparser.ConfigParser()
             with codecs.open(self.config.config_file, 'r', encoding="utf-8") as f:
                 self.cf.readfp(f)
-            pass
-        pass
+        if self.config.pbrc_file:
+            logger.info("read pbrc config file from %s", self.config.pbrc_file)
+            self.pf = configparser.ConfigParser()
+            with codecs.open(self.config.pbrc_file, 'r', encoding="utf-8") as f:
+                self.pf.readfp(f)
 
     def getCfgValue(self, section: str, key: str, default: any = None):
         value = None
@@ -70,9 +68,18 @@ class DataCenter(object):
         # type: (Namespace) -> None
         self.config = config
         self.readConfigFile()
+        self.initPbrcsConfig()
 
     def initPbrcsConfig(self):
-        pass
+        pbrcs = self.pf.keys()
+        for pbrc in pbrcs:
+            if pbrc != "DEFAULT":
+                self.risk_mgrs[pbrc] = RiskManager(
+                    self.getCfgValue('reader', 'mid_dir'), self.pf[pbrc]['log_dir'], f'final_{pbrc}.csv',
+                    f'mid_{pbrc}.csv', self.pf[pbrc]['name_to_account'], pbrc, self.getCfgValue("server", "trader_tax_rate", 0.0003),
+                    self.getCfgValue("server", "stamp_tax_rate")
+                )
+                logger.info(f"添加解析数据文件:[{pbrc}]{self.pf[pbrc]['log_dir']}")
 
     def regClient(self, client_id):
         if client_id not in self.clients:
@@ -106,15 +113,15 @@ class DataCenter(object):
     
     def isClientAlive(self, hid: int) -> bool:
         return hid in self.clients and self.clients[hid].state == keyType.CLIENT_STATE.NORMAL
-    
-    def writeData(self, res, res_status, trader_list, detail_list):
-        self.res = res
-        self.res_status = res_status
-        self.trader_list = trader_list
-        self.detail_list = detail_list
-    
+
     def getData(self):
-        return self.res, self.res_status, self.trader_list, self.detail_list
+        data = {}
+        for key in self.risk_mgrs:
+            data[key] = {
+                'detail': self.risk_mgrs[key].get_current_status2(),
+                'main': self.risk_mgrs[key].get_current_status3()
+            }
+        return data
     
     def __is_float(self, _s):
         try:
@@ -122,3 +129,8 @@ class DataCenter(object):
             return True
         except:
             return False
+    
+    def tick(self):
+        self.checkZombieClient()
+        for risk_mgr in self.risk_mgrs.values():
+            risk_mgr.renew_status()

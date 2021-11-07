@@ -14,8 +14,8 @@ class Reader(object):
         self.logger = logging.getLogger()
         self.mid_dir = mid_dir
         self.log_dir = log_dir
-        self.mid_csv_file = mid_csv_file
-        self.final_csv_file = final_csv_file
+        self.mid_csv_file = os.path.join(mid_dir, mid_csv_file)
+        self.final_csv_file = os.path.join(mid_dir, final_csv_file)
         self.names_to_account = names_to_account
         if not os.path.exists(self.log_dir):
             self.logger.error(u"没找到 pbrc Log 目录[%s]！" % self.log_dir)
@@ -23,7 +23,6 @@ class Reader(object):
         if not os.path.exists(self.mid_dir):
             self.logger.warning(u"中间目录[%s]不存在，自动创建。" % self.mid_dir)
             os.mkdir(self.mid_dir)
-        self.names_to_account = None
         self.run()  # 初始化的时候先run一遍
 
     def run(self):
@@ -47,7 +46,7 @@ class Reader(object):
         #mydf = get_risk_manage_df(mydf)
         #mydf.to_csv("real/zy01.csv", encoding="gb2312", index=False)
 
-        my_dic = self.transformDbfToCsv(self.log_dir + latestFile)
+        my_dic = self.transformDbfToCsv(os.path.join(self.log_dir, latestFile))
         #self.logger.info(u"dbf log 文件[%s]解析完成！" % latestFile)
         records = list(my_dic.values())
         #with open('real/zy011.csv', 'w', newline='') as csvfile:
