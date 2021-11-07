@@ -54,7 +54,7 @@ class MsgHandler(Thread):
                             ret = {"code": e.code, "msg": e.description}
                         else:
                             ret = {"code": 100}
-                        self.rpc_queue.push_msg(0, RpcMessage("PlayerSyncHandler/Exception", [msg.client_id], [], ret))
+                        self.rpc_queue.push_msg(0, RpcMessage("PlayerSyncHandler/Exception", [], [], ret))
                         logger.error("", exc_info=True)
                 else:
                     logger.error("invalid rpc call, permission denied: %s" % msg.method)
