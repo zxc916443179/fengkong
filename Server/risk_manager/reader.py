@@ -1,5 +1,4 @@
 from pandas.core.frame import DataFrame
-from common_server.data_module import DataCenter
 import os, logging, re
 from dbfread import DBF
 import numpy as np
@@ -11,13 +10,13 @@ PATTERN = re.compile(r'Trealdeal_\d{8}\.log')
 
 
 class Reader(object):
-    def __init__(self) -> None:
+    def __init__(self, mid_dir, log_dir, mid_csv_file, final_csv_file, names_to_account) -> None:
         self.logger = logging.getLogger()
-        self.data_center = DataCenter()
-        self.mid_dir = self.data_center.getCfgValue("reader", "mid_dir")
-        self.log_dir = self.data_center.getCfgValue("reader", "log_dir")
-        self.mid_csv_file = self.mid_dir + self.data_center.getCfgValue("reader", "mid_csv_file")
-        self.final_csv_file = self.mid_dir + self.data_center.getCfgValue("reader", "final_csv_file")
+        self.mid_dir = mid_dir
+        self.log_dir = log_dir
+        self.mid_csv_file = mid_csv_file
+        self.final_csv_file = final_csv_file
+        self.names_to_account = names_to_account
         if not os.path.exists(self.log_dir):
             self.logger.error(u"没找到 pbrc Log 目录[%s]！" % self.log_dir)
             raise Exception("Pbrc Log Folder Do Not Exists.")
@@ -67,8 +66,7 @@ class Reader(object):
         #self.logger.info(u"中间文件[%s]写入成功！" % mid_csv_file)
 
         df = pd.read_csv(self.mid_csv_file, encoding="gb2312")
-        names_file = self.data_center.getCfgValue("input", "names")
-        self.names_to_account = names_file
+        names_file = self.names_to_account
         if not os.path.exists(names_file):
             self.logger.error(u"交易员配置文件[%s]没有找到！" % names_file)
             raise Exception("Trader Configuration File Do Not Exists.")

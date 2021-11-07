@@ -1,6 +1,7 @@
 import configparser
 from common.common_library_module import Singleton
 from common.rpc_queue_module import RpcMessage
+from risk_manager.risk_manager import RiskManager
 from setting import keyType
 from common_server.timer import TimerManager
 import logging
@@ -35,6 +36,8 @@ class DataCenter(object):
         self.checkTimer = TimerManager.addRepeatTimer(0.2, self.checkZombieClient)
         self.cf: configparser.ConfigParser = None
 
+        self.risk_mgrs = {}
+
         self.res = None
         self.res_status = None
 
@@ -67,6 +70,9 @@ class DataCenter(object):
         # type: (Namespace) -> None
         self.config = config
         self.readConfigFile()
+
+    def initPbrcsConfig(self):
+        pass
 
     def regClient(self, client_id):
         if client_id not in self.clients:

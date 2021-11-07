@@ -91,6 +91,7 @@ if __name__ == "__main__":
     parser.add_argument("--debug", action="store_true", help="enable debug mode")
     parser.add_argument("--verbose", "-v", action="store_true", help="enable verbose mode")
     parser.add_argument("--config_file", "-cfg", default="conf/setting.ini")
+    parser.add_argument("--pbrc_file", "-pf", default="conf/pbrc.ini")
     arguments = parser.parse_args()
 
     if not os.path.exists("log"):
@@ -119,7 +120,6 @@ if __name__ == "__main__":
     server.startup()
     thread_pool = ThreadPool()
     thread_pool.start()
-    risk_manager = RiskManager()
     TimerManager.addRepeatTimer(server.data_center.getCfgValue("server", "tick_time", default=1.0), risk_manager.renew_status)
     TimerManager.addRepeatTimer(1.0, server.syncData)
     try:

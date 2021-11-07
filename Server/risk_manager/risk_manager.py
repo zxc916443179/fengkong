@@ -1,6 +1,5 @@
 import logging
 from risk_manager.reader import Reader
-from common_server.data_module import DataCenter
 import pandas as pd
 import numpy as np
 import traceback as tb
@@ -9,13 +8,14 @@ from risk_manager.calculator import Calculator
 ts = None
 
 class RiskManager(object):
-    def __init__(self) -> None:
+    def __init__(self, mid_dir, log_dir, final_csv_file, mid_csv_file, names_to_account, name) -> None:
         self.import_package()
         self.logger = logging.getLogger()
-        self.reader = Reader()
-        self.data_center = DataCenter()
         self.mid_csv_file = self.reader.final_csv_file
         self.names_to_account = self.reader.names_to_account
+        self.names_to_account = names_to_account
+        self.name = name
+        self.reader = Reader(mid_dir, log_dir, mid_csv_file, final_csv_file, names_to_account)
 
         self.trade_cost = self.data_center.getCfgValue("server", "trader_tax_rate", default=0.0003)
         self.yhs_cost = self.data_center.getCfgValue("server", "stamp_tax_rate", default=0.001)
