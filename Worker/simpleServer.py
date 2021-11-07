@@ -48,11 +48,12 @@ class Controller(object):
         self.detailUi = DetailWindow(datailList)
         return self.detailUi.show()
 
-def newWindosws(info):
+def newWindosws(info, controllers: list):
     keyList = info.keys()
     for i in keyList:
         controller = Controller() 
         controller.show_mainUi(i, info[i]['main'], info[i]['detail'])
+        controllers.append(controller)
 
 def saveItem(data, QTableWidgetItem, formWindow):
     for i in range(len(data)):
@@ -213,8 +214,7 @@ if __name__ == "__main__":
             ]
             }
         }
-    newWindosws(moskInfo)
-    controller = Controller() 
-    controller.show_mainUi() 
+    controllers = []
+    newWindosws(moskInfo, controllers)
     sys.exit(app.exec_() & thread_pool.stop())
     
