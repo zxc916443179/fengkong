@@ -39,29 +39,47 @@ class Controller(object):
         self.data_center = DataCenter()
         pass
         
-    def show_mainUi(self):
-        self.mainUi = MyMainForm()
-        self.mainUi.switch_Detail.connect(self.show_detailUi)
+    def show_mainUi(self, key, mainList, detailList):
+        self.mainUi = MyMainForm(key, mainList)
+        self.mainUi.switch_Detail.connect(lambda:self.show_detailUi(detailList))
         self.mainUi.show()
 
-    def show_detailUi(self):
-        self.detailUi = DetailWindow()
-        self.detailUi.show()
+    def show_detailUi(self, datailList):
+        self.detailUi = DetailWindow(datailList)
+        return self.detailUi.show()
 
+def newWindosws(info):
+    keyList = info.keys()
+    for i in keyList:
+        controller = Controller() 
+        controller.show_mainUi(i, info[i]['main'], info[i]['detail'])
+
+def saveItem(data, QTableWidgetItem, formWindow):
+    for i in range(len(data)):
+        for j in range(len(data[i])):
+            if data[i][j] != None:
+                save=str(data[i][j])
+                newItem = QTableWidgetItem(save)
+                formWindow.tableWidget.setItem(i,j,newItem)
 
 class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
     switch_Detail = QtCore.pyqtSignal()
-    def __init__(self, parent=None):
-        super(MyMainForm, self).__init__(parent)
+    def __init__(self, key, mainList):
+        super(MyMainForm, self).__init__()
         self.setupUi(self)
+        self.setWindowTitle(key)
+        self.tableWidget.setRowCount(len(mainList))
+        saveItem(mainList, QtWidgets.QTableWidgetItem, self)
         self.pushButton.clicked.connect(self.goDetail)
     def goDetail(self):
         self.switch_Detail.emit()
 
 class DetailWindow(QtWidgets.QMainWindow, uiDetailWindow):
-    def __init__(self):
+    def __init__(self, detailList):
         super(DetailWindow, self).__init__()
         self.setupUi(self)
+        self.tableWidget.setRowCount(len(detailList))
+        saveItem(detailList, QtWidgets.QTableWidgetItem, self)
 
 class Worker(Thread):
     def __init__(self, config=None):
@@ -171,8 +189,30 @@ if __name__ == "__main__":
     thread_pool.start()
     TimerManager.addRepeatTimer(2, worker.heartbeat)
     app = QtWidgets.QApplication(sys.argv)
-    controller = Controller() 
-    controller.show_mainUi() 
+    moskInfo = {
+        "ppit1": {
+            "main":[
+                ['a',111,17000,66,],
+                ['b',122,18000,33,'good']
+                ]
+            ,
+            "detail":[
+                ['long','a',600171, 'shbl', 111, 17000,'66%',],
+                ['short','b',600133, 'shbg', 111, 2300,'11%',]
+                ] 
+            },
+        "ppit2": {
+            "main":[
+                ['c',111,17000,66,],
+                ['d',122,18000,33,'good']]
+            ,
+            "detail":[
+                ['long','c',600171, 'shbl', 111, 17000,'66%',],
+                ['short','d',600133, 'shbg', 111, 2300,'11%',]
+            ]
+            }
+        }
+    newWindosws(moskInfo)
     thread_pool.stop()
     sys.exit(app.exec_())
     
