@@ -59,6 +59,8 @@ class DataCenter(object):
             value = default
         if value is None:
             value = default
+        if self.__is_float(value):
+            return float(value)
         return value
 
     def setConfig(self, config):
@@ -107,3 +109,10 @@ class DataCenter(object):
     
     def getData(self):
         return self.res, self.res_status, self.trader_list, self.detail_list
+    
+    def __is_float(self, _s):
+        try:
+            float(str(_s))
+            return True
+        except:
+            return False

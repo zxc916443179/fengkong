@@ -15,8 +15,6 @@ from risk_manager.risk_manager import RiskManager
 import argparse
 
 
-logger = logging.getLogger(__name__)
-
 class SimpleServer(object):
 
     def __init__(self, config=None):
@@ -31,6 +29,7 @@ class SimpleServer(object):
         self.data_center.setConfig(config)
 
         self.max_consume = 10
+        self.logger = logging.getLogger()
 
     def startup(self):
         self.host.startup(8888)
@@ -57,7 +56,7 @@ class SimpleServer(object):
         self.host.process()
         event, wparam, data = self.host.read()
         if event == conf.NET_CONNECTION_NEW:
-            logger.debug("new client")
+            self.logger.debug("new client")
             code, client_netstream = self.host.getClient(wparam)
             assert code == 0
             self.registerEntity(GameEntity(client_netstream))
@@ -72,7 +71,7 @@ class SimpleServer(object):
             self.entities.pop(wparam)
             self.msg_queue.push_msg(0, Message("closeClient", wparam, (), {}, ""))
             # self.data_center.removePlayer(wparam)
-            logger.debug("close connect %d" % wparam)
+            self.logger.debug("close connect %d" % wparam)
 
         # process send queue:
         for _ in range(min(self.max_consume, len(self.rpc_queue))):
@@ -108,11 +107,11 @@ if __name__ == "__main__":
 
     LOG_FORMAT = "%(asctime)s - %(levelname)s[%(module)s/%(funcName)s(%(lineno)d)] - %(message)s"
     DATE_FORMAT = "%Y/%m/%d %H:%M:%S %p"
-
+    print(arguments.debug, arguments.verbose)
     log_level = logging.DEBUG if arguments.debug else logging.INFO
 
     logging.basicConfig(filename='log/debug%s.log' % time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime()), filemode="w",
-                        level=logging.DEBUG, format=LOG_FORMAT, datefmt=DATE_FORMAT)
+                        level=log_level, format=LOG_FORMAT, datefmt=DATE_FORMAT)
     logger = logging.getLogger()
     if arguments.verbose:
         logger.addHandler(logging.StreamHandler())
