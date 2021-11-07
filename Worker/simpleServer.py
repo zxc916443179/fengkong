@@ -1,16 +1,22 @@
-import logging
-import time
+import argparse
 import json
+import logging
+import sys
+import time
+from threading import Thread
+from typing import Dict, List
+
+from PyQt5 import QtCore, QtWidgets
+
 from common import conf
-from common.message_queue_module import MsgQueue, Message
+from common.message_queue_module import Message, MsgQueue
 from common.rpc_queue_module import RpcQueue
 from common_server.data_module import DataCenter
 from common_server.thread_pool_module import ThreadPool
 from common_server.timer import TimerManager
 from network.netStream import NetStream
-from setting import keyType
-from typing import Dict, List
-import argparse
+from ui_folder.uiDetailPage import uiDetailWindow
+from ui_folder.uiWidget import uiWidgetWindow
 
 
 def parseRpcMessage(method, targets, args, kwargs):
@@ -27,9 +33,39 @@ def parseRpcMessage(method, targets, args, kwargs):
     }
     return data
 
+class Controller(object):
+    def __init__(self):
+        self.logger = print
+        self.data_center = DataCenter()
+        pass
+        
+    def show_mainUi(self):
+        self.mainUi = MyMainForm()
+        self.mainUi.switch_Detail.connect(self.show_detailUi)
+        self.mainUi.show()
 
-class Worker(object):
+    def show_detailUi(self):
+        self.detailUi = DetailWindow()
+        self.detailUi.show()
+
+
+class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
+    switch_Detail = QtCore.pyqtSignal()
+    def __init__(self, parent=None):
+        super(MyMainForm, self).__init__(parent)
+        self.setupUi(self)
+        self.pushButton.clicked.connect(self.goDetail)
+    def goDetail(self):
+        self.switch_Detail.emit()
+
+class DetailWindow(QtWidgets.QMainWindow, uiDetailWindow):
+    def __init__(self):
+        super(DetailWindow, self).__init__()
+        self.setupUi(self)
+
+class Worker(Thread):
     def __init__(self, config=None):
+        super(Worker, self).__init__()
         # type: (argparse.Namespace) -> None
         self.config = config
         self.retry_times = 10
@@ -44,6 +80,13 @@ class Worker(object):
         self.data_center = DataCenter()
         self.data_center.setConfig(config)
 
+    def run(self):
+        try:
+            while 1:
+                self.tick()
+        except (KeyboardInterrupt, SystemExit):
+            logger.error("", exc_info=True)
+
     def tick(self, tick_time=0.02):
         if self.state == -1:
             return
@@ -55,6 +98,8 @@ class Worker(object):
             self.queue.append((conf.NET_CONNECTION_DATA, self.netstream.hid, data))
         self.consumeMessage()
         self.consumeRpcMessage()
+        
+        TimerManager.scheduler()
 
     def consumeMessage(self):
         for _ in range(max(self.max_consume, len(self.queue))):
@@ -121,13 +166,13 @@ if __name__ == "__main__":
     if arguments.verbose:
         logger.addHandler(logging.StreamHandler())
     worker = Worker(config=arguments)
+    worker.start()
     thread_pool = ThreadPool()
     thread_pool.start()
     TimerManager.addRepeatTimer(2, worker.heartbeat)
-    try:
-        while 1:
-            worker.tick()
-            TimerManager.scheduler()
-    except (KeyboardInterrupt, SystemExit):
-        logger.error("", exc_info=True)
-        thread_pool.stop()
+    app = QtWidgets.QApplication(sys.argv)
+    controller = Controller() 
+    controller.show_mainUi() 
+    thread_pool.stop()
+    sys.exit(app.exec_())
+    
