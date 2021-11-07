@@ -49,6 +49,7 @@ class SimpleServer(object):
         return
 
     def syncData(self):
+        self.logger.debug("send data to client")
         self.rpc_queue.push_msg(0, RpcMessage("syncData", self.data_center.getClientList(), [], {"data": list(self.data_center.getData())}))
 
     def tick(self, tick_time=0.02):
@@ -121,7 +122,7 @@ if __name__ == "__main__":
     thread_pool.start()
     risk_manager = RiskManager()
     TimerManager.addRepeatTimer(server.data_center.getCfgValue("server", "tick_time", default=1.0), risk_manager.renew_status)
-    TimerManager.addRepeatTimer(1.0, server.syncData)
+    TimerManager.addRepeatTimer(5.0, server.syncData)
     try:
         while 1:
             server.tick()

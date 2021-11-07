@@ -23,3 +23,4 @@ class ThreadPool:
     def stop(self):
         for thread in self.thread_pool:
             thread.state = 1
+        return 1

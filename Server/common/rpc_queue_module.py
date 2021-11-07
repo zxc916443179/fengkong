@@ -68,7 +68,7 @@ class RpcMessage(object):
         return self.method, self.targets, self.args, self.kwargs
         
     def __eq__(self, o: object) -> bool:
-        return len(self.client_id) == len(o.client_id)
+        return len(self.targets) == len(o.targets)
 
     def __le__(self, o: object) -> bool:
-        return len(self.client_id) <= len(o.client_id)
+        return len(self.targets) <= len(o.targets)

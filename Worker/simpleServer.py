@@ -73,7 +73,7 @@ class Worker(Thread):
         self.netstream.connect(config.ip, config.port)
         self.logger = logging.getLogger(__name__)
         self.queue = []  # type: List
-        self.state = -1
+        self.state = 0
         self.max_consume = 10
         self.message_queue = MsgQueue()
         self.rpc_queue = RpcQueue()
@@ -93,8 +93,9 @@ class Worker(Thread):
         self.netstream.process()
         while self.netstream.status() == conf.NET_STATE_ESTABLISHED:
             data = self.netstream.recv()
-            if data == '':
+            if data == b'':
                 break
+
             self.queue.append((conf.NET_CONNECTION_DATA, self.netstream.hid, data))
         self.consumeMessage()
         self.consumeRpcMessage()
@@ -173,6 +174,5 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     controller = Controller() 
     controller.show_mainUi() 
-    thread_pool.stop()
-    sys.exit(app.exec_())
+    sys.exit(app.exec_() & thread_pool.stop())
     
