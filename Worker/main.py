@@ -1,12 +1,16 @@
 import sys
+import logging
 
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QColor, QBrush
 from ui_folder.uiWidget import uiWidgetWindow
 from ui_folder.uiDetailPage import uiDetailWindow
+from common_server.data_module import DataCenter
 
 class Controller:
     def __init__(self):
+        self.logger = print
+        self.data_center = DataCenter()
         pass
    
     def show_mainUi(self):
@@ -36,6 +40,7 @@ class DetailWindow(QtWidgets.QMainWindow, uiDetailWindow):
 def main():
     app = QtWidgets.QApplication(sys.argv)
     controller = Controller() 
+    controller.logger(controller.data_center.getData())
     controller.show_mainUi() 
     sys.exit(app.exec_())
 
