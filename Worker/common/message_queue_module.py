@@ -62,3 +62,9 @@ class Message(object):
         self.args = args
         self.kwargs = kwargs
         self.permission = permission
+
+    def __eq__(self, o: object) -> bool:
+        return self.client_id == o.client_id
+
+    def __le__(self, o: object) -> bool:
+        return self.client_id <= o.client_id

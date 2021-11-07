@@ -70,8 +70,8 @@ class NetStream(object):
         super(NetStream, self).__init__()
 
         self.sock = None  # socket object
-        self.send_buf = b''  # send buffer
-        self.recv_buf = b''  # recv buffer
+        self.send_buf = []  # send buffer
+        self.recv_buf = []  # recv buffer
 
         self.state = conf.NET_STATE_STOP
         self.errd = (errno.EINPROGRESS, errno.EALREADY, errno.EWOULDBLOCK)
@@ -91,8 +91,8 @@ class NetStream(object):
         self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
         self.sock.connect_ex((address, port))
         self.state = conf.NET_STATE_CONNECTING
-        self.send_buf = b''
-        self.recv_buf = b''
+        self.send_buf = []
+        self.recv_buf = []
         self.errc = 0
 
         return 0
@@ -121,8 +121,8 @@ class NetStream(object):
         self.state = conf.NET_STATE_ESTABLISHED
         self.nodelay(1)
 
-        self.send_buf = b''
-        self.recv_buf = b''
+        self.send_buf = []
+        self.recv_buf = []
 
         return 0
 
@@ -162,7 +162,7 @@ class NetStream(object):
                 return 0
             if code in self.errd:
                 self.state = conf.NET_STATE_ESTABLISHED
-                self.recv_buf = b''
+                self.recv_buf = []
                 logger.info("success connect to gate server")
                 return 1
 
@@ -175,15 +175,13 @@ class NetStream(object):
 
     # append data into send_buf with a size header
     def send(self, data):
-        size = len(data) + conf.NET_HEAD_LENGTH_SIZE
-        wsize = struct.pack(conf.NET_HEAD_LENGTH_FORMAT, size)
-        self.__sendRaw(wsize + str.encode(data))
+        self.__sendRaw(data)
 
         return 0
 
     # append data to send_buf then try to send it out (__try_send)
     def __sendRaw(self, data):
-        self.send_buf = self.send_buf + data
+        self.send_buf.append(data)
         self.process()
 
         return 0
@@ -193,10 +191,10 @@ class NetStream(object):
         wsize = 0
         if len(self.send_buf) == 0:
             return 0
-
+        send_data = self.send_buf.pop(0)
         try:
             # print "self.send_buf",self.send_buf
-            wsize = self.sock.send(self.send_buf)
+            wsize = self.sock.send(str.encode(send_data, encoding='utf-8'))
         
         except socket.error as error:
             code, _ = error.errno, error.strerror
@@ -205,23 +203,14 @@ class NetStream(object):
                 self.close()
 
                 return -1
-
-        self.send_buf = self.send_buf[wsize:]
         return wsize
 
     # recv an entire message from recv_buf
     def recv(self):
-        rsize = self.__peekRaw(conf.NET_HEAD_LENGTH_SIZE)
-        if len(rsize) < conf.NET_HEAD_LENGTH_SIZE:
-            return ''
+        if len(self.recv_buf) == 0:
+            return b''
 
-        size = struct.unpack(conf.NET_HEAD_LENGTH_FORMAT, rsize)[0]
-        if len(self.recv_buf) < size:
-            return ''
-
-        self.__recvRaw(conf.NET_HEAD_LENGTH_SIZE)
-
-        return self.__recvRaw(size - conf.NET_HEAD_LENGTH_SIZE)
+        return self.recv_buf.pop(0)
 
     # try to receive all the data into recv_buf
     def __tryRecv(self):
@@ -229,7 +218,7 @@ class NetStream(object):
         while 1:
             text = b''
             try:
-                text = self.sock.recv(1024)
+                text = self.sock.recv(10240)
                 if not text:
                     self.errc = 10000
                     self.close()
@@ -246,26 +235,5 @@ class NetStream(object):
                 break
 
             rdata = rdata + text
-
-        self.recv_buf = self.recv_buf + rdata
+            self.recv_buf.append(rdata.decode('utf-8'))
         return len(rdata)
-
-    # peek data from recv_buf (read without delete it)
-    def __peekRaw(self, size):
-        self.process()
-        if len(self.recv_buf) == 0:
-            return b''
-
-        if size > len(self.recv_buf):
-            size = len(self.recv_buf)
-        rdata = self.recv_buf[0:size]
-
-        return rdata
-
-    # read data from recv_buf (read and delete it from recv_buf)
-    def __recvRaw(self, size):
-        rdata = self.__peekRaw(size)
-        size = len(rdata)
-        self.recv_buf = self.recv_buf[size:]
-
-        return rdata.decode()
