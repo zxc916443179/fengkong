@@ -12,7 +12,7 @@ PATTERN = re.compile(r'Trealdeal_\d{8}\.log')
 
 class Reader(object):
     def __init__(self) -> None:
-        self.logger = logging.getLogger(__name__)
+        self.logger = logging.getLogger()
         self.data_center = DataCenter()
         self.mid_dir = self.data_center.getCfgValue("reader", "mid_dir")
         self.log_dir = self.data_center.getCfgValue("reader", "log_dir")

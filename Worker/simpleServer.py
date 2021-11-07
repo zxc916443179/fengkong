@@ -34,7 +34,7 @@ class Worker(object):
         self.config = config
         self.retry_times = 10
         self.netstream = NetStream()
-        self.connect_timer = TimerManager.addRepeatTimer(3.0, self.connect)
+        self.netstream.connect(config.ip, config.port)
         self.logger = logging.getLogger(__name__)
         self.queue = []  # type: List
         self.state = -1
@@ -43,25 +43,6 @@ class Worker(object):
         self.rpc_queue = RpcQueue()
         self.data_center = DataCenter()
         self.data_center.setConfig(config)
-
-    def connect(self):
-        try:
-            self.state = -1
-            self.netstream.connect(self.config.ip, self.config.port)
-            self.state = 0
-            self.retry_times = 10
-            self.logger.info("连接服务器成功")
-            if self.connect_timer is not None:
-                TimerManager.cancel(self.connect_timer)
-        except:
-            if self.retry_times > 0:
-                self.logger.error(f"无法连接服务器，尝试重连。。。剩余重连次数{self.retry_times}")
-                self.retry_times -= 1
-            else:
-                self.logger.error("无法连接服务器，请检查服务器状态")
-                import sys
-                sys.exit()
-                TimerManager.cancel(self.connect_timer)
 
     def tick(self, tick_time=0.02):
         if self.state == -1:
@@ -84,7 +65,6 @@ class Worker(object):
             if code == conf.NET_CONNECTION_LEAVE or self.netstream.state == -1:
                 logger.error("失去连接，尝试重连")
                 self.state = -1
-                self.connect_timer = TimerManager.addRepeatTimer(3.0, self.connect)
                 break
             elif code == conf.NET_CONNECTION_DATA:
                 info = json.loads(data)
@@ -136,7 +116,7 @@ if __name__ == "__main__":
 
     logging.basicConfig(filename='logs/log_%d/debug%s.log' % (
         arguments.worker_id, time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())), filemode="w",
-                        level=logging.DEBUG, format=LOG_FORMAT, datefmt=DATE_FORMAT)
+                        level=log_level, format=LOG_FORMAT, datefmt=DATE_FORMAT)
     logger = logging.getLogger()
     if arguments.verbose:
         logger.addHandler(logging.StreamHandler())

@@ -66,3 +66,9 @@ class RpcMessage(object):
     def parseMsg(self):
         # type: () -> Tuple[str, List[int], List[object], Dict]
         return self.method, self.targets, self.args, self.kwargs
+        
+    def __eq__(self, o: object) -> bool:
+        return len(self.client_id) == len(o.client_id)
+
+    def __le__(self, o: object) -> bool:
+        return len(self.client_id) <= len(o.client_id)

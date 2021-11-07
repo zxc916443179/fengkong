@@ -3,18 +3,18 @@ from risk_manager.reader import Reader
 from common_server.data_module import DataCenter
 import pandas as pd
 import numpy as np
-import tushare as ts
 import traceback as tb
 from risk_manager.calculator import Calculator
 
+ts = None
 
 class RiskManager(object):
     def __init__(self) -> None:
-        self.logger = logging.getLogger(__name__)
+        self.import_package()
+        self.logger = logging.getLogger()
         self.reader = Reader()
         self.data_center = DataCenter()
-        self.mid_csv_file = self.reader.mid_csv_file
-        self.final_csv_file = self.reader.final_csv_file
+        self.mid_csv_file = self.reader.final_csv_file
         self.names_to_account = self.reader.names_to_account
 
         self.trade_cost = self.data_center.getCfgValue("server", "trader_tax_rate", default=0.0003)
@@ -32,7 +32,11 @@ class RiskManager(object):
 
         self.renew_humans()
         self.renew_status()
-    
+
+    def import_package(self):
+        global ts
+        import tushare as ts
+
     def renew_humans(self):
         '''
         --------
@@ -169,6 +173,7 @@ class RiskManager(object):
             return []
 
         #获取未平仓位实时行情
+        # 这里能不能改成异步的
         data = ts.get_realtime_quotes(current_codes)
         temp = np.array(data['price'].values, dtype = float)
         loc = temp == 0
@@ -269,7 +274,7 @@ class RiskManager(object):
             temp_df = pd.DataFrame(res_status)
             temp_df.to_csv('stocks.csv', index = False)
         except Exception as e:
-            logging.warning(tb.format_exc())
+            self.logger.warning(tb.format_exc())
             #print(e)
         #获取总统计
         res = self.total(res)
