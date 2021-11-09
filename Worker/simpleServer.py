@@ -43,6 +43,7 @@ class Controller(object):
         self.mainUi = MyMainForm(key, mainList)
         self.mainUi.switch_Detail.connect(lambda:self.show_detailUi(detailList))
         self.mainUi.show()
+        TimerManager.addRepeatTimer(1.0, self.mainUi.update)
 
     def show_detailUi(self, datailList):
         self.detailUi = DetailWindow(datailList)
@@ -69,16 +70,21 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
         super(MyMainForm, self).__init__()
         self.setupUi(self)
         self.setWindowTitle(key)
+        self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.tableWidget.setRowCount(len(mainList))
         saveItem(mainList, QtWidgets.QTableWidgetItem, self)
         self.pushButton.clicked.connect(self.goDetail)
     def goDetail(self):
         self.switch_Detail.emit()
 
+    def update(self):
+        pass
+
 class DetailWindow(QtWidgets.QMainWindow, uiDetailWindow):
     def __init__(self, detailList):
         super(DetailWindow, self).__init__()
         self.setupUi(self)
+        self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.tableWidget.setRowCount(len(detailList))
         saveItem(detailList, QtWidgets.QTableWidgetItem, self)
 
@@ -130,6 +136,8 @@ class Worker(Thread):
             if code == conf.NET_CONNECTION_LEAVE or self.netstream.state == -1:
                 logger.error("失去连接，尝试重连")
                 self.state = -1
+                self.message_queue.push_msg(0,
+                                            Message("closeClient", wparam, [], {}))
                 break
             elif code == conf.NET_CONNECTION_DATA:
                 info = json.loads(data)
@@ -191,29 +199,7 @@ if __name__ == "__main__":
     thread_pool.start()
     TimerManager.addRepeatTimer(2, worker.heartbeat)
     app = QtWidgets.QApplication(sys.argv)
-    moskInfo = {
-        "ppit1": {
-            "main":[
-                ['a',111,17000,66,],
-                ['b',122,18000,33,'good']
-                ]
-            ,
-            "detail":[
-                ['long','a',600171, 'shbl', 111, 17000,'66%',],
-                ['short','b',600133, 'shbg', 111, 2300,'11%',]
-                ] 
-            },
-        "ppit2": {
-            "main":[
-                ['c',111,17000,66,],
-                ['d',122,18000,33,'good']]
-            ,
-            "detail":[
-                ['long','c',600171, 'shbl', 111, 17000,'66%',],
-                ['short','d',600133, 'shbg', 111, 2300,'11%',]
-            ]
-            }
-        }
+ 
     controllers = []
     newWindosws(moskInfo, controllers)
     sys.exit(app.exec_() & thread_pool.stop())
