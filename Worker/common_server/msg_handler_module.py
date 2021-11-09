@@ -69,4 +69,10 @@ class MsgHandler(Thread):
     
     @req()
     def syncData(self, msg: Message) -> None:
+        self.data_center.setState(0)
+        logger.info("sync message from Server %s", msg.kwargs)
+
+    @req()
+    def closeClient(self, msg: Message) -> None:
+        self.data_center.setState(-1)
         logger.info("sync message from Server %s", msg.kwargs)
