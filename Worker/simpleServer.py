@@ -34,17 +34,23 @@ def parseRpcMessage(method, targets, args, kwargs):
     return data
 
 class Controller(object):
-    def __init__(self, info: dict):
+    def __init__(self):
         self.logger = print
         self.windows = []
         self.details = []
-        self.info = info
+        self.info = {}
         self.data_center = DataCenter()
         pass
     
     def showMainWindows(self):
-        for i, v in self.info.items():
-            self.show_mainUi(i, v['main'], v['detail'])
+        while True:
+            state = self.data_center.getState()
+            if state == 1:
+                self.info = self.data_center.getData()
+                for i, v in self.info.items():
+                    if str(i).startswith("pbrc")
+                    self.show_mainUi(i, v['main'], v['detail'])
+                return    
         
     def show_mainUi(self, key, mainList, detailList):
         mainUi = MyMainForm(key, mainList)
@@ -229,30 +235,7 @@ if __name__ == "__main__":
     thread_pool.start()
     TimerManager.addRepeatTimer(2, worker.heartbeat)
     app = QtWidgets.QApplication(sys.argv)
-    moskInfo = {
-        "ppit1": {
-            "main":[
-                ['a',111,17000,66,],
-                ['b',122,18000,33,'good']
-                ]
-            ,
-            "detail":[
-                ['long','a',600171, 'shbl', 111, 17000,'66%',],
-                ['short','b',600133, 'shbg', 111, 2300,'11%',]
-                ] 
-            },
-        "ppit2": {
-            "main":[
-                ['c',111,17000,66,],
-                ['d',122,18000,33,'good']]
-            ,
-            "detail":[
-                ['long','c',600171, 'shbl', 111, 17000,'66%',],
-                ['short','d',600133, 'shbg', 111, 2300,'11%',]
-            ]
-            }
-        }
-    controller = Controller(moskInfo)
+    controller = Controller()
     controller.showMainWindows()
     sys.exit(app.exec_() & thread_pool.stop())
     

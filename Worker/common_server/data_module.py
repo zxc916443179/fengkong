@@ -67,6 +67,9 @@ class DataCenter(object):
 
     def setData(self, allList):
         self.allList = allList
+
+    def getData(self):
+        return self.allList
     
     def getMainDataByKey(self, key):
         return self.allList[key]['main']

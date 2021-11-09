@@ -118,7 +118,7 @@ class DataCenter(object):
         data = {}
         for key in self.risk_mgrs:
             data[key] = self.risk_mgrs[key].get_current_status2()
-        return data
+        return {'data': data}
     
     def __is_float(self, _s):
         try:
