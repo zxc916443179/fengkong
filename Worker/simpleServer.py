@@ -48,13 +48,12 @@ class Controller(object):
         
     def show_mainUi(self, key, mainList, detailList):
         mainUi = MyMainForm(key, mainList)
-        mainUi.switch_Detail.connect(lambda:self.show_detailUi(detailList))
+        mainUi.switch_Detail.connect(lambda:self.show_detailUi(key, detailList))
         mainUi.show()
-        TimerManager.addRepeatTimer(1.0, mainUi.update)
         self.windows.append(mainUi)
 
-    def show_detailUi(self, datailList):
-        detailUi = DetailWindow(datailList)
+    def show_detailUi(self, key, datailList):
+        detailUi = DetailWindow(key, datailList)
         self.details.append(detailUi)
         return detailUi.show()
     
@@ -78,25 +77,46 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
     switch_Detail = QtCore.pyqtSignal()
     def __init__(self, key, mainList):
         super(MyMainForm, self).__init__()
+        self.key = key
+        self.data_center = DataCenter()
         self.setupUi(self)
         self.setWindowTitle(key)
-        self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tableWidget.setRowCount(len(mainList))
         saveItem(mainList, QtWidgets.QTableWidgetItem, self)
         self.pushButton.clicked.connect(self.goDetail)
+        TimerManager.addRepeatTimer(1.0, self.update)
+
     def goDetail(self):
         self.switch_Detail.emit()
 
     def update(self):
+        state = self.data_center.getState()
+        if state == 1:
+            mainList = self.data_center.getMainDataByKey(self.key)
+            self.tableWidget.clearContents()
+            saveItem(mainList, QtWidgets.QTableWidgetItem, self)
         pass
 
 class DetailWindow(QtWidgets.QMainWindow, uiDetailWindow):
-    def __init__(self, detailList):
+    def __init__(self, key, detailList):
         super(DetailWindow, self).__init__()
+        self.key = key
+        self.data_center = DataCenter()
         self.setupUi(self)
-        self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tableWidget.setRowCount(len(detailList))
         saveItem(detailList, QtWidgets.QTableWidgetItem, self)
+        TimerManager.addRepeatTimer(1.0, self.update)
+
+    def update(self):
+        state = self.data_center.getState()
+        if state == 1:
+            detailList = self.data_center.getDetailDataByKey(self.key)
+            self.tableWidget.clearContents()
+            saveItem(detailList, QtWidgets.QTableWidgetItem, self)
+        pass
+
 
 class Worker(Thread):
     def __init__(self, config=None):

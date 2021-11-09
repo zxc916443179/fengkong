@@ -42,30 +42,34 @@ class DataCenter(object):
         self.res = None
 
         self.state = 0
-
-        self.mian_list = None
-        self.detail_list = None
+        self.config = None
+        self.allList = {}
         pass
 
-    def statusControl(nowState, newState):
+    def statusControl(self, nowState, newState):
         if nowState == 0 and newState != 0:
             return newState
         elif nowState == 1 and newState != 0:
             return newState
         elif nowState == -1 and newState != 0:
             return newState
+        else:
+            return -1
     
     def setState(self, state):
-        self.state = state
+        self.state = self.statusControl(self.state, state)
     
-    def getState(self, state):
+    def getState(self):
         return self.state
 
-    def setData(self, mockData, state, res, mian_list, detail_list):
-        self.mockData = mockData
-        self.res = res
-        self.main_list = main_list
-        self.detail_list = detail_list
+    def setConfig(self, conf):
+        self.config = conf
+
+    def setData(self, allList):
+        self.allList = allList
     
-    def getData(self):
-        return self.mockData, self.res, self.main_list, self.detail_list
+    def getMainDataByKey(self, key):
+        return self.allList[key]['main']
+
+    def getDetailDataByKey(self, key):
+        return self.allList[key]['detail']
