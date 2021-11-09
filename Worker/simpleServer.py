@@ -34,27 +34,37 @@ def parseRpcMessage(method, targets, args, kwargs):
     return data
 
 class Controller(object):
-    def __init__(self):
+    def __init__(self, info: dict):
         self.logger = print
+        self.windows = []
+        self.details = []
+        self.info = info
         self.data_center = DataCenter()
         pass
+    
+    def showMainWindows(self):
+        for i, v in self.info.items():
+            self.show_mainUi(i, v['main'], v['detail'])
         
     def show_mainUi(self, key, mainList, detailList):
-        self.mainUi = MyMainForm(key, mainList)
-        self.mainUi.switch_Detail.connect(lambda:self.show_detailUi(detailList))
-        self.mainUi.show()
-        TimerManager.addRepeatTimer(1.0, self.mainUi.update)
+        mainUi = MyMainForm(key, mainList)
+        mainUi.switch_Detail.connect(lambda:self.show_detailUi(detailList))
+        mainUi.show()
+        TimerManager.addRepeatTimer(1.0, mainUi.update)
+        self.windows.append(mainUi)
 
     def show_detailUi(self, datailList):
-        self.detailUi = DetailWindow(datailList)
-        return self.detailUi.show()
-
-def newWindosws(info, controllers: list):
-    keyList = info.keys()
-    for i in keyList:
-        controller = Controller() 
-        controller.show_mainUi(i, info[i]['main'], info[i]['detail'])
-        controllers.append(controller)
+        detailUi = DetailWindow(datailList)
+        self.details.append(detailUi)
+        return detailUi.show()
+    
+    def destroyAllWindows(self):
+        for detail in self.details:
+            detail.close()
+            del detail
+        for main in self.windows:
+            main.close()
+            del main
 
 def saveItem(data, QTableWidgetItem, formWindow):
     for i in range(len(data)):
@@ -199,8 +209,30 @@ if __name__ == "__main__":
     thread_pool.start()
     TimerManager.addRepeatTimer(2, worker.heartbeat)
     app = QtWidgets.QApplication(sys.argv)
- 
-    controllers = []
-    newWindosws(moskInfo, controllers)
+    moskInfo = {
+        "ppit1": {
+            "main":[
+                ['a',111,17000,66,],
+                ['b',122,18000,33,'good']
+                ]
+            ,
+            "detail":[
+                ['long','a',600171, 'shbl', 111, 17000,'66%',],
+                ['short','b',600133, 'shbg', 111, 2300,'11%',]
+                ] 
+            },
+        "ppit2": {
+            "main":[
+                ['c',111,17000,66,],
+                ['d',122,18000,33,'good']]
+            ,
+            "detail":[
+                ['long','c',600171, 'shbl', 111, 17000,'66%',],
+                ['short','d',600133, 'shbg', 111, 2300,'11%',]
+            ]
+            }
+        }
+    controller = Controller(moskInfo)
+    controller.showMainWindows()
     sys.exit(app.exec_() & thread_pool.stop())
     

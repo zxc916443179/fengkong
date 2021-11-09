@@ -253,9 +253,10 @@ class RiskManager(object):
                     i[-1] = '***'
 
                 #判断是否跳过零头股显示
-                if not self.lingtougu_flag and b[loc] < 100:
-                    loc += 1
-                    continue
+                # 服务端不跳过，交给客户端判断
+                # if not self.lingtougu_flag and b[loc] < 100:
+                #     loc += 1
+                #     continue
                 loc += 1
                 res_status.append(i)
                 #printrows += str(i) + '\n'
@@ -319,7 +320,7 @@ class RiskManager(object):
 
         #返回浮动盈亏状况以及盈亏状况
         #return printrows, res, res_status
-        return res, res_status
+        return {'main': res, 'detail': res_status}
 
     def get_current_status3(self):
         detail_list = []
