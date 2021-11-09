@@ -590,5 +590,5 @@ class RiskManager(object):
                 vol = vol + np.sum(buy_vol) + np.sum(sell_vol)
                 money = money + np.sum(sell_price*sell_vol) + np.sum(buy_price*buy_vol)
 
-            profits.append([self.names_dic[Human], int(profit)])
+            profits.append([self.names_dic[Human], int(profit), int(vol)])
         return profits
