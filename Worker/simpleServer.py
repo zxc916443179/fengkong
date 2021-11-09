@@ -48,7 +48,6 @@ class Controller(object):
             if state == 1:
                 self.info = self.data_center.getData()
                 for i, v in self.info.items():
-                    if str(i).startswith("pbrc")
                     self.show_mainUi(i, v['main'], v['detail'])
                 return    
         
