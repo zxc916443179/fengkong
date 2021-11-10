@@ -10,7 +10,6 @@ class DetailWindow(QtWidgets.QMainWindow, uiDetailWindow):
         self.key = key
         self.data_center = DataCenter()
         self.setupUi(self)
-        self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tableWidget.setRowCount(len(detailList))
         saveItem(detailList, QtWidgets.QTableWidgetItem, self)
         TimerManager.addRepeatTimer(1.0, self.update)

@@ -12,7 +12,6 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
         self.data_center = DataCenter()
         self.setupUi(self)
         self.setWindowTitle(key)
-        self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tableWidget.setRowCount(len(mainList))
         saveItem(mainList, QtWidgets.QTableWidgetItem, self)
         self.pushButton.clicked.connect(self.goDetail)

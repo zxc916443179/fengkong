@@ -14,11 +14,15 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class uiWidgetWindow(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(634, 733)
+        Dialog.setFixedWidth(645)
+        Dialog.setMinimumHeight(730)
         self.pushButton = QtWidgets.QPushButton(Dialog)
         self.pushButton.setGeometry(QtCore.QRect(0, 690, 631, 41))
         self.pushButton.setObjectName("pushButton")
         self.tableWidget = QtWidgets.QTableWidget(Dialog)
+        self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.tableWidget.horizontalHeader().setStyleSheet("QHeaderView::section{background:skyblue;color: black;}")
+        self.tableWidget.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
         self.tableWidget.setGeometry(QtCore.QRect(0, 0, 631, 681))
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(5)

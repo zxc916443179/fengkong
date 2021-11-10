@@ -14,12 +14,16 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class uiDetailWindow(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1047, 678)
+        Form.setFixedWidth(1020)
+        Form.setMinimumHeight(500)
         self.tableWidget = QtWidgets.QTableWidget(Form)
         self.tableWidget.setGeometry(QtCore.QRect(0, 0, 1051, 681))
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(8)
         self.tableWidget.setRowCount(0)
+        self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.tableWidget.horizontalHeader().setStyleSheet("QHeaderView::section{background:skyblue;color: black;}")
+        self.tableWidget.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Fixed)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
