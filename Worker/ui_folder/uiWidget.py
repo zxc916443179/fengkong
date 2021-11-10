@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class uiWidgetWindow(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.setFixedWidth(645)
+        Dialog.setFixedWidth(630)
         Dialog.setMinimumHeight(730)
         self.pushButton = QtWidgets.QPushButton(Dialog)
         self.pushButton.setGeometry(QtCore.QRect(0, 690, 631, 41))
