@@ -49,7 +49,6 @@ class SimpleServer(object):
         return
 
     def syncData(self):
-        self.logger.debug("send data to client")
         self.rpc_queue.push_msg(0, RpcMessage("syncData", self.data_center.getClientList(), [], self.data_center.getData()))
 
     def tick(self, tick_time=0.02):

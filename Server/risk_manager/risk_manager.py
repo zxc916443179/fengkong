@@ -148,7 +148,7 @@ class RiskManager(object):
         #        stack_stock[Human].append(res)
         #    stack_stock[Human] = np.array(stack_stock[Human])
 
-    def get_current_status(self):
+    def get_current_status(self) -> list[list]:
         '''
         --------
             获取当前股票未平仓位浮动盈亏
@@ -228,12 +228,13 @@ class RiskManager(object):
         temp = np.array(res)
         res_status = []
         try:
-            a, b, c = temp[:, 4], temp[:, 6], temp[:, 7]
-            a = np.array(a, dtype=float)
-            b = np.array(b, dtype=float)
-            c = np.array(c, dtype=float)
+            a, b, c, d = temp[:, 4], temp[:, 6], temp[:, 7], temp[:, 5]
+            a = np.array(a, dtype=float)  # 成本价
+            b = np.array(b, dtype=float)  # 仓位
+            c = np.array(c, dtype=float)  # 收益率
+            d = np.array(d, dtype=float)  # 现价
             kuisun = np.array(a*b*c, dtype=int)
-            #status数据结构[仓位方向，交易员，证券代码，证券名称，浮动盈亏]
+            #status数据结构[仓位方向，交易员，证券代码，证券名称，浮动盈亏，状态，持仓市值]
             status = np.column_stack((temp[:, :4], kuisun)).tolist()
 
             loc = 0
@@ -245,13 +246,14 @@ class RiskManager(object):
                 i.append(str(int(c[loc] * 10000) / 100) + '%')
 
                 #判断是否爆仓
+                i.append(' ')
                 if loss<(-100):
-                    i.append('*')
+                    i[-1] = '*'
                 if loss<(-500):
                     i[-1] = '**'
                 if loss<(-1000):
                     i[-1] = '***'
-
+                i.append(int(b * d) // 10000)  # 持仓市值
                 #判断是否跳过零头股显示
                 # 服务端不跳过，交给客户端判断
                 # if not self.lingtougu_flag and b[loc] < 100:
@@ -299,14 +301,14 @@ class RiskManager(object):
             else:
                 #logging.warning("没有找到[%s,%s]的 stop 的配置！" % (account_id, name))
                 self.loss[name] = [1000, 3000, 5000]
-
-            i.append(self.loss[i[0]][2])
+            i.insert(len(i) - 1, self.loss[i[0]][2])  # 市值在最后一列
+            i.insert(len(i) - 1, ' ')
             if i[1]<self.loss[i[0]][0]*(-1):
-                i.append('*')
+                i[-2] = '*'
             if i[1]<self.loss[i[0]][1]*(-1):
-                i[-1] = '**'
+                i[-2] = '**'
             if i[1]<self.loss[i[0]][2]*(-1):
-                i[-1] = '***'
+                i[-2] = '***'
 
             #printrows += str(i) + '\n'
         #printrows += str(['总计', total]) + '\n'
@@ -503,7 +505,7 @@ class RiskManager(object):
 
         return res
 
-    def total(self, res):
+    def total(self, res) -> list[list]:
         '''
         --------
             获取当前交易员累计盈亏
@@ -516,6 +518,7 @@ class RiskManager(object):
             profit = 0 #累计盈亏
             vol = 0 #累计成交量
             money = 0 #累计成交额
+            unbalanced = 0 # 未平仓位市值
             for code in self.dic[Human]:
                 #统计委托
                 loc1 = data['Code']==code
@@ -581,6 +584,7 @@ class RiskManager(object):
                 #判断该股票是否有未平仓位
                 for i in res:
                     if str(i[2]).zfill(6) == code and i[1] == self.names_dic[Human]:
+                        unbalanced += float(i[5])*float(i[6])
                         if i[0] == 'long':
                             profit = profit + float(i[5])*float(i[6])
                         else:
@@ -590,5 +594,5 @@ class RiskManager(object):
                 vol = vol + np.sum(buy_vol) + np.sum(sell_vol)
                 money = money + np.sum(sell_price*sell_vol) + np.sum(buy_price*buy_vol)
 
-            profits.append([self.names_dic[Human], int(profit), int(vol)])
+            profits.append([self.names_dic[Human], int(profit), int(vol), int(unbalanced // 10000)])
         return profits
