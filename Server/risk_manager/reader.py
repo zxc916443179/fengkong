@@ -92,9 +92,7 @@ class Reader(object):
         #    save_loc.append(val in account_list)
         total_save_loc = np.logical_and(total_save_loc, save_loc)
 
-        self.logger.debug("df size before reassembe: %d" % len(df))
         df = df.loc[total_save_loc, :]
-        self.logger.debug("df size after reassembe: %d" % len(df))
 
         loc = df.WTFX == 1
         df.loc[loc, 'WTFX'] = '买入'
@@ -129,5 +127,4 @@ class Reader(object):
         for record in DBF(filepath, recfactory=dict):
             count += 1
             result[record['CJXH']] = record
-        self.logger.debug("There are %s rows in dbf and %s unique rows in dbf" % (count, len(result.keys())))
         return result

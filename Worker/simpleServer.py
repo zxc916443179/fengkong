@@ -6,7 +6,7 @@ import time
 from threading import Thread
 from typing import Dict, List
 
-from PyQt5 import QtCore, QtWidgets
+from PyQt5 import QtWidgets
 
 from common import conf
 from common.message_queue_module import Message, MsgQueue
@@ -15,9 +15,7 @@ from common_server.data_module import DataCenter
 from common_server.thread_pool_module import ThreadPool
 from common_server.timer import TimerManager
 from network.netStream import NetStream
-from ui_folder.uiDetailPage import uiDetailWindow
-from ui_folder.uiWidget import uiWidgetWindow
-
+from Controller import Controller
 
 def parseRpcMessage(method, targets, args, kwargs):
     # type: (str, List[int], List[object], Dict) -> Dict
@@ -32,95 +30,6 @@ def parseRpcMessage(method, targets, args, kwargs):
         "kwargs": kwargs
     }
     return data
-
-class Controller(object):
-    def __init__(self):
-        self.logger = print
-        self.windows = []
-        self.details = []
-        self.info = {}
-        self.data_center = DataCenter()
-        pass
-    
-    def showMainWindows(self):
-        while True:
-            state = self.data_center.getState()
-            if state == 1:
-                self.info = self.data_center.getData()
-                for i, v in self.info.items():
-                    self.show_mainUi(i, v['main'], v['detail'])
-                return    
-        
-    def show_mainUi(self, key, mainList, detailList):
-        mainUi = MyMainForm(key, mainList)
-        mainUi.switch_Detail.connect(lambda:self.show_detailUi(key, detailList))
-        mainUi.show()
-        self.windows.append(mainUi)
-
-    def show_detailUi(self, key, datailList):
-        detailUi = DetailWindow(key, datailList)
-        self.details.append(detailUi)
-        return detailUi.show()
-    
-    def destroyAllWindows(self):
-        for detail in self.details:
-            detail.close()
-            del detail
-        for main in self.windows:
-            main.close()
-            del main
-
-def saveItem(data, QTableWidgetItem, formWindow):
-    for i in range(len(data)):
-        for j in range(len(data[i])):
-            if data[i][j] != None:
-                save=str(data[i][j])
-                newItem = QTableWidgetItem(save)
-                formWindow.tableWidget.setItem(i,j,newItem)
-
-class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
-    switch_Detail = QtCore.pyqtSignal()
-    def __init__(self, key, mainList):
-        super(MyMainForm, self).__init__()
-        self.key = key
-        self.data_center = DataCenter()
-        self.setupUi(self)
-        self.setWindowTitle(key)
-        self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
-        self.tableWidget.setRowCount(len(mainList))
-        saveItem(mainList, QtWidgets.QTableWidgetItem, self)
-        self.pushButton.clicked.connect(self.goDetail)
-        TimerManager.addRepeatTimer(1.0, self.update)
-
-    def goDetail(self):
-        self.switch_Detail.emit()
-
-    def update(self):
-        state = self.data_center.getState()
-        if state == 1:
-            mainList = self.data_center.getMainDataByKey(self.key)
-            self.tableWidget.clearContents()
-            saveItem(mainList, QtWidgets.QTableWidgetItem, self)
-        pass
-
-class DetailWindow(QtWidgets.QMainWindow, uiDetailWindow):
-    def __init__(self, key, detailList):
-        super(DetailWindow, self).__init__()
-        self.key = key
-        self.data_center = DataCenter()
-        self.setupUi(self)
-        self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
-        self.tableWidget.setRowCount(len(detailList))
-        saveItem(detailList, QtWidgets.QTableWidgetItem, self)
-        TimerManager.addRepeatTimer(1.0, self.update)
-
-    def update(self):
-        state = self.data_center.getState()
-        if state == 1:
-            detailList = self.data_center.getDetailDataByKey(self.key)
-            self.tableWidget.clearContents()
-            saveItem(detailList, QtWidgets.QTableWidgetItem, self)
-        pass
 
 
 class Worker(Thread):
