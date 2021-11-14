@@ -89,7 +89,7 @@ class NetStream(object):
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.sock.setblocking(False)
         self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
-        self.sock.connect_ex((address, port))
+        self.sock.connect_ex((address, int(port)))
         self.state = conf.NET_STATE_CONNECTING
         self.send_buf = []
         self.recv_buf = []

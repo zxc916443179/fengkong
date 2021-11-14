@@ -10,14 +10,24 @@ class DetailWindow(QtWidgets.QMainWindow, uiDetailWindow):
         self.key = key
         self.data_center = DataCenter()
         self.setupUi(self)
+        self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tableWidget.setRowCount(len(detailList))
         saveItem(detailList, QtWidgets.QTableWidgetItem, self)
         TimerManager.addRepeatTimer(1.0, self.update)
+        self.showLingtou = False
+        self.checkBox.stateChanged.connect(self.onLingtouChecked)
 
     def update(self):
         state = self.data_center.getState()
         if state == 1:
             detailList = self.data_center.getDetailDataByKey(self.key)
             self.tableWidget.clearContents()
+            if not self.showLingtou:
+                detailList = [i for i in detailList if i[5] >= 100]
             saveItem(detailList, QtWidgets.QTableWidgetItem, self)
+        elif state == -1:
+            self.close()
         pass
+    
+    def onLingtouChecked(self):
+        self.showLingtou = True if self.checkBox.isChecked() else False
