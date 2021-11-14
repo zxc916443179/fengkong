@@ -1,50 +1,18 @@
-import json
-
+import configparser
 from common.common_library_module import Singleton
-from setting import keyType
-from common_server.timer import TimerManager
 import logging
-from typing import TYPE_CHECKING, List, Union, Dict
-import numpy as np
 
-if TYPE_CHECKING:
-    from argparse import Namespace
 logger = logging.getLogger()
 
 
 @Singleton
 class DataCenter(object):
     def __init__(self):
-        self.mockData = {
-        "ppit1": {
-            "main":[
-                ['a',111,17000,66,],
-                ['b',122,18000,33,'good']
-                ]
-            ,
-            "detail":[
-                ['long','a',600171, 'shbl', 111, 17000,'66%',],
-                ['short','b',600133, 'shbg', 111, 2300,'11%',]
-                ] 
-            },
-        "ppit2": {
-            "main":[
-                ['c',111,17000,66,],
-                ['d',122,18000,33,'good']]
-            ,
-            "detail":[
-                ['long','c',600171, 'shbl', 111, 17000,'66%',],
-                ['short','d',600133, 'shbg', 111, 2300,'11%',]
-            ]
-            }
-        }
-
-        self.res = None
-
         self.state = 0
         self.config = None
         self.allList = {}
-        pass
+        self.cf: configparser.ConfigParser = None
+        self.is_main = 0 # 是否是主客户端
 
     def statusControl(self, nowState, newState):
         if nowState == 0 and newState != 0:
@@ -64,6 +32,29 @@ class DataCenter(object):
 
     def setConfig(self, conf):
         self.config = conf
+        self.readConfigFile()
+        self.is_main = self.getCfgValue("client", "is_main")
+    
+    def getCfgValue(self, section: str, key: str, default: any = None):
+        value = None
+        try:
+            value = self.cf.get(section, key)
+        except:
+            value = default
+        if value is None:
+            value = default
+        if self.__is_float(value):
+            return float(value)
+        return value
+    
+    def readConfigFile(self):
+        import codecs
+        if self.config.config_file:
+            logger.info("read config file from %s", self.config.config_file)
+            self.cf = configparser.ConfigParser()
+            with codecs.open(self.config.config_file, 'r', encoding="utf-8") as f:
+                self.cf.readfp(f)
+
 
     def setData(self, allList):
         self.allList = allList
@@ -76,3 +67,10 @@ class DataCenter(object):
 
     def getDetailDataByKey(self, key):
         return self.allList[key]['detail']
+
+    def __is_float(self, _s):
+        try:
+            float(str(_s))
+            return True
+        except:
+            return False

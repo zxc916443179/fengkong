@@ -131,4 +131,3 @@ class DataCenter(object):
         self.checkZombieClient()
         for risk_mgr in self.risk_mgrs.values():
             risk_mgr.renew_status()
-            print(self.getData())

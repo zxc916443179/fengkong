@@ -37,17 +37,18 @@ class Worker(Thread):
         super(Worker, self).__init__()
         # type: (argparse.Namespace) -> None
         self.config = config
+        
+        self.data_center = DataCenter()
+        self.data_center.setConfig(config)
         self.retry_times = 10
         self.netstream = NetStream()
-        self.netstream.connect(config.ip, config.port)
+        self.netstream.connect(self.data_center.getCfgValue("client", "ip"), self.data_center.getCfgValue("client", "port"))
         self.logger = logging.getLogger(__name__)
         self.queue = []  # type: List
         self.state = 0
         self.max_consume = 10
         self.message_queue = MsgQueue()
         self.rpc_queue = RpcQueue()
-        self.data_center = DataCenter()
-        self.data_center.setConfig(config)
 
     def run(self):
         try:
@@ -108,10 +109,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--debug", action="store_true", help="enable debug mode")
     parser.add_argument("--verbose", "-v", action="store_true", help="enable verbose mode")
-    parser.add_argument("--show_map", "-sm", action="store_true", help="enable debug map mode")
-    parser.add_argument("--ip", default="127.0.0.1", type=str)
-    parser.add_argument("--port", default=8888, type=int)
-    parser.add_argument("--worker_id", default=0, type=int)
+    parser.add_argument("--config_file", default="conf/setting.ini", type=str)
+    parser.add_argument("--worker_id", default=0)
     arguments = parser.parse_args()
 
     if not os.path.exists("logs/log_%d" % arguments.worker_id):
