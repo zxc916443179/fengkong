@@ -16,12 +16,12 @@ class Controller(object):
             state = self.data_center.getState()
             if state == 1:
                 self.info = self.data_center.getData()
-                for i, v in self.info.items():
-                    self.show_mainUi(i, v['main'], v['detail'])
+                for index, (i, v) in enumerate(self.info.items()):
+                    self.show_mainUi(i, v['main'], v['detail'], index=index)
                 return    
         
-    def show_mainUi(self, key, mainList, detailList):
-        mainUi = MyMainForm(key, mainList)
+    def show_mainUi(self, key, mainList, detailList, index=0):
+        mainUi = MyMainForm(key, mainList, index=index)
         mainUi.switch_Detail.connect(lambda:self.show_detailUi(key, detailList))
         mainUi.show()
         self.windows.append(mainUi)

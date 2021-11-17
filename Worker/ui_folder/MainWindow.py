@@ -8,12 +8,12 @@ from ui_folder import saveItem, musicPlay
 class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
     switch_Detail = QtCore.pyqtSignal()
     warn_signal = QtCore.pyqtSignal()
-    def __init__(self, key, mainList):
+    def __init__(self, key, mainList, index=0):
         super(MyMainForm, self).__init__()
         self.key = key
         self.data_center = DataCenter()
         self.isWarned = False
-        self.setupUi(self)
+        self.setupUi(self, index)
         self.setWindowTitle(key)
         self.msgQueue = MsgQueue()
         self.tableWidget.setRowCount(len(mainList))
