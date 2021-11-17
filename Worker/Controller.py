@@ -30,7 +30,7 @@ class Controller(object):
         detailUi = DetailWindow(key, datailList)
         self.details.append(detailUi)
         return detailUi.show()
-    
+
     def destroyAllWindows(self):
         for detail in self.details:
             detail.close()

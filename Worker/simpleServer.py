@@ -112,7 +112,8 @@ if __name__ == "__main__":
     parser.add_argument("--config_file", default="conf/setting.ini", type=str)
     parser.add_argument("--worker_id", default=0)
     arguments = parser.parse_args()
-
+    if not os.path.exists("logs"):
+        os.mkdir("logs")
     if not os.path.exists("logs/log_%d" % arguments.worker_id):
         os.mkdir("logs/log_%d" % arguments.worker_id)
     else:
