@@ -20,6 +20,7 @@ class uiDetailWindow(object):
         self.checkBox.setGeometry(QtCore.QRect(0, 690, 631, 41))
         self.checkBox.setObjectName("checkBoxButton")
         self.checkBox.setText("零头股")
+        self.checkBox.setChecked(True)
         self.tableWidget = QtWidgets.QTableWidget(Form)
         self.tableWidget.setGeometry(QtCore.QRect(0, 0, 1051, 681))
         self.tableWidget.setObjectName("tableWidget")
