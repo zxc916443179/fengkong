@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class uiWidgetWindow(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.setFixedWidth(630)
+        Dialog.setMinimumWidth(630)
         Dialog.setMinimumHeight(730)
         self.pushButton = QtWidgets.QPushButton(Dialog)
         self.pushButton.setGeometry(QtCore.QRect(0, 690, 631, 41))
@@ -25,7 +25,7 @@ class uiWidgetWindow(object):
         self.tableWidget.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
         self.tableWidget.setGeometry(QtCore.QRect(0, 0, 631, 681))
         self.tableWidget.setObjectName("tableWidget")
-        self.tableWidget.setColumnCount(5)
+        self.tableWidget.setColumnCount(6)
         self.tableWidget.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(0, item)
@@ -37,6 +37,8 @@ class uiWidgetWindow(object):
         self.tableWidget.setHorizontalHeaderItem(3, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(4, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(5, item)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -55,6 +57,8 @@ class uiWidgetWindow(object):
         item.setText(_translate("Dialog", "成交量"))
         item = self.tableWidget.horizontalHeaderItem(4)
         item.setText(_translate("Dialog", "状态"))
+        item = self.tableWidget.horizontalHeaderItem(5)
+        item.setText(_translate("Dialog", "持仓市值"))
 
 
 if __name__ == "__main__":
