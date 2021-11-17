@@ -7,6 +7,7 @@ from ui_folder import saveItem, musicPlay
 
 class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
     switch_Detail = QtCore.pyqtSignal()
+    warn_signal = QtCore.pyqtSignal()
     def __init__(self, key, mainList):
         super(MyMainForm, self).__init__()
         self.key = key
@@ -18,7 +19,16 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
         self.tableWidget.setRowCount(len(mainList))
         # saveItem(mainList, QtWidgets.QTableWidgetItem, self)
         self.pushButton.clicked.connect(self.goDetail)
+        self.warn_signal.connect(lambda:self.onEmitWarnWindow())
+        self.warnLevel = 0
+        self.musicPath = None
         TimerManager.addRepeatTimer(1.0, self.update)
+
+    def onEmitWarnWindow(self):
+        if self.musicPath is not None:
+            musicPlay(self.musicPath)
+        QtWidgets.QMessageBox.about(self, self.key, "警告" if self.warnLevel == 1 else "报警")
+        pass
 
     def goDetail(self):
         self.switch_Detail.emit()
@@ -48,10 +58,12 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
     def showWarnWindow(self, warnLevel: int, musicPath = None) -> None:
         if warnLevel == 0:
             self.isWarned = False
+            self.musicPath = None
             return
         if not self.isWarned:
             self.isWarned = True
-            QtCore.QThread(QtWidgets.QMessageBox.warning(None, self.key, "警告" if warnLevel == 1 else "报警")).start()
+            self.warnLevel = warnLevel
             if musicPath:
-                musicPlay(musicPath)
+                self.musicPath = musicPath
+            self.warn_signal.emit()
         
