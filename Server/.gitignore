@@ -5,3 +5,5 @@
 */**/*.pyc
 *.cpython-39.pyc
 **/__pycache__
+dist
+build
