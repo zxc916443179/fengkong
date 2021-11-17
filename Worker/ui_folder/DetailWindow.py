@@ -14,7 +14,7 @@ class DetailWindow(QtWidgets.QMainWindow, uiDetailWindow):
         self.tableWidget.setRowCount(len(detailList))
         saveItem(detailList, QtWidgets.QTableWidgetItem, self)
         TimerManager.addRepeatTimer(1.0, self.update)
-        self.showLingtou = False
+        self.showLingtou = True
         self.checkBox.stateChanged.connect(self.onLingtouChecked)
 
     def update(self):
@@ -22,8 +22,12 @@ class DetailWindow(QtWidgets.QMainWindow, uiDetailWindow):
         if state == 1:
             detailList = self.data_center.getDetailDataByKey(self.key)
             self.tableWidget.clearContents()
-            if not self.showLingtou:
-                detailList = [i for i in detailList if i[5] >= 100]
+            if detailList[0] != 'no stock': 
+                if not self.showLingtou:
+                    detailList = [i for i in detailList if i[5] >= 100]
+            else: detailList = []
+            if len(detailList) == 0: 
+                detailList = 'no stock'
             saveItem(detailList, QtWidgets.QTableWidgetItem, self)
         elif state == -1:
             self.close()
