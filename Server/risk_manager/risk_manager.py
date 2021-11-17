@@ -309,7 +309,7 @@ class RiskManager(object):
                 i[-2] = '**'
             if i[1]<self.loss[i[0]][2]*(-1):
                 i[-2] = '***'
-
+            i[2], i[3] = i[3], i[2]
             #printrows += str(i) + '\n'
         #printrows += str(['总计', total]) + '\n'
         res.append(['总计', total])
