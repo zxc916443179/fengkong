@@ -60,7 +60,7 @@ class MsgHandler(Thread):
 
     @req()
     def heartBeat(self, msg: Message) -> None:
-        logger.info("heart beat from client")
+        logger.debug("heart beat from client")
     
     @req()
     def closeClient(self, msg: Message) -> None:
