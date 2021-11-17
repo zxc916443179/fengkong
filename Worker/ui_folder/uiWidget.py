@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class uiWidgetWindow(object):
     def setupUi(self, Dialog, index=0):
         Dialog.setObjectName("Dialog")
-        Dialog.setGeometry(QtCore.QRect(index * 80, index * 200, 500, 700))
+        Dialog.setGeometry(QtCore.QRect(index * 200, index * 80, 500, 700))
         self.centralwidget = QtWidgets.QWidget(Dialog)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
