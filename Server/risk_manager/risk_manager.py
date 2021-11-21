@@ -253,7 +253,7 @@ class RiskManager(object):
                     i[-1] = '**'
                 if loss<(-1000):
                     i[-1] = '***'
-                i.append(int(b * d) // 10000)  # 持仓市值
+                i.append(int(b[loc] * d[loc]) // 10000)  # 持仓市值
                 #判断是否跳过零头股显示
                 # 服务端不跳过，交给客户端判断
                 # if not self.lingtougu_flag and b[loc] < 100:
@@ -262,7 +262,8 @@ class RiskManager(object):
                 loc += 1
                 res_status.append(i)
                 #printrows += str(i) + '\n'
-        except:
+        except Exception as e:
+            self.logger.error(tb.format_exc())
             #printrows += 'no stock\n'
             res_status = ['no stock']
         #printrows += '-------------------------------------------------------------\n'
@@ -278,6 +279,7 @@ class RiskManager(object):
         #获取总统计
         res = self.total(res)
         profits = np.array(res)
+        total_deal = 0
         #print(res)
         if len(res) == 0:
             total = 0
@@ -310,9 +312,13 @@ class RiskManager(object):
             if i[1]<self.loss[i[0]][2]*(-1):
                 i[-2] = '***'
             i[2], i[3] = i[3], i[2]
+            total_deal += i[3]
+            i[3] /= 10000
+            i[3] = int(i[3])
             #printrows += str(i) + '\n'
         #printrows += str(['总计', total]) + '\n'
-        res.append(['总计', total])
+        total_deal /= 10000
+        res.append(['总计', total, ' ', int(total_deal)])
 
         #判断是否打印
         #if printable:

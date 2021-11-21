@@ -9,9 +9,7 @@ from common_server.thread_pool_module import ThreadPool
 from common_server.timer import TimerManager
 from gameEntity import GameEntity
 from network.simpleHost import SimpleHost
-from setting import keyType
 from typing import Dict
-from risk_manager.risk_manager import RiskManager
 import argparse
 
 
