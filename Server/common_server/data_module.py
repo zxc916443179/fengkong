@@ -1,6 +1,6 @@
 import configparser
 from common.common_library_module import Singleton
-from common.rpc_queue_module import RpcMessage
+from common.rpc_queue_module import RpcMessage, RpcQueue
 from risk_manager.risk_manager import RiskManager
 from setting import keyType
 from common_server.timer import TimerManager
@@ -38,6 +38,8 @@ class DataCenter(object):
         self.pf: configparser.ConfigParser = None
 
         self.risk_mgrs: dict[str, RiskManager] = {}
+        self.ticker = None
+        self.rpc_queue = RpcQueue()
 
     def readConfigFile(self):
         import codecs
@@ -69,6 +71,10 @@ class DataCenter(object):
         self.config = config
         self.readConfigFile()
         self.initPbrcsConfig()
+        self.ticker = TimerManager.addRepeatTimer(self.getCfgValue("server", "tick_time", 1.0), self.tick)
+        logger.info("初始化完毕，参数信息：")
+        logger.info(f"[手续费]={self.getCfgValue('server', 'trader_tax_rate')}, [印花税]={self.getCfgValue('server', 'stamp_tax_rate')}")
+        logger.info(f"[tick_time]={self.getCfgValue('server', 'tick_time')}")
 
     def initPbrcsConfig(self):
         pbrcs = self.pf.keys()
@@ -117,7 +123,11 @@ class DataCenter(object):
     def getData(self):
         data = {}
         for key in self.risk_mgrs:
-            data[key] = self.risk_mgrs[key].get_current_status2()
+            tmp1 = self.risk_mgrs[key].get_current_status2()
+            # tmp2, _ = self.risk_mgrs[key].get_current_status3()
+            # for i, human in enumerate(tmp2):
+            #     tmp1['main'][i][1] = human[1]
+            data[key] = tmp1
         return {'data': data}
     
     def __is_float(self, _s):
@@ -131,3 +141,4 @@ class DataCenter(object):
         self.checkZombieClient()
         for risk_mgr in self.risk_mgrs.values():
             risk_mgr.renew_status()
+        self.rpc_queue.push_msg(0, RpcMessage("syncData", self.getClientList(), [], self.getData()))

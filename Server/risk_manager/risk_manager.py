@@ -313,11 +313,8 @@ class RiskManager(object):
                 i[-2] = '***'
             i[2], i[3] = i[3], i[2]
             total_deal += i[3]
-            i[3] /= 10000
-            i[3] = int(i[3])
             #printrows += str(i) + '\n'
         #printrows += str(['总计', total]) + '\n'
-        total_deal /= 10000
         res.append(['总计', total, ' ', int(total_deal)])
 
         #判断是否打印
@@ -600,5 +597,5 @@ class RiskManager(object):
                 vol = vol + np.sum(buy_vol) + np.sum(sell_vol)
                 money = money + np.sum(sell_price*sell_vol) + np.sum(buy_price*buy_vol)
 
-            profits.append([self.names_dic[Human], int(profit), int(vol), int(unbalanced // 10000)])
+            profits.append([self.names_dic[Human], int(profit), int(money // 10000), int(unbalanced // 10000)])
         return profits

@@ -46,11 +46,7 @@ class SimpleServer(object):
 
         return
 
-    def syncData(self):
-        self.rpc_queue.push_msg(0, RpcMessage("syncData", self.data_center.getClientList(), [], self.data_center.getData()))
-
     def tick(self, tick_time=0.02):
-        self.data_center.tick()
         self.host.process()
         event, wparam, data = self.host.read()
         if event == conf.NET_CONNECTION_NEW:
@@ -118,7 +114,6 @@ if __name__ == "__main__":
     server.startup()
     thread_pool = ThreadPool()
     thread_pool.start()
-    TimerManager.addRepeatTimer(5.0, server.syncData)
     try:
         while 1:
             server.tick()
