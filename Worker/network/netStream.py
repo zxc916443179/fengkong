@@ -12,6 +12,10 @@ import struct
 import json
 from typing import TYPE_CHECKING
 import logging
+from time import sleep
+
+from common_server.data_module import DataCenter
+from setting.keyType import WORKER_STATE
 
 if TYPE_CHECKING:
     from gameEntity import GameEntity
@@ -78,7 +82,10 @@ class NetStream(object):
         self.conn = (errno.EISCONN, 10057, 10053)
         self.errc = 0
         self.hid = 0
-
+        self.retry_times = 10
+        self.address = None
+        self.port = None
+        self.data_center = DataCenter()
         return
 
     def status(self):
@@ -86,11 +93,31 @@ class NetStream(object):
 
     # connect the remote server
     def connect(self, address, port):
-        self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.sock.setblocking(False)
+        self.address = address
+        self.port = port
+        self.assign(socket.socket(socket.AF_INET, socket.SOCK_STREAM))
+        self.sock.setblocking(True)
         self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
-        self.sock.connect_ex((address, int(port)))
-        self.state = conf.NET_STATE_CONNECTING
+        self.sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
+        self.data_center.setState(WORKER_STATE.CONNECTING)
+        self.data_center.contorller.showWarnWindow()
+        while True:
+            try:
+                self.sock.connect((self.address, int(self.port)))
+                break
+            except Exception as e:
+                if self.retry_times <= 0:
+                    logger.error("无法连接服务器，请检查连接状态。")
+                    import os
+                    os._exit(-1)
+                logger.error(f"连接出错了，正在尝试重连，剩余尝试次数{self.retry_times}...")
+                self.retry_times -= 1
+                sleep(3)
+        logger.info("成功连接至服务器！")
+        self.data_center.contorller.closeWarnWindow()
+        self.sock.setblocking(False)
+        self.state = conf.NET_STATE_ESTABLISHED
+        self.retry_times = 10
         self.send_buf = []
         self.recv_buf = []
         self.errc = 0
@@ -139,7 +166,7 @@ class NetStream(object):
     # update
     def process(self):
         if self.state == conf.NET_STATE_STOP:
-            return 0
+            self.connect(self.address, self.port)
         if self.state == conf.NET_STATE_CONNECTING:
             self.__tryConnect()
         if self.state == conf.NET_STATE_ESTABLISHED:
@@ -155,7 +182,10 @@ class NetStream(object):
         if self.state != conf.NET_STATE_CONNECTING:
             return -1
         try:
-            self.sock.recv(0)
+            d = self.sock.recv(0)
+            print(d)
+        except Exception as e:
+            print(e)
         except socket.error as error:
             code, _ = error.errno, error.strerror
             if code in self.conn:
@@ -169,8 +199,8 @@ class NetStream(object):
             self.close()
             return -1
 
-        self.state = conf.NET_STATE_ESTABLISHED
-        logger.info("success connect to gate server")
+        # self.state = conf.NET_STATE_ESTABLISHED
+        # logger.info("success connect to gate server")
         return 1
 
     # append data into send_buf with a size header

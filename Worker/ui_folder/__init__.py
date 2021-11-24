@@ -6,6 +6,8 @@ from .MediaPlayer import MediaPlayer
 def saveItem(data, QTableWidgetItem, formWindow):
     from ui_folder.MainWindow import MyMainForm
     warnLevel = 0
+    formWindow.tableWidget.clearContents()
+    formWindow.tableWidget.setRowCount(len(data))
     if data == 'no stock': 
         formWindow.tableWidget.setItem(0, 0, QTableWidgetItem(str(data)))
     else: 

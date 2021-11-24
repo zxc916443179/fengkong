@@ -2,8 +2,9 @@ import configparser
 from common.common_library_module import Singleton
 import logging
 
-logger = logging.getLogger()
+from setting.keyType import WORKER_STATE
 
+logger = logging.getLogger()
 
 @Singleton
 class DataCenter(object):
@@ -13,19 +14,18 @@ class DataCenter(object):
         self.allList = {}
         self.cf: configparser.ConfigParser = None
         self.is_main = 0 # 是否是主客户端
+        self.contorller = None
+    
+    def regController(self, controller):
+        self.contorller = controller
 
     def statusControl(self, nowState, newState):
-        if nowState == 0 and newState != 0:
-            return newState
-        elif nowState == 1 and newState != 0:
-            return newState
-        elif nowState == -1 and newState != 0:
-            return newState
-        else:
-            return -1
+        if WORKER_STATE.checkCanStateTransmit(nowState, newState):
+            self.state = newState
+            logger.info(f"state transmit to {newState} from {nowState}")
     
     def setState(self, state):
-        self.state = self.statusControl(self.state, state)
+        self.statusControl(self.state, state)
     
     def getState(self):
         return self.state

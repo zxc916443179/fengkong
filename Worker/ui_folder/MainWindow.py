@@ -1,5 +1,6 @@
 from PyQt5 import QtGui, QtWidgets, QtCore
 from common.message_queue_module import Message, MsgQueue
+from setting.keyType import WORKER_STATE
 from ui_folder.uiWidget import uiWidgetWindow
 from common_server.data_module import DataCenter
 from common_server.timer import TimerManager
@@ -14,6 +15,7 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
         self.data_center = DataCenter()
         self.isWarned = False
         self.setupUi(self, index)
+        self.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)
         self.setWindowTitle(key)
         self.msgQueue = MsgQueue()
         self.tableWidget.setRowCount(len(mainList))
@@ -22,7 +24,7 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
         self.warn_signal.connect(lambda:self.onEmitWarnWindow())
         self.warnLevel = 0
         self.musicPath = None
-        TimerManager.addRepeatTimer(1.0, self.update)
+        TimerManager.addRepeatTimer(self.data_center.getCfgValue('client', 'tick_time', 1.0), self.update)
 
     def onEmitWarnWindow(self):
         if self.musicPath is not None:
@@ -35,11 +37,10 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
 
     def update(self):
         state = self.data_center.getState()
-        if state == 1:
+        if state == WORKER_STATE.RUNNING:
             mainList = self.data_center.getMainDataByKey(self.key)
-            self.tableWidget.clearContents()
             saveItem(mainList, QtWidgets.QTableWidgetItem, self)
-        elif state == -1:
+        elif state == WORKER_STATE.DISCONNECTED:
             self.close()
         pass
     

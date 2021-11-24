@@ -18,7 +18,7 @@ class uiDetailWindow(object):
         self.centralwidget = QtWidgets.QWidget(Form)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
-        self.verticalLayout.setContentsMargins(10, 10, 10, 10)
+        self.verticalLayout.setContentsMargins(3, 3, 3, 3)
         self.verticalLayout.setObjectName("verticalLayout")
         self.checkBox = QtWidgets.QCheckBox(self.centralwidget)
         # self.checkBox.setGeometry(QtCore.QRect(0, 690, 631, 41))

@@ -10,7 +10,7 @@ logger = logging.getLogger()
 class ThreadPool:
     def __init__(self):
         self.msg_queue = MsgQueue()
-        self.thread_pool = [MsgHandler() for _ in range(10)]
+        self.thread_pool = [MsgHandler() for _ in range(1)]
         
     def tick(self, tick_time=0.02):
         pass

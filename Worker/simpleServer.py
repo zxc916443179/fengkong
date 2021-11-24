@@ -85,7 +85,10 @@ class Worker(Thread):
                                             Message("closeClient", wparam, [], {}))
                 break
             elif code == conf.NET_CONNECTION_DATA:
-                info = json.loads(data)
+                try:
+                    info = json.loads(data)
+                except:
+                    continue
                 self.message_queue.push_msg(0,
                                             Message(info["method"], wparam, info["args"], info["kwargs"]))
 
@@ -137,13 +140,16 @@ if __name__ == "__main__":
     logger = logging.getLogger()
     if arguments.verbose:
         logger.addHandler(logging.StreamHandler())
-    worker = Worker(config=arguments)
-    worker.start()
-    thread_pool = ThreadPool()
-    thread_pool.start()
-    TimerManager.addRepeatTimer(2, worker.heartbeat)
+        
     app = QtWidgets.QApplication(sys.argv)
     controller = Controller()
+    worker = Worker(config=arguments)
+    worker.start()
+    
+    thread_pool = ThreadPool()
+    thread_pool.start()
+    
     controller.showMainWindows()
+    TimerManager.addRepeatTimer(10, worker.heartbeat)
     sys.exit(app.exec_() & thread_pool.stop())
     

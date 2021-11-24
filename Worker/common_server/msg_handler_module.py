@@ -7,6 +7,8 @@ from gameEntity import RPCError
 
 import logging
 
+from setting.keyType import WORKER_STATE
+
 logger = logging.getLogger()
 
 
@@ -69,10 +71,10 @@ class MsgHandler(Thread):
     
     @req()
     def syncData(self, msg: Message) -> None:
-        self.data_center.setState(1)
         self.data_center.setData(msg.kwargs['data'])
+        self.data_center.setState(WORKER_STATE.RUNNING)
         logger.debug("sync message from Server %s", msg.kwargs['data'])
 
     @req()
     def closeClient(self, msg: Message) -> None:
-        self.data_center.setState(-1)
+        self.data_center.setState(WORKER_STATE.DISCONNECTED)
