@@ -102,7 +102,7 @@ if __name__ == "__main__":
 
     LOG_FORMAT = "%(asctime)s - %(levelname)s[%(module)s/%(funcName)s(%(lineno)d)] - %(message)s"
     DATE_FORMAT = "%Y/%m/%d %H:%M:%S %p"
-    print(arguments.debug, arguments.verbose)
+    print(f"debug:{arguments.debug}, verbose:{arguments.verbose}")
     log_level = logging.DEBUG if arguments.debug else logging.INFO
 
     logging.basicConfig(filename='log/debug%s.log' % time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime()), filemode="w",

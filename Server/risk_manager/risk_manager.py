@@ -263,7 +263,10 @@ class RiskManager(object):
                 res_status.append(i)
                 #printrows += str(i) + '\n'
         except Exception as e:
-            self.logger.error(tb.format_exc())
+            if len(temp) == 0:
+                self.logger.info(f"未获取到股票交易信息，请检查[{self.name}]是否正确配置")
+            else:
+                self.logger.error(tb.format_exc())
             #printrows += 'no stock\n'
             res_status = ['no stock']
         #printrows += '-------------------------------------------------------------\n'
@@ -315,7 +318,7 @@ class RiskManager(object):
             total_deal += i[3]
             #printrows += str(i) + '\n'
         #printrows += str(['总计', total]) + '\n'
-        res.append(['总计', total, ' ', int(total_deal)])
+        res.append(['总计', int(total), ' ', int(total_deal)])
 
         #判断是否打印
         #if printable:

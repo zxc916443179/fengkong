@@ -90,6 +90,7 @@ class SimpleHost(object):
 
         self.sock.listen(conf.MAX_HOST_CLIENTS_INDEX + 1)
         self.sock.setblocking(False)
+        self.sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
         self.port = self.sock.getsockname()[1]
         self.state = conf.NET_STATE_ESTABLISHED
 

@@ -50,8 +50,12 @@ class RpcProxy(object):
         return getattr(self, name)
 
     def parse_rpc(self, data):
-        info = json.loads(data)
-        method = info.get('method', None)
+        try:
+            info = json.loads(data)
+            method = info.get('method', None)
+        except:
+            logger.error("parse json failed, pass")
+            return
 
         if method is None:
             return
