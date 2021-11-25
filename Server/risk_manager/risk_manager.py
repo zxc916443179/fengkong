@@ -63,7 +63,7 @@ class RiskManager(object):
             if name=='None' or name=='':
                 self.logger.warning("Name at idx[%s] is empty" % idx)
                 continue
-            self.logger.debug("(Account, Name, Stop): (%d, %s, %d) at %s" % (account, name, stop, idx))
+            # self.logger.debug("(Account, Name, Stop): (%d, %s, %d) at %s" % (account, name, stop, idx))
             self.humans.append(account)
             self.names_dic[account] = name
             self.loss[account] = stop
@@ -212,7 +212,7 @@ class RiskManager(object):
             更新委托文件数据
         --------
         '''
-        #self.renew_humans()
+        self.renew_humans()
         self.reader.run()
         self.data = self.provide_data()
         self.renew_stock_status()
@@ -265,8 +265,9 @@ class RiskManager(object):
         except Exception as e:
             if len(temp) == 0:
                 self.logger.info(f"未获取到股票交易信息，请检查[{self.name}]是否正确配置")
-            else:
-                self.logger.error(tb.format_exc())
+                self.logger.info(f"stocks:{self.stack_stock}")
+                self.logger.info(f"data:{self.data}")
+            self.logger.error(tb.format_exc())
             #printrows += 'no stock\n'
             res_status = ['no stock']
         #printrows += '-------------------------------------------------------------\n'
