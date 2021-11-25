@@ -151,5 +151,6 @@ if __name__ == "__main__":
     
     controller.showMainWindows()
     TimerManager.addRepeatTimer(10, worker.heartbeat)
-    sys.exit(app.exec_() & thread_pool.stop())
-    
+    code = app.exec_()
+    thread_pool.stop()
+    sys.exit(code)

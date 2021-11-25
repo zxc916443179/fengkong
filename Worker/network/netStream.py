@@ -100,7 +100,7 @@ class NetStream(object):
         self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
         self.sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
         self.data_center.setState(WORKER_STATE.CONNECTING)
-        self.data_center.contorller.showWarnWindow()
+        # self.data_center.contorller.showWarnWindow()
         while True:
             try:
                 self.sock.connect((self.address, int(self.port)))
@@ -114,7 +114,7 @@ class NetStream(object):
                 self.retry_times -= 1
                 sleep(3)
         logger.info("成功连接至服务器！")
-        self.data_center.contorller.closeWarnWindow()
+        # self.data_center.contorller.closeWarnWindow()
         self.sock.setblocking(False)
         self.state = conf.NET_STATE_ESTABLISHED
         self.retry_times = 10
@@ -167,8 +167,6 @@ class NetStream(object):
     def process(self):
         if self.state == conf.NET_STATE_STOP:
             self.connect(self.address, self.port)
-        if self.state == conf.NET_STATE_CONNECTING:
-            self.__tryConnect()
         if self.state == conf.NET_STATE_ESTABLISHED:
             self.__tryRecv()
         if self.state == conf.NET_STATE_ESTABLISHED:

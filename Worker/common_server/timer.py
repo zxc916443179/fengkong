@@ -93,14 +93,14 @@ class TimerManager(object):
 				heapq.heappush(TimerManager.tasks, call)
 				
 	@staticmethod
-	def cancel(timer):
+	def cancel(timer: CallLater):
 		if timer not in TimerManager.tasks:
 			return
 		
 		timer.cancel()
 		TimerManager.cancelled_num += 1
 		
-		if float(TimerManager.cancelled_num)/len(TimerManager.tasks) > 0.25:
+		if float(TimerManager.cancelled_num) / len(TimerManager.tasks) > 0.25:
 			TimerManager.removeCancelledTasks()
 		
 		return

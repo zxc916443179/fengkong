@@ -66,13 +66,3 @@ class uiWidgetWindow(object):
         item.setText(_translate("Dialog", "状态"))
         item = self.tableWidget.horizontalHeaderItem(5)
         item.setText(_translate("Dialog", "持仓市值"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Dialog = QtWidgets.QDialog()
-    ui = uiWidgetWindow()
-    ui.setupUi(Dialog)
-    Dialog.show()
-    sys.exit(app.exec_())

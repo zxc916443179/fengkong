@@ -24,7 +24,8 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
         self.warn_signal.connect(lambda:self.onEmitWarnWindow())
         self.warnLevel = 0
         self.musicPath = None
-        TimerManager.addRepeatTimer(self.data_center.getCfgValue('client', 'tick_time', 1.0), self.update)
+        self.timer = None
+        self.timer = TimerManager.addRepeatTimer(self.data_center.getCfgValue('client', 'tick_time', 1.0), self.update)
 
     def onEmitWarnWindow(self):
         if self.musicPath is not None:
@@ -51,7 +52,10 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
                                                QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No,
                                                QtWidgets.QMessageBox.No)
         if reply == QtWidgets.QMessageBox.Yes:
+            if self.timer:
+                TimerManager.cancel(self.timer)
             import os
+            print("exit")
             os._exit(0)
         else:
             event.ignore()

@@ -26,7 +26,6 @@ class Controller(object):
                 return    
         
     def show_mainUi(self, key, mainList, detailList, index=0):
-        print('show main ui')
         mainUi = MyMainForm(key, mainList, index=index)
         mainUi.switch_Detail.connect(lambda:self.show_detailUi(key, detailList))
         mainUi.show()
@@ -50,7 +49,6 @@ class Controller(object):
         self.warn_win_th.start()
 
     def closeWarnWindow(self):
-        print(self.warn_win_th)
         if self.warn_win_th:
             self.warn_win_th.stop()
 
@@ -69,9 +67,11 @@ class WarnWindow(Thread):
         self.warn_win.setStandardButtons(QtWidgets.QMessageBox.Ok)      # QMessageBox显示的按钮
     
     def run(self) -> None:
+        # self.warn_win.show()
         self.warn_win.exec_()
     
     def stop(self):
         if self.warn_win:
-            self.warn_win.button(QtWidgets.QMessageBox.Ok).animateClick()
+            print("stop th")
+            self.warn_win.close()
             self.warn_win = None
