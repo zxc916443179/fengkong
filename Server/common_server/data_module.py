@@ -123,7 +123,9 @@ class DataCenter(object):
     def getData(self):
         data = {}
         for key in self.risk_mgrs:
-            tmp1 = self.risk_mgrs[key].get_current_status2()
+            while self.risk_mgrs[key].status is None:
+                pass
+            tmp1 = self.risk_mgrs[key].status
             # tmp2, _ = self.risk_mgrs[key].get_current_status3()
             # for i, human in enumerate(tmp2):
             #     tmp1['main'][i][1] = human[1]
@@ -138,7 +140,9 @@ class DataCenter(object):
             return False
     
     def tick(self):
-        self.checkZombieClient()
         for risk_mgr in self.risk_mgrs.values():
             risk_mgr.renew_status()
+            risk_mgr.get_current_status2()
+    
+    def syncData(self):
         self.rpc_queue.push_msg(0, RpcMessage("syncData", self.getClientList(), [], self.getData()))

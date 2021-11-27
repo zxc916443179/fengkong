@@ -1,10 +1,12 @@
 import logging
+from threading import Thread
 import time
 
 from common import conf
 from common.message_queue_module import MsgQueue, Message
 from common.rpc_queue_module import RpcMessage, RpcQueue
 from common_server.data_module import DataCenter
+from common_server.share_module import TuShare
 from common_server.thread_pool_module import ThreadPool
 from common_server.timer import TimerManager
 from gameEntity import GameEntity
@@ -13,7 +15,7 @@ from typing import Dict
 import argparse
 
 
-class SimpleServer(object):
+class SimpleServer(Thread):
 
     def __init__(self, config=None):
         # type: (argparse.Namespace) -> None
@@ -45,6 +47,18 @@ class SimpleServer(object):
         self.data_center.regClient(eid)
 
         return
+
+    def run(self) -> None:
+        last_time = time.time()
+        while True:
+            try:
+                now = time.time()
+                self.tick()
+                if now - last_time > 1.0:
+                    last_time = now
+                    self.data_center.syncData()
+            except Exception as e:
+                self.logger.error("", exc_info=True)
 
     def tick(self, tick_time=0.02):
         self.host.process()
@@ -114,9 +128,11 @@ if __name__ == "__main__":
     server.startup()
     thread_pool = ThreadPool()
     thread_pool.start()
+    tushare_thread = TuShare()
+    tushare_thread.start()
+    server.start()
     try:
         while 1:
-            server.tick()
             TimerManager.scheduler()
     except KeyboardInterrupt:
         logger.error("", exc_info=True)

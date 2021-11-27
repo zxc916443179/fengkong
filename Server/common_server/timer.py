@@ -5,6 +5,13 @@ import time
 from functools import total_ordering
 
 
+def timeit(func, *args, **kwargs):
+	start_time = time.time()
+	res = func(*args, **kwargs)
+	print(f"exe func[{func.__name__}] time is {time.time() - start_time}")
+	return res
+
+
 @total_ordering
 class CallLater(object):
 	"""Calls a function at a later time.

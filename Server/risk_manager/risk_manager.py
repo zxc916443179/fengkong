@@ -1,14 +1,18 @@
 import logging
+from common_server.share_module import TuShare
+from common_server.timer import timeit
 from risk_manager.reader import Reader
 import pandas as pd
 import numpy as np
 import traceback as tb
 from risk_manager.calculator import Calculator
+from copy import deepcopy
 
 ts = None
 
 class RiskManager(object):
     def __init__(self, mid_dir, log_dir, final_csv_file, mid_csv_file, names_to_account, name, trader_tax_rate=0.0003, stamp_tax_rate=0.001) -> None:
+        self.tushare = TuShare()
         self.import_package()
         self.logger = logging.getLogger()
         self.names_to_account = names_to_account
@@ -28,6 +32,8 @@ class RiskManager(object):
         self.dic = {}               #人与管理股票列表
         self.stack_stock = None     #股票当日库存状态列表
         self.lingtougu_flag = True  #是否显示零头股
+        self.temp_data = None
+        self.status = None
 
         self.renew_humans()
         self.renew_status()
@@ -173,7 +179,16 @@ class RiskManager(object):
 
         #获取未平仓位实时行情
         # 这里能不能改成异步的
-        data = ts.get_realtime_quotes(current_codes)
+        success, data = self.tushare.getRealTimeQuotes(current_codes)
+        if not success:
+            self.logger.info("cannot get real time quotes")
+            if self.temp_data:
+                data = self.temp_data
+            else:
+                return []
+        else:
+            self.temp_data = deepcopy(data)
+        # data = ts.get_realtime_quotes(current_codes)
         temp = np.array(data['price'].values, dtype = float)
         loc = temp == 0
         temp[loc] = np.array(data['pre_close'].values, dtype = float)[loc]*1
@@ -212,7 +227,7 @@ class RiskManager(object):
             更新委托文件数据
         --------
         '''
-        self.renew_humans()
+        # self.renew_humans()
         self.reader.run()
         self.data = self.provide_data()
         self.renew_stock_status()
@@ -329,6 +344,7 @@ class RiskManager(object):
 
         #返回浮动盈亏状况以及盈亏状况
         #return printrows, res, res_status
+        self.status = {'main': res, 'detail': res_status}
         return {'main': res, 'detail': res_status}
 
     def get_current_status3(self):

@@ -122,9 +122,7 @@ class Reader(object):
         return df
 
     def transformDbfToCsv(self, filepath):
-        count = 0
         result = {}
         for record in DBF(filepath, recfactory=dict):
-            count += 1
             result[record['CJXH']] = record
         return result
