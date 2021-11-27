@@ -54,7 +54,7 @@ class Worker(Thread):
         try:
             while 1:
                 self.tick()
-        except (KeyboardInterrupt, SystemExit):
+        except Exception as e:
             logger.error("", exc_info=True)
 
     def tick(self, tick_time=0.02):
@@ -88,6 +88,7 @@ class Worker(Thread):
                 try:
                     info = json.loads(data)
                 except:
+                    self.logger.error("parse json failed, pass")
                     continue
                 self.message_queue.push_msg(0,
                                             Message(info["method"], wparam, info["args"], info["kwargs"]))
@@ -140,17 +141,19 @@ if __name__ == "__main__":
     logger = logging.getLogger()
     if arguments.verbose:
         logger.addHandler(logging.StreamHandler())
+    try:
+        app = QtWidgets.QApplication(sys.argv)
+        controller = Controller()
+        worker = Worker(config=arguments)
+        worker.start()
         
-    app = QtWidgets.QApplication(sys.argv)
-    controller = Controller()
-    worker = Worker(config=arguments)
-    worker.start()
-    
-    thread_pool = ThreadPool()
-    thread_pool.start()
-    
-    controller.showMainWindows()
-    TimerManager.addRepeatTimer(10, worker.heartbeat)
-    code = app.exec_()
-    thread_pool.stop()
-    sys.exit(code)
+        thread_pool = ThreadPool()
+        thread_pool.start()
+        
+        controller.showMainWindows()
+        TimerManager.addRepeatTimer(10, worker.heartbeat)
+        code = app.exec_()
+        thread_pool.stop()
+        sys.exit(code)
+    except Exception as e:
+        logger.error("", exc_info=True)

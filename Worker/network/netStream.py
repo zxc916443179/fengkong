@@ -167,6 +167,8 @@ class NetStream(object):
     def process(self):
         if self.state == conf.NET_STATE_STOP:
             self.connect(self.address, self.port)
+        if self.state == conf.NET_STATE_CONNECTING:
+            self.__tryConnect()
         if self.state == conf.NET_STATE_ESTABLISHED:
             self.__tryRecv()
         if self.state == conf.NET_STATE_ESTABLISHED:
