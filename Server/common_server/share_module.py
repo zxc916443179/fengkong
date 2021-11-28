@@ -66,8 +66,6 @@ class TuShare(Thread):
             self.shares[code] = None
 
     def getRealTimeQuotes(self, codes, time_out = 5) -> tuple[bool, DataFrame]:
-        if '000591' in codes:
-            self.logger.debug(f"{time.time()}: 000591 update")
         start_time = self.my_time
         codes_ = [c for c in codes]
         while 1:
