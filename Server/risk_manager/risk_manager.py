@@ -181,7 +181,7 @@ class RiskManager(object):
         # 这里能不能改成异步的
         success, data = self.tushare.getRealTimeQuotes(current_codes)
         if not success:
-            self.logger.info("cannot get real time quotes")
+            self.logger.debug("cannot get real time quotes")
             if self.temp_data:
                 data = self.temp_data
             else:
@@ -280,8 +280,8 @@ class RiskManager(object):
         except Exception as e:
             if len(temp) == 0:
                 self.logger.info(f"未获取到股票交易信息，请检查[{self.name}]是否正确配置")
-                self.logger.info(f"stocks:{self.stack_stock}")
-                self.logger.info(f"data:{self.data}")
+                self.logger.debug(f"stocks:{self.stack_stock}")
+                self.logger.debug(f"data:{self.data}")
             self.logger.error(tb.format_exc())
             #printrows += 'no stock\n'
             res_status = ['no stock']

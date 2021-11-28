@@ -33,13 +33,14 @@ class TuShare(Thread):
         remove_list = []
         for key, code in self.codes.items():
             if now - code['time'] > TIMEOUT:
-                code["expired"] = 1
-                self.logger.info(f"code[{key}] expired")
+                code["expired"] = True
+                self.logger.debug(f"code[{key}] expired")
                 remove_list.append(key)
         
         for key in remove_list:
-            self.codes.pop(key)
-            self.shares.pop(key)
+            if self.codes[key]['expired']:
+                self.codes.pop(key)
+                self.shares.pop(key)
     
     def run(self) -> None:
         while 1:
@@ -61,10 +62,12 @@ class TuShare(Thread):
     def checkAppendList(self):
         while not self.append_queue.empty():
             code = self.append_queue.get()
-            self.codes[code] = {'time': self.my_time, 'expired': 0}
+            self.codes[code] = {'time': self.my_time, 'expired': False}
             self.shares[code] = None
 
     def getRealTimeQuotes(self, codes, time_out = 5) -> tuple[bool, DataFrame]:
+        if '000591' in codes:
+            self.logger.debug(f"{time.time()}: 000591 update")
         start_time = self.my_time
         codes_ = [c for c in codes]
         while 1:
@@ -75,7 +78,7 @@ class TuShare(Thread):
             new_gather_indices = []
             for i, code in enumerate(codes_):
                 if code not in self.codes:
-                    self.logger.info(f"add gather code {code}")
+                    self.logger.debug(f"add gather code {code}")
                     self.append_queue.put(code)
                     new_gather_indices.append(i)
                     gathered = False
@@ -94,8 +97,7 @@ class TuShare(Thread):
             if gathered:
                 gather = DataFrame()
                 for i, ga in enumerate(gather_list):
-                    self.codes[code]['time'] = self.my_time
+                    self.codes[codes[i]]['expired'] = False
+                    self.codes[codes[i]]['time'] = self.my_time
                     gather.insert(i, codes[i], ga)
                 return True, gather.T
-
-
