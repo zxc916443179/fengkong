@@ -154,7 +154,7 @@ class RiskManager(object):
         #        stack_stock[Human].append(res)
         #    stack_stock[Human] = np.array(stack_stock[Human])
 
-    def get_current_status(self) -> list[list]:
+    def get_current_status(self):
         '''
         --------
             获取当前股票未平仓位浮动盈亏
@@ -317,7 +317,7 @@ class RiskManager(object):
             #如果没有停机位数据，则以1000, 3000, 5000代替
             if account_id in self.loss.keys():
                 tmp_loss = self.loss[account_id]
-                self.loss[name] = [tmp_loss / 3, tmp_loss * 2 / 3, tmp_loss]
+                self.loss[name] = [tmp_loss / 3, tmp_loss * 4 / 5, tmp_loss]
                 #logging.info("找到了[%s,%s]的 stop 的配置！" % (account_id, name))
             else:
                 #logging.warning("没有找到[%s,%s]的 stop 的配置！" % (account_id, name))
@@ -528,7 +528,7 @@ class RiskManager(object):
 
         return res
 
-    def total(self, res) -> list[list]:
+    def total(self, res):
         '''
         --------
             获取当前交易员累计盈亏

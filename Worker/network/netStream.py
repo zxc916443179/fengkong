@@ -107,10 +107,10 @@ class NetStream(object):
                 break
             except Exception as e:
                 if self.retry_times <= 0:
-                    logger.error("无法连接服务器，请检查连接状态。")
+                    logger.error("无法连接服务器，请检查连接状态。", exc_info=True)
                     import os
                     os._exit(-1)
-                logger.error(f"连接出错了，正在尝试重连，剩余尝试次数{self.retry_times}...")
+                logger.error(f"连接出错了，正在尝试重连，剩余尝试次数{self.retry_times}...", exc_info=True)
                 self.retry_times -= 1
                 sleep(3)
         logger.info("成功连接至服务器！")

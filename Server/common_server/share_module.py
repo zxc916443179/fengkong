@@ -65,7 +65,7 @@ class TuShare(Thread):
             self.codes[code] = {'time': self.my_time, 'expired': False}
             self.shares[code] = None
 
-    def getRealTimeQuotes(self, codes, time_out = 5) -> tuple[bool, DataFrame]:
+    def getRealTimeQuotes(self, codes, time_out = 5):
         start_time = self.my_time
         codes_ = [c for c in codes]
         while 1:
