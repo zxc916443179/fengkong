@@ -15,6 +15,11 @@ class DataCenter(object):
         self.cf: configparser.ConfigParser = None
         self.is_main = 0 # 是否是主客户端
         self.contorller = None
+        self.ifWarn = True
+        self.warnChangedEventsFunc = []
+    
+    def registerWarnChangedEvent(self, func):
+        self.warnChangedEventsFunc.append(func)
     
     def regController(self, controller):
         self.contorller = controller
@@ -74,3 +79,14 @@ class DataCenter(object):
             return True
         except:
             return False
+
+    def setIfWarn(self, ifWarn):
+        self.ifWarn = ifWarn
+        self.warnChangedEvent()
+
+    def warnChangedEvent(self, *args):
+        for func in self.warnChangedEventsFunc:
+            func(self.ifWarn)
+
+    def getIfWarn(self):
+        return self.ifWarn

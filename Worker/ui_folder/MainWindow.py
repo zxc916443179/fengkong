@@ -13,6 +13,7 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
         super(MyMainForm, self).__init__()
         self.key = key
         self.data_center = DataCenter()
+        self.data_center.registerWarnChangedEvent(self.onWarnChanged)
         self.isWarned = False
         self.setupUi(self, index)
         self.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)
@@ -26,6 +27,11 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
         self.musicPath = None
         self.timer = None
         self.timer = TimerManager.addRepeatTimer(self.data_center.getCfgValue('client', 'tick_time', 1.0), self.update)
+        self.ifWarnNeed = True
+        self.checkBox.stateChanged.connect(self.onWarningChecked)
+
+    def onWarnChanged(self, ifWarnNeed):
+        self.checkBox.setChecked(ifWarnNeed)
 
     def onEmitWarnWindow(self):
         if self.musicPath is not None:
@@ -61,7 +67,8 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
             event.ignore()
     
     def showWarnWindow(self, warnLevel: int, musicPath = None) -> None:
-        if warnLevel == 0:
+        ifWarnNeed = self.data_center.getIfWarn()
+        if warnLevel == 0 or ifWarnNeed:
             self.isWarned = False
             self.musicPath = None
             return
@@ -71,4 +78,8 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
             if musicPath:
                 self.musicPath = musicPath
             self.warn_signal.emit()
+
+    def onWarningChecked(self):
+        self.ifWarnNeed = True if self.checkBox.isChecked() else False   
+        self.data_center.setIfWarn(self.ifWarnNeed)
         
