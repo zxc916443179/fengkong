@@ -27,7 +27,6 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
         self.musicPath = None
         self.timer = None
         self.timer = TimerManager.addRepeatTimer(self.data_center.getCfgValue('client', 'tick_time', 1.0), self.update)
-        self.ifWarnNeed = True
         self.checkBox.stateChanged.connect(self.onWarningChecked)
 
     def onWarnChanged(self, ifWarnNeed):
@@ -80,6 +79,5 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
             self.warn_signal.emit()
 
     def onWarningChecked(self):
-        self.ifWarnNeed = True if self.checkBox.isChecked() else False   
-        self.data_center.setIfWarn(self.ifWarnNeed)
+        self.data_center.setIfWarn(True if self.checkBox.isChecked() else False)
         

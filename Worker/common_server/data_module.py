@@ -82,11 +82,11 @@ class DataCenter(object):
 
     def setIfWarn(self, ifWarn):
         self.ifWarn = ifWarn
-        self.warnChangedEvent()
+        self.warnChangedEvent(self.ifWarn)
 
     def warnChangedEvent(self, *args):
         for func in self.warnChangedEventsFunc:
-            func(self.ifWarn)
+            func(*args)
 
     def getIfWarn(self):
         return self.ifWarn
