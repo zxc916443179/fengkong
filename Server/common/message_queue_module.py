@@ -68,3 +68,6 @@ class Message(object):
 
     def __le__(self, o: object) -> bool:
         return self.client_id <= o.client_id
+
+    def __lt__(self, o: object) -> bool:
+        return self.client_id < o.client_id

@@ -10,6 +10,7 @@ ts = None
 
 TIMEOUT = 60
 
+
 @Singleton
 class TuShare(Thread):
     
