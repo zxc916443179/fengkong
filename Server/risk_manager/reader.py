@@ -17,6 +17,7 @@ class Reader(object):
         self.mid_csv_file = os.path.join(mid_dir, mid_csv_file)
         self.final_csv_file = os.path.join(mid_dir, final_csv_file)
         self.names_to_account = names_to_account
+        self.has_data = False
         if not os.path.exists(self.log_dir):
             self.logger.error(u"没找到 pbrc Log 目录[%s]！" % self.log_dir)
             raise Exception("Pbrc Log Folder Do Not Exists.")
@@ -35,7 +36,7 @@ class Reader(object):
         if len(files) == 0:
             self.logger.warning(u"Pbrc Log 目录[%s]中没有 dbf log 文件！" % self.log_dir)
             self.logger.error(u"请确保[%s]目录中有 dbf log 文件后，重新启动程序。" % self.log_dir)
-            raise Exception(u"Pbrc Log Do Not Exists.")
+            return
         files.sort()
         latestFile = files[-1]
         #self.logger.info(u"解析最近的 dbf log 文件[%s]。" % latestFile)
@@ -54,29 +55,32 @@ class Reader(object):
         #print(records)
         if len(records) == 0:
             self.logger.warning(u"Pbrc log[%s]中没有成交记录！")
-            input(u"按任意键继续。")
-            raise Exception("No Entrust Found.")
+            # input(u"按任意键继续。")
+            # raise Exception("No Entrust Found.")
+            return
         with open(self.mid_csv_file, 'w', newline='') as csvfile:
             fieldnames = records[0].keys()
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(records)
         csvfile.close()
-        #self.logger.info(u"中间文件[%s]写入成功！" % mid_csv_file)
+        self.logger.info(u"中间文件[%s]写入成功！" % self.mid_csv_file)
 
         df = pd.read_csv(self.mid_csv_file, encoding="gb2312")
         names_file = self.names_to_account
         if not os.path.exists(names_file):
             self.logger.error(u"交易员配置文件[%s]没有找到！" % names_file)
-            raise Exception("Trader Configuration File Do Not Exists.")
+            # raise Exception("Trader Configuration File Do Not Exists.")
+            return
         else:
-            #self.logger.info(u"解析交易员配置文件[%s]" % names_file)
+            self.logger.info(u"解析交易员配置文件[%s]" % names_file)
             names_df = pd.read_excel(names_file)
             names_df.dropna()
-            #self.logger.info(u"重组委托记录。")
+            self.logger.info(u"重组委托记录。")
             df = self.reassembe(df, names_df)
-            #self.logger.info(u"将重组后的委托记录写入最终CSV[%s]中。" % final_csv_file)
+            self.logger.info(u"将重组后的委托记录写入最终CSV[%s]中。" % self.final_csv_file)
             df.to_csv(self.final_csv_file, encoding="gb2312", index=False)
+        self.has_data = True
 
     def reassembe(self, df: DataFrame, names_df: DataFrame) -> DataFrame:
         total_save_head = ['CJSJ', 'TZGW', 'ZQDM', 'CJSL', 'CJJG', 'WTFX'] # Limit head

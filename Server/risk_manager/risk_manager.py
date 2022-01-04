@@ -18,11 +18,12 @@ class RiskManager(object):
         self.names_to_account = names_to_account
         self.name = name
         self.reader = Reader(mid_dir, log_dir, mid_csv_file, final_csv_file, names_to_account)
+        self.has_data = self.reader.has_data
         self.mid_csv_file = self.reader.final_csv_file
 
         self.trade_cost = trader_tax_rate
         self.yhs_cost = stamp_tax_rate
-        
+
         # renew by renew_humans
         self.humans = []            #账户列表
         self.names_dic = {}         #账户与人名的对应关系
@@ -48,6 +49,8 @@ class RiskManager(object):
             更新名单
         --------
         '''
+        if not self.has_data:
+            return
         names_df = pd.read_excel(self.names_to_account)
         self.humans = []
         self.names_dic = {}
@@ -73,7 +76,7 @@ class RiskManager(object):
             self.humans.append(account)
             self.names_dic[account] = name
             self.loss[account] = stop
-    
+
     def __is_float(self, _s):
         '''
         --------
@@ -160,6 +163,8 @@ class RiskManager(object):
             获取当前股票未平仓位浮动盈亏
         --------
         '''
+        if not self.has_data:
+            return
         res = []
         #获取未平仓位部分的证券代码
         current_codes = []
@@ -227,9 +232,14 @@ class RiskManager(object):
             更新委托文件数据
         --------
         '''
-        # self.renew_humans()
         self.reader.run()
+        self.has_data = self.reader.has_data
+        if not self.has_data:
+            return
+        self.renew_humans()
+
         self.data = self.provide_data()
+
         self.renew_stock_status()
 
     def get_current_status2(self):
@@ -239,6 +249,8 @@ class RiskManager(object):
         --------
         '''
         #printrows = ''
+        if not self.has_data:
+            return
         res = self.get_current_status()
         temp = np.array(res)
         res_status = []

@@ -49,7 +49,7 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
         elif state == WORKER_STATE.DISCONNECTED:
             self.close()
         pass
-    
+
     def closeEvent(self, event: QtGui.QCloseEvent) -> None:
         reply = QtWidgets.QMessageBox.question(self,
                                                '本程序',
@@ -64,10 +64,10 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
             os._exit(0)
         else:
             event.ignore()
-    
+
     def showWarnWindow(self, warnLevel: int, musicPath = None) -> None:
         ifWarnNeed = self.data_center.getIfWarn()
-        if warnLevel == 0 or ifWarnNeed:
+        if warnLevel == 0 or not ifWarnNeed:
             self.isWarned = False
             self.musicPath = None
             return
@@ -80,4 +80,3 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
 
     def onWarningChecked(self):
         self.data_center.setIfWarn(True if self.checkBox.isChecked() else False)
-        

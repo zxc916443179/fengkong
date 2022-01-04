@@ -15,12 +15,12 @@ class DataCenter(object):
         self.cf: configparser.ConfigParser = None
         self.is_main = 0 # 是否是主客户端
         self.contorller = None
-        self.ifWarn = True
+        self.ifWarn = False
         self.warnChangedEventsFunc = []
-    
+
     def registerWarnChangedEvent(self, func):
         self.warnChangedEventsFunc.append(func)
-    
+
     def regController(self, controller):
         self.contorller = controller
 
@@ -28,10 +28,10 @@ class DataCenter(object):
         if WORKER_STATE.checkCanStateTransmit(nowState, newState):
             self.state = newState
             logger.info(f"state transmit to {newState} from {nowState}")
-    
+
     def setState(self, state):
         self.statusControl(self.state, state)
-    
+
     def getState(self):
         return self.state
 
@@ -39,7 +39,7 @@ class DataCenter(object):
         self.config = conf
         self.readConfigFile()
         self.is_main = self.getCfgValue("client", "is_main")
-    
+
     def getCfgValue(self, section: str, key: str, default: any = None):
         value = None
         try:
@@ -51,7 +51,7 @@ class DataCenter(object):
         if self.__is_float(value):
             return float(value)
         return value
-    
+
     def readConfigFile(self):
         import codecs
         if self.config.config_file:
@@ -66,7 +66,7 @@ class DataCenter(object):
 
     def getData(self):
         return self.allList
-    
+
     def getMainDataByKey(self, key):
         return self.allList[key]['main']
 

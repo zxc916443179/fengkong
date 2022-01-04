@@ -18,7 +18,7 @@ class Client(object):
         self.id = self.genId()
         self.hid = hid
         self.state = keyType.CLIENT_STATE.NORMAL
-    
+
     def genId(self):
         self.id = str(int(time.time() * 1000))[3:] + str(Client.idx)
         Client.idx += 1
@@ -93,7 +93,7 @@ class DataCenter(object):
             logger.info(f"register client {client_id}, id is {self.clients[client_id].id}")
         else:
             logger.info("already exist")
-    
+
     def checkZombieClient(self):
         clients = self.clients.values()
         remove_list = []
@@ -103,46 +103,49 @@ class DataCenter(object):
         for hid in remove_list:
             self.clients.pop(hid)
             logger.info(f"remove dead client {hid}")
-    
+
     def getClient(self, hid):
         return self.clients.get(hid)
-    
+
     def getClientById(self, id: str) -> Client or None:
         clients = self.clients.values()
         for client in clients:
             if client.id == id:
                 return client
         return None
-    
+
     def getClientList(self) -> List[int]:
         return self.clients.keys()
-    
+
     def isClientAlive(self, hid: int) -> bool:
         return hid in self.clients and self.clients[hid].state == keyType.CLIENT_STATE.NORMAL
 
     def getData(self):
         data = {}
         for key in self.risk_mgrs:
-            while self.risk_mgrs[key].status is None:
-                pass
+            if self.risk_mgrs[key].status is None:
+                data[key] = {}
+                data[key]["main"] = []
+                data[key]["detail"] = []
+                continue
             tmp1 = self.risk_mgrs[key].status
             # tmp2, _ = self.risk_mgrs[key].get_current_status3()
             # for i, human in enumerate(tmp2):
             #     tmp1['main'][i][1] = human[1]
             data[key] = tmp1
         return {'data': data}
-    
+
     def __is_float(self, _s):
         try:
             float(str(_s))
             return True
         except:
             return False
-    
+
     def tick(self):
         for risk_mgr in self.risk_mgrs.values():
             risk_mgr.renew_status()
             risk_mgr.get_current_status2()
-    
+
     def syncData(self):
         self.rpc_queue.push_msg(0, RpcMessage("syncData", self.getClientList(), [], self.getData()))
