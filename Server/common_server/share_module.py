@@ -13,11 +13,11 @@ TIMEOUT = 60
 
 @Singleton
 class TuShare(Thread):
-    
+
     def importPackage(self):
         global ts
         import tushare as ts
-    
+
     def __init__(self):
         super(TuShare, self).__init__()
         self.shares = {}
@@ -28,7 +28,7 @@ class TuShare(Thread):
         self.update_frequency = 1.2
         self.last_update_time = self.my_time
         self.importPackage()
-    
+
     def checkOutdateCodes(self):
         now = self.my_time
         remove_list = []
@@ -37,12 +37,12 @@ class TuShare(Thread):
                 code["expired"] = True
                 self.logger.debug(f"code[{key}] expired")
                 remove_list.append(key)
-        
+
         for key in remove_list:
             if self.codes[key]['expired']:
                 self.codes.pop(key)
                 self.shares.pop(key)
-    
+
     def run(self) -> None:
         while 1:
             self.my_time = time.time()
@@ -53,29 +53,36 @@ class TuShare(Thread):
                 self.last_update_time = self.my_time
                 try:
                     data = ts.get_realtime_quotes(codes)
+                    print(f"本次向行情服务器请求花费时间{time.time() - self.my_time}")
                     if data is not None:
                         data.index = data['code']
                         for code in codes:
+                            if code not in data.index:
+                                self.logger.info(f"code {code} not in data")
+                                self.getRealTimeQuotes([code])
+                                continue
+
                             self.shares[code] = data.loc[code, :]
                 except Exception as e:
                     self.logger.error("", exc_info=True)
-    
+
     def checkAppendList(self):
         while not self.append_queue.empty():
             code = self.append_queue.get()
             self.codes[code] = {'time': self.my_time, 'expired': False}
             self.shares[code] = None
 
-    def getRealTimeQuotes(self, codes, time_out = 5):
+    def getRealTimeQuotes(self, codes, time_out = 2):
         start_time = self.my_time
         codes_ = [c for c in codes]
         while 1:
-            if self.my_time - start_time > time_out:
+            if time.time() - start_time > time_out:
                 return False, None
             gather_list = []
             gathered = True
             new_gather_indices = []
             for i, code in enumerate(codes_):
+                # 不在codes列表里的添加到codes中去
                 if code not in self.codes:
                     self.logger.debug(f"add gather code {code}")
                     self.append_queue.put(code)
@@ -89,7 +96,7 @@ class TuShare(Thread):
                 codes_.pop(i)
             if gathered:
                 for code in codes:
-                    if self.shares.get(code, None) is None:
+                    if self.shares.get(code, None) is None or code not in self.codes:
                         gathered = False
                         break
                     gather_list.append(self.shares[code])

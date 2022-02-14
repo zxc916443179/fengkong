@@ -187,7 +187,7 @@ class RiskManager(object):
         success, data = self.tushare.getRealTimeQuotes(current_codes)
         if not success:
             self.logger.debug("cannot get real time quotes")
-            if self.temp_data:
+            if self.temp_data is not None:
                 data = self.temp_data
             else:
                 return []

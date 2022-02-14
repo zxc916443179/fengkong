@@ -13,6 +13,40 @@ from gameEntity import GameEntity
 from network.simpleHost import SimpleHost
 from typing import Dict
 import argparse
+import sys
+
+
+class RedirectorIO(object):
+    '''
+    重定向标准输出
+    添加一些信息方便debug
+    '''
+    origin_out = sys.stdout
+
+    def __init__(self, filename="") -> None:
+        super(RedirectorIO).__init__()
+        self.filename = filename
+        self.newline = True
+        # self.logger = logging.getLogger()
+
+    def write(self, out_stream):
+        if out_stream == "\n":
+            self.origin_out.write(out_stream)
+            self.newline = True
+            return
+        # self.logger.info(out_stream)
+        if self.newline:
+            stack = sys._getframe(1)
+            timeStr = time.strftime("%Y/%m/%d %H:%M:%S %p", time.localtime())
+            prefix = "%s - PRINT[%s:%s %s] - " % (timeStr, stack.f_code.co_filename,
+                                       stack.f_lineno, stack.f_code.co_name)
+            self.origin_out.write(prefix + out_stream)
+            self.newline = False
+        else:
+            self.origin_out.write(out_stream)
+
+    def flush(self):
+        pass
 
 
 class SimpleServer(Thread):
@@ -93,6 +127,7 @@ class SimpleServer(Thread):
 
 
 if __name__ == "__main__":
+    sys.stdout = RedirectorIO()
     import os
 
     parser = argparse.ArgumentParser()
@@ -123,7 +158,9 @@ if __name__ == "__main__":
                         level=log_level, format=LOG_FORMAT, datefmt=DATE_FORMAT)
     logger = logging.getLogger()
     if arguments.verbose:
-        logger.addHandler(logging.StreamHandler())
+        streamHandler = logging.StreamHandler()
+        streamHandler.formatter = logging.Formatter(fmt=LOG_FORMAT, datefmt=DATE_FORMAT)
+        logger.addHandler(streamHandler)
     server = SimpleServer(config=arguments)
     server.startup()
     thread_pool = ThreadPool()

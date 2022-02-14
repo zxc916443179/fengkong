@@ -73,12 +73,12 @@ class Reader(object):
             # raise Exception("Trader Configuration File Do Not Exists.")
             return
         else:
-            self.logger.info(u"解析交易员配置文件[%s]" % names_file)
+            # self.logger.info(u"解析交易员配置文件[%s]" % names_file)
             names_df = pd.read_excel(names_file)
             names_df.dropna()
-            self.logger.info(u"重组委托记录。")
+            # self.logger.info(u"重组委托记录。")
             df = self.reassembe(df, names_df)
-            self.logger.info(u"将重组后的委托记录写入最终CSV[%s]中。" % self.final_csv_file)
+            # self.logger.info(u"将重组后的委托记录写入最终CSV[%s]中。" % self.final_csv_file)
             df.to_csv(self.final_csv_file, encoding="gb2312", index=False)
         self.has_data = True
 
