@@ -32,12 +32,45 @@ def parseRpcMessage(method, targets, args, kwargs):
     return data
 
 
+class RedirectorIO(object):
+    '''
+    重定向标准输出
+    添加一些信息方便debug
+    '''
+    origin_out = sys.stdout
+
+    def __init__(self, filename="") -> None:
+        super(RedirectorIO).__init__()
+        self.filename = filename
+        self.newline = True
+        # self.logger = logging.getLogger()
+
+    def write(self, out_stream):
+        if out_stream == "\n":
+            self.origin_out.write(out_stream)
+            self.newline = True
+            return
+        # self.logger.info(out_stream)
+        if self.newline:
+            stack = sys._getframe(1)
+            timeStr = time.strftime("%Y/%m/%d %H:%M:%S %p", time.localtime())
+            prefix = "%s - PRINT[%s:%s %s] - " % (timeStr, stack.f_code.co_filename,
+                                       stack.f_lineno, stack.f_code.co_name)
+            self.origin_out.write(prefix + out_stream)
+            self.newline = False
+        else:
+            self.origin_out.write(out_stream)
+
+    def flush(self):
+        pass
+
+
 class Worker(Thread):
     def __init__(self, config=None):
         super(Worker, self).__init__()
         # type: (argparse.Namespace) -> None
         self.config = config
-        
+
         self.data_center = DataCenter()
         self.data_center.setConfig(config)
         self.retry_times = 10
@@ -69,7 +102,7 @@ class Worker(Thread):
             self.queue.append((conf.NET_CONNECTION_DATA, self.netstream.hid, data))
         self.consumeMessage()
         self.consumeRpcMessage()
-        
+
         TimerManager.scheduler()
 
     def consumeMessage(self):
@@ -87,11 +120,11 @@ class Worker(Thread):
             elif code == conf.NET_CONNECTION_DATA:
                 try:
                     info = json.loads(data)
+                    self.message_queue.push_msg(0,
+                                                Message(info["method"], wparam, info["args"], info["kwargs"]))
                 except:
-                    self.logger.error("parse json failed, pass")
+                    self.logger.error("parse json failed, pass", data)
                     continue
-                self.message_queue.push_msg(0,
-                                            Message(info["method"], wparam, info["args"], info["kwargs"]))
 
     def consumeRpcMessage(self):
         for _ in range(max(self.max_consume, len(self.rpc_queue))):
@@ -108,6 +141,7 @@ class Worker(Thread):
 
 
 if __name__ == "__main__":
+    sys.stdout = RedirectorIO()
     import os
 
     parser = argparse.ArgumentParser()
@@ -146,10 +180,10 @@ if __name__ == "__main__":
         controller = Controller()
         worker = Worker(config=arguments)
         worker.start()
-        
+
         thread_pool = ThreadPool()
         thread_pool.start()
-        
+
         controller.showMainWindows()
         TimerManager.addRepeatTimer(10, worker.heartbeat)
         code = app.exec_()

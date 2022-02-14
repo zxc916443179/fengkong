@@ -68,12 +68,12 @@ class MsgHandler(Thread):
     @req()
     def heartBeat(self, msg: Message) -> None:
         logger.debug("heart beat from Server")
-    
+
     @req()
     def syncData(self, msg: Message) -> None:
         self.data_center.setData(msg.kwargs['data'])
         self.data_center.setState(WORKER_STATE.RUNNING)
-        logger.debug("sync message from Server %s", msg.kwargs['data'])
+        # logger.debug("sync message from Server %s", msg.kwargs['data'])
 
     @req()
     def closeClient(self, msg: Message) -> None:

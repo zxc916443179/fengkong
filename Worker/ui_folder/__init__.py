@@ -3,14 +3,14 @@ from PyQt5 import QtGui
 from .MediaPlayer import MediaPlayer
 
 
-def saveItem(data, QTableWidgetItem, formWindow):
+def saveItem(data: list, QTableWidgetItem, formWindow):
     from ui_folder.MainWindow import MyMainForm
     warnLevel = 0
     formWindow.tableWidget.clearContents()
     formWindow.tableWidget.setRowCount(len(data))
-    if data == 'no stock': 
+    if data[0] == 'no stock':
         formWindow.tableWidget.setItem(0, 0, QTableWidgetItem(str(data)))
-    else: 
+    else:
         for i in range(len(data)):
             for j in range(len(data[i])):
                 if data[i][j] != None:
@@ -23,7 +23,7 @@ def saveItem(data, QTableWidgetItem, formWindow):
                     elif data[i][j] == '***':
                         formWindow.tableWidget.item(i, j).setBackground(QtGui.QColor(255, 0, 0))
                         warnLevel = 2
-    
+
     if type(formWindow) is MyMainForm:
         musicPath = './resource/audio/warn.wav' if warnLevel == 1 else './resource/audio/alert.wav'
         formWindow.showWarnWindow(warnLevel=warnLevel, musicPath=musicPath)

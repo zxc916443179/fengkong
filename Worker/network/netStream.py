@@ -94,12 +94,13 @@ class NetStream(object):
     # connect the remote server
     def connect(self, address, port):
         self.address = address
-        self.port = port
+        self.port = int(port)
         self.assign(socket.socket(socket.AF_INET, socket.SOCK_STREAM))
         self.sock.setblocking(True)
         self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
         self.sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
         self.data_center.setState(WORKER_STATE.CONNECTING)
+        logger.info(f"尝试连接至服务器{self.address}:{self.port}")
         # self.data_center.contorller.showWarnWindow()
         while True:
             try:
@@ -167,11 +168,11 @@ class NetStream(object):
     def process(self):
         if self.state == conf.NET_STATE_STOP:
             self.connect(self.address, self.port)
-        if self.state == conf.NET_STATE_CONNECTING:
+        elif self.state == conf.NET_STATE_CONNECTING:
             self.__tryConnect()
-        if self.state == conf.NET_STATE_ESTABLISHED:
+        elif self.state == conf.NET_STATE_ESTABLISHED:
             self.__tryRecv()
-        if self.state == conf.NET_STATE_ESTABLISHED:
+        elif self.state == conf.NET_STATE_ESTABLISHED:
             self.__trySend()
 
         return 0
@@ -225,7 +226,7 @@ class NetStream(object):
         try:
             # print "self.send_buf",self.send_buf
             wsize = self.sock.send(str.encode(send_data, encoding='utf-8'))
-        
+
         except socket.error as error:
             code, _ = error.errno, error.strerror
             if code not in self.errd:
@@ -254,7 +255,7 @@ class NetStream(object):
                     self.close()
 
                     return -1
-            
+
             except socket.error as error:
                 code, _ = error.errno, error.strerror
                 if code not in self.errd:

@@ -57,7 +57,7 @@ class uiWidgetWindow(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "详情"))
-        self.pushButton.setText(_translate("Dialog", "Detial"))
+        self.pushButton.setText(_translate("Dialog", "Detail"))
         item = self.tableWidget.horizontalHeaderItem(0)
         item.setText(_translate("Dialog", "交易员"))
         item = self.tableWidget.horizontalHeaderItem(1)

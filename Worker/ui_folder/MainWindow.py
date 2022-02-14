@@ -1,3 +1,4 @@
+from time import sleep
 from PyQt5 import QtGui, QtWidgets, QtCore
 from common.message_queue_module import Message, MsgQueue
 from setting.keyType import WORKER_STATE
@@ -25,8 +26,11 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
         self.warn_signal.connect(lambda:self.onEmitWarnWindow())
         self.warnLevel = 0
         self.musicPath = None
-        self.timer = None
-        self.timer = TimerManager.addRepeatTimer(self.data_center.getCfgValue('client', 'tick_time', 1.0), self.update)
+        # self.timer = None
+        # self.timer = TimerManager.addRepeatTimer(self.data_center.getCfgValue('client', 'tick_time', 1.0), self.update)
+        self.updateThread = UpdateMainThread(self)
+        self.updateThread.start()
+        self.updateThread.update.connect(self.update)
         self.checkBox.stateChanged.connect(self.onWarningChecked)
 
     def onWarnChanged(self, ifWarnNeed):
@@ -41,13 +45,11 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
     def goDetail(self):
         self.switch_Detail.emit()
 
-    def update(self):
-        state = self.data_center.getState()
-        if state == WORKER_STATE.RUNNING:
-            mainList = self.data_center.getMainDataByKey(self.key)
-            saveItem(mainList, QtWidgets.QTableWidgetItem, self)
-        elif state == WORKER_STATE.DISCONNECTED:
+    def update(self, mainList: list):
+        if mainList[0] == "disconnected":
             self.close()
+        else:
+            saveItem(mainList, QtWidgets.QTableWidgetItem, self)
         pass
 
     def closeEvent(self, event: QtGui.QCloseEvent) -> None:
@@ -57,8 +59,8 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
                                                QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No,
                                                QtWidgets.QMessageBox.No)
         if reply == QtWidgets.QMessageBox.Yes:
-            if self.timer:
-                TimerManager.cancel(self.timer)
+            if self.updateThread:
+                self.updateThread.stop()
             import os
             print("exit")
             os._exit(0)
@@ -80,3 +82,27 @@ class MyMainForm(QtWidgets.QMainWindow, uiWidgetWindow):
 
     def onWarningChecked(self):
         self.data_center.setIfWarn(True if self.checkBox.isChecked() else False)
+
+
+class UpdateMainThread(QtCore.QThread):
+    update = QtCore.pyqtSignal(list)
+    def __init__(self, parent) -> None:
+        super().__init__(parent)
+        self.key = parent.key
+        self.running = True
+        self.data_center = DataCenter()
+
+    def run(self) -> None:
+        while self.running:
+            state = self.data_center.getState()
+            if state == WORKER_STATE.RUNNING:
+                mainList = self.data_center.getMainDataByKey(self.key)
+                if mainList == "no stock":
+                    mainList = [mainList]
+                self.update.emit(mainList)
+            elif state == WORKER_STATE.DISCONNECTED:
+                self.update.emit(["disconnected"])
+            sleep(self.data_center.getCfgValue('client', 'tick_time', 1.0))
+
+    def stop(self):
+        self.running = False
